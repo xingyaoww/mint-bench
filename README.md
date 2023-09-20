@@ -38,17 +38,17 @@ pip install -e .
 
 ### Model Setup
 
-**If you want to evaluate huggingface-compatible open-source models**, check instructions [here](docs/SERVING.md).
+**To evaluate huggingface-compatible open-source models**, check instructions [here](docs/SERVING.md).
 
 **To evaluate API-base closed-source models**, set Your API Key:
 
 ```bash
 # Obtain OpenAI API access from https://openai.com/blog/openai-api
-# This key is necessary for all models since by default we use GPT-4 for feedback generation
+# This key is necessary for all models since, by default, we use GPT-4 for feedback generation
 export OPENAI_API_KEY='YOUR KEY HERE';
 
 # The following keys are optional
-# Will only be used if you use Bard or Claude as the evaluated model / feedback provider
+# Will only be used if you use Bard or Claude as the evaluated model/feedback provider
 # https://www.googlecloudcommunity.com/gc/AI-ML/Google-Bard-API/m-p/538517
 export BARD_API_KEY='YOUR KEY HERE';
 # https://docs.anthropic.com/claude/docs/getting-access-to-claude
@@ -60,7 +60,7 @@ Please refer to [docs/CONFIG.md](docs/CONFIG.md) if you want to evaluate a custo
 
 ### Generate Config
 
-MINT use configuration files to specify the experiment settings (e.g., which models to use, which datasets to use, etc.).
+MINT uses configuration files to specify the experiment settings (e.g., which models to use, which datasets to use, etc.).
 We provide a script [`mint/configs/config_variables.py`](mint/configs/config_variables.py) to generate default config files for you.
 
 Please refer to [docs/CONFIG.md](docs/CONFIG.md) if you want to add an evaluated model, a different LLM that provides feedback, or different experiment setting (e.g., feedback type).
@@ -72,10 +72,8 @@ python mint/configs/generate_config.py
 ```
 
 ### Evaluate Models
-**If you want to use docker environment for better isolation**
-
-We recommend using terminal multiplexer (e.g., [tmux](https://github.com/tmux/tmux/wiki)) to start the docker for better management.
-Please make sure you have admin permission by adding prefix "sudo" or have your admin [add you to the docker user group](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user).
+**If you want to use a docker environment for better isolation**: We recommend using a terminal multiplexer (e.g., [tmux](https://github.com/tmux/tmux/wiki)) to start the docker for better management.
+Please make sure you have admin permission by adding the prefix "sudo" or have your admin [add you to the docker user group](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user).
 You will enter an interactive docker environment with all dependencies installed:
 ```bash
 ./scripts/docker/run_interactive.sh
@@ -96,7 +94,7 @@ DEBUG_MODE=1 ./scripts/run.sh
 
 **Analyze result**: You can use the notebook `scripts/notebook/analyze_output.ipynb` to analyze the model you evaluated and reproduce tables and figures from the paper.
 
-**Visualize the results**: The following code will starts a streamlit-based visualizer to visualize your directory.
+**Visualize the results**: The following code will start a streamlit-based visualizer to visualize your directory.
 ```bash
 streamlit run scripts/visualizer.py -- --data_dir data/outputs
 ```
@@ -107,7 +105,7 @@ streamlit run scripts/visualizer.py -- --data_dir data/outputs
 We welcome contributions to this repo from the community!
 
 To add your model to the benchmark, you can start an issue and submit your model outputs `<model_name>.zip` [here](https://uofi.app.box.com/f/07369c26b565487cb976aba921ca080d).
-Please refer to [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for more details about contributing models, tools, and data.
+Please take a look at [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for more details about contributing models, tools, and data.
 
 ## :books: Citation
 
