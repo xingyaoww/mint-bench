@@ -1,5 +1,5 @@
 
-# How to configure MINT to evaluate your LLM
+# :paperclip: How to configure MINT to evaluate your LLM
 
 ## Add an evaluated LLM
 
@@ -41,13 +41,13 @@ For open-source models, we have [`VLLMAgent`](mint/agents/vllm_agent.py) that ca
 },
 ```
 
-**If you want to evaluate another closed-source LLM with a different API schema than existing implementation**: You need to implement a new agent class that inherits from `LMAgent` (PR welcomed!).
+**If you want to evaluate another closed-source LLM with a different API schema than the existing implementation**: You need to implement a new agent class that inherits from `LMAgent` (PR welcomed!).
 You can use [`mint/agents/openai_lm_agent.py`](mint/agents/openai_lm_agent.py) as an example, then add this model configuration to [`mint/configs/config_variables.py`](mint/configs/config_variables.py) similar to the above.
 
 
-## Add an feedback-providing LLM
+## Add a feedback-providing LLM
 
-We implemented three different feedback agent class:
+We implemented three different feedback agent classes:
 - [OpenAIFeedbackAgent](mint/agents/openai_feedback_agent.py)
 - [ClaudeFeedbackAgent](mint/agents/claude_feedback_agent.py)
 - [VLLMFeedbackAgent](mint/agents/vllm_feedback_agent.py)
@@ -84,11 +84,7 @@ FEEDBACK_PROVIDER_LIST = [
 
 ## Change Experiment Configurations
 
-You can also optionally change different experiment settings in [`mint/configs/config_variables.py`](mint/configs/config_variables.py).
-
-### `FEEDBACK_CONFIG`
-
-default setting of feedback model, which will be overwritten by information from `FEEDBACK_PROVIDER_LIST` if specified.
+Optionally, you can change different experiment settings in [`mint/configs/config_variables.py`](mint/configs/config_variables.py).
 
 ### `ENV_CONFIGS`
 
@@ -107,11 +103,11 @@ ENV_CONFIGS = [
 ]
 ```
 
-where `max_steps` corresponds to budget of interaction in the paper, `use_tools` should always be `True` (no tool setting is not implemented yet), `max_propose_solution` is the maximum number of solutions that the evaluated LLM can propose, and `count_down` is whether to count down the remaining steps in the environment (read Section 2 in the paper for more detail).
+where `max_steps` corresponds to the budget of interaction (k) in the paper, `use_tools` should always be `True` (no tool setting is not implemented yet), `max_propose_solution` is the maximum number of solutions that the evaluated LLM can propose, and `count_down` is whether to count down the remaining steps in the environment (read Section 2 in the paper for more detail).
 
 ### `FEEDBACK_TYPES`
 
-This specifies the types of feedback we instruct the feedback-providing LLM to provide. Here are all the setting we currently support:
+This specifies the types of feedback we instruct the feedback-providing LLM to provide. Here are all the settings we currently support:
 
 ```python
 FEEDBACK_TYPES = [
@@ -122,5 +118,5 @@ FEEDBACK_TYPES = [
 ]
 ````
 
-- `pseudo_human_feedback` specifies whether we provide ground-truth solution of the problem to the feedback-providing LLM. `no_GT` means we do not provide ground-truth solution (default setting), and `GT` means we provide ground-truth feedback.
+- `pseudo_human_feedback` specifies whether we provide a ground-truth solution of the problem to the feedback-providing LLM. `no_GT` means we do not provide a ground-truth solution (default setting), and `GT` means we provide ground-truth feedback.
 - `feedback_form` specifies the form of feedback we provide. `textual` means we provide textual feedback (default setting), and `binary` means we instruct the feedback-provider to provide binary feedback.
