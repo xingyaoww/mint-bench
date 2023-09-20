@@ -9,7 +9,7 @@ They will be automatically downloaded to `data/processed` and `data/outputs` whe
 ./scripts/setup.sh
 ```
 
-Of you can choose to manually download them from:
+Or you can choose to download them from:
 
 - processed data: [link](https://uofi.box.com/s/xomunc5sddp3flbbkrog11xc6oy63soz)
 - LLM outputs: [link](https://uofi.box.com/s/a2p2tp4q6rmb2mfuim3fv3ff80ud8z2x)
