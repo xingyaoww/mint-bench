@@ -4,7 +4,7 @@ Official Repo for paper [MINT: Multi-turn Interactive Evaluation for Large Langu
 
 **MINT** benchmark aims to evaluate LLMs' ability to solve tasks with **m**ulti-turn **int**eractions by (1) using tools and (2) leveraging natural language feedback.
 
-Please visit our [website](https://xingyaoww.github.io/mint-bench) for more information and visualization.
+Please visit our [website](https://xingyaoww.github.io/mint-bench) for more information and visualization. Check [here](docs/DATA.md) for released model outputs and benchmark data.
 
 > :warning: WARNING: Evaluation of LLMs requires executing untrusted model-generated code. Users are *strongly encouraged* to sandbox the code execution so that it does not perform destructive actions on their host or network. We highly recommend using the provided docker image for isolated execution.
 
@@ -94,7 +94,7 @@ DEBUG_MODE=1 ./scripts/run.sh
 
 **Analyze result**: You can use the notebook `scripts/notebook/analyze_output.ipynb` to analyze the model you evaluated and reproduce tables and figures from the paper.
 
-**Visualize the results**: The following code will start a streamlit-based visualizer to visualize your directory.
+**Visualize the results**: The following code will starts a streamlit-based visualizer to visualize your directory.
 ```bash
 streamlit run scripts/visualizer.py -- --data_dir data/outputs
 ```
@@ -105,7 +105,7 @@ streamlit run scripts/visualizer.py -- --data_dir data/outputs
 We welcome contributions to this repo from the community!
 
 To add your model to the benchmark, you can start an issue and submit your model outputs `<model_name>.zip` [here](https://uofi.app.box.com/f/07369c26b565487cb976aba921ca080d).
-Please take a look at [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for more details about contributing models, tools, and data.
+Please refer to [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for more details about contributing models, tools, and data.
 
 ## :books: Citation
 
