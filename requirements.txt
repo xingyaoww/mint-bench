@@ -1,0 +1,39 @@
+pre-commit
+openai
+datasets
+wikipedia
+langchain
+streamlit
+backoff
+charset-normalizer==3.1.0
+# Alfworld
+pandas==1.4.4
+opencv-python
+networkx
+h5py
+tqdm
+vocab
+revtok
+Click
+ai2thor==2.1.0
+transformers
+tokenizers
+scipy==1.10.1
+ipython
+matplotlib
+cython
+nltk
+gym==0.15.4
+pipreqs
+pyyaml
+pytz
+visdom
+sympy
+pycocotools
+fast-downward @ https://github.com/MarcCote/downward/archive/faster_replan.zip
+textworld @ https://github.com/MarcCote/TextWorld/archive/handcoded_expert_integration.zip
+alfworld @ git+https://github.com/xingyaoww/alfworld.git
+seaborn
+google-generativeai
+python-dateutil
+statsmodels

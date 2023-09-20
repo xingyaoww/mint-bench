@@ -1,0 +1,14 @@
+name: mint
+channels:
+  - defaults
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.9
+  - pytorch==1.13.1
+  - torchvision==0.14.1
+  - torchaudio==0.13.1
+  - pytorch-cuda=11.6
+  - pip
+  - pip:
+      - -r requirements.txt
