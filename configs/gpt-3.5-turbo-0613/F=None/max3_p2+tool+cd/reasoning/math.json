@@ -13,7 +13,7 @@
         "task_type": "reasoning",
         "tool_imports": [
             [
-                "intereval.tools.wikipedia_search",
+                "mint.tools.wikipedia_search",
                 "WikipediaQueryRun"
             ]
         ],
