@@ -74,7 +74,7 @@ class OpenAIFeedbackAgent(OpenAILMAgent):
             ]
 
             # log in yellow
-            LOGGER.info(
+            LOGGER.debug(
                 "Feedback Agent Prompt:\n"
                 + "\033[93m"
                 + messages[0]["content"]
@@ -85,7 +85,7 @@ class OpenAIFeedbackAgent(OpenAILMAgent):
                 state.token_counter["feedback_" + usage_type] += count
             action = self.lm_output_to_action(lm_output, form)
             # log in red
-            LOGGER.info(
+            LOGGER.debug(
                 "Feedback Agent Action:\n" + "\033[91m" + action.value + "\033[0m"
             )
             return action
