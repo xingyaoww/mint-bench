@@ -36,7 +36,15 @@ def interactive_loop(
     else:
         env = GeneralEnv(task, tools, feedback_config, env_config)
     state: State = env.reset()
+
+    init_msg = state.latest_output['content']
+    if interactive_mode:
+        # omit in-context example
+        splited_msg = init_msg.split("---")
+        init_msg = splited_msg[0] + "== In-context Example Omitted ==" + splited_msg[2]
+
     LOGGER.info(f"\nUser: \n\033[94m{state.latest_output['content']}\033[0m")
+
     num_steps = 0
 
     if task.loaded_history is not None:
@@ -56,7 +64,7 @@ def interactive_loop(
         if interactive_mode:
             to_continue = "n"
             while to_continue not in ["y", "Y"]:
-                to_continue = input("\n> Continue? (y/n)")
+                to_continue = input("\n> Continue? (y/n) ")
 
         action: Action = agent.act(state)
         # color the action in green
@@ -77,14 +85,15 @@ def interactive_loop(
                 LOGGER.info(
                     "\n" +
                     "\033[1m" + "User:\n" + "\033[0m" +
-                    f"\033[94m{obs}\033[0m" + "\n" + f"\033[91m{feedback}\033[0m"
+                    f"\033[94m{obs}\033[0m" + "\n" 
+                    + f"\033[93m{feedback}\033[0m" + "\n"
                 )
             else:
                 # color the observation in blue
                 LOGGER.info(
                     "\n" +
                     "\033[1m" + "User:\n" + "\033[0m" +
-                    f"\033[94m{user_msg}\033[0m"
+                    f"\033[94m{user_msg}\033[0m" + "\n"
                 )
         num_steps += 1
 
