@@ -204,7 +204,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--interactive",
         action="store_true",
-        help="Whether to run in interactive mode (replace LLM action with user input).",
+        help="Whether to run in interactive mode for demo purpose.",
     )
     args = parser.parse_args()
     LOGGER.setLevel(logging.DEBUG if args.debug else logging.INFO)
