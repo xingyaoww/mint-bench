@@ -1,0 +1,37 @@
+[
+    {
+        "feedback_provider": "gpt-4-0613 (closed-source)",
+        "SR5_difference": 32.93,
+        "evaluated_LLM_feedback": 15.19
+    },
+    {
+        "feedback_provider": "gpt-3.5-turbo-0613 (closed-source)",
+        "SR5_difference": 0.0,
+        "evaluated_LLM_feedback": -10.41
+    },
+    {
+        "feedback_provider": "claude-instant-1 (closed-source)",
+        "SR5_difference": 9.55,
+        "evaluated_LLM_feedback": 1.53
+    },
+    {
+        "feedback_provider": "LLaMA-2 (70B, Base)",
+        "SR5_difference": -9.73,
+        "evaluated_LLM_feedback": -0.69
+    },
+    {
+        "feedback_provider": "LLaMA-2 (70B, RLHF)",
+        "SR5_difference": -18.26,
+        "evaluated_LLM_feedback": -14.0
+    },
+    {
+        "feedback_provider": "CodeLlama (34B, Base)",
+        "SR5_difference": -8.02,
+        "evaluated_LLM_feedback": 2.22
+    },
+    {
+        "feedback_provider": "CodeLlama (34B, SIFT)",
+        "SR5_difference": -19.12,
+        "evaluated_LLM_feedback": 3.07
+    }
+]

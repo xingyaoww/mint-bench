@@ -1,0 +1,346 @@
+{
+  "avg_micro": [
+    [
+      "CodeLlama (13B, Base)",
+      31.91
+    ],
+    [
+      "CodeLlama (13B, SIFT)",
+      22.35
+    ],
+    [
+      "CodeLlama (34B, Base)",
+      42.32
+    ],
+    [
+      "CodeLlama (34B, SIFT)",
+      27.3
+    ],
+    [
+      "CodeLlama (7B, Base)",
+      16.21
+    ],
+    [
+      "CodeLlama (7B, SIFT)",
+      25.94
+    ],
+    [
+      "Lemur-v1 (70B, SIFT)",
+      15.19
+    ],
+    [
+      "Lemur-v1 (70B, Base)",
+      33.79
+    ],
+    [
+      "LLaMA-2 (13B, Base)",
+      23.21
+    ],
+    [
+      "LLaMA-2 (13B, RLHF)",
+      17.58
+    ],
+    [
+      "LLaMA-2 (70B, Base)",
+      35.32
+    ],
+    [
+      "LLaMA-2 (70B, RLHF)",
+      26.62
+    ],
+    [
+      "LLaMA-2 (7B, Base)",
+      14.68
+    ],
+    [
+      "LLaMA-2 (7B, RLHF)",
+      9.04
+    ],
+    [
+      "chat-bison-001 (closed-source)",
+      25.77
+    ],
+    [
+      "claude-2 (closed-source)",
+      49.83
+    ],
+    [
+      "claude-instant-1 (closed-source)",
+      52.05
+    ],
+    [
+      "gpt-3.5-turbo-0613 (closed-source)",
+      51.37
+    ],
+    [
+      "gpt-4-0613 (closed-source)",
+      68.43
+    ],
+    [
+      "Vicuna-v1.5 (13B, SIFT)",
+      10.41
+    ],
+    [
+      "Vicuna-v1.5 (7B, SIFT)",
+      21.67
+    ]
+  ],
+  "reasoning": [
+    [
+      "CodeLlama (13B, Base)",
+      15.82
+    ],
+    [
+      "CodeLlama (13B, SIFT)",
+      10.13
+    ],
+    [
+      "CodeLlama (34B, Base)",
+      29.75
+    ],
+    [
+      "CodeLlama (34B, SIFT)",
+      20.25
+    ],
+    [
+      "CodeLlama (7B, Base)",
+      4.75
+    ],
+    [
+      "CodeLlama (7B, SIFT)",
+      17.09
+    ],
+    [
+      "Lemur-v1 (70B, SIFT)",
+      24.68
+    ],
+    [
+      "Lemur-v1 (70B, Base)",
+      20.89
+    ],
+    [
+      "LLaMA-2 (13B, Base)",
+      10.76
+    ],
+    [
+      "LLaMA-2 (13B, RLHF)",
+      24.05
+    ],
+    [
+      "LLaMA-2 (70B, Base)",
+      22.47
+    ],
+    [
+      "LLaMA-2 (70B, RLHF)",
+      23.1
+    ],
+    [
+      "LLaMA-2 (7B, Base)",
+      4.11
+    ],
+    [
+      "LLaMA-2 (7B, RLHF)",
+      14.56
+    ],
+    [
+      "chat-bison-001 (closed-source)",
+      25.0
+    ],
+    [
+      "claude-2 (closed-source)",
+      54.75
+    ],
+    [
+      "claude-instant-1 (closed-source)",
+      53.8
+    ],
+    [
+      "gpt-3.5-turbo-0613 (closed-source)",
+      50.32
+    ],
+    [
+      "gpt-4-0613 (closed-source)",
+      66.46
+    ],
+    [
+      "Vicuna-v1.5 (13B, SIFT)",
+      16.46
+    ],
+    [
+      "Vicuna-v1.5 (7B, SIFT)",
+      9.81
+    ]
+  ],
+  "decision_making": [
+    [
+      "CodeLlama (13B, Base)",
+      73.88
+    ],
+    [
+      "CodeLlama (13B, SIFT)",
+      58.96
+    ],
+    [
+      "CodeLlama (34B, Base)",
+      84.33
+    ],
+    [
+      "CodeLlama (34B, SIFT)",
+      67.91
+    ],
+    [
+      "CodeLlama (7B, Base)",
+      59.7
+    ],
+    [
+      "CodeLlama (7B, SIFT)",
+      62.69
+    ],
+    [
+      "Lemur-v1 (70B, SIFT)",
+      0.75
+    ],
+    [
+      "Lemur-v1 (70B, Base)",
+      70.15
+    ],
+    [
+      "LLaMA-2 (13B, Base)",
+      60.45
+    ],
+    [
+      "LLaMA-2 (13B, RLHF)",
+      9.7
+    ],
+    [
+      "LLaMA-2 (70B, Base)",
+      73.13
+    ],
+    [
+      "LLaMA-2 (70B, RLHF)",
+      41.79
+    ],
+    [
+      "LLaMA-2 (7B, Base)",
+      46.27
+    ],
+    [
+      "LLaMA-2 (7B, RLHF)",
+      2.24
+    ],
+    [
+      "chat-bison-001 (closed-source)",
+      47.01
+    ],
+    [
+      "claude-2 (closed-source)",
+      41.04
+    ],
+    [
+      "claude-instant-1 (closed-source)",
+      52.99
+    ],
+    [
+      "gpt-3.5-turbo-0613 (closed-source)",
+      66.42
+    ],
+    [
+      "gpt-4-0613 (closed-source)",
+      85.07
+    ],
+    [
+      "Vicuna-v1.5 (13B, SIFT)",
+      5.22
+    ],
+    [
+      "Vicuna-v1.5 (7B, SIFT)",
+      64.93
+    ]
+  ],
+  "code_generation": [
+    [
+      "CodeLlama (13B, Base)",
+      27.94
+    ],
+    [
+      "CodeLlama (13B, SIFT)",
+      14.71
+    ],
+    [
+      "CodeLlama (34B, Base)",
+      30.15
+    ],
+    [
+      "CodeLlama (34B, SIFT)",
+      3.68
+    ],
+    [
+      "CodeLlama (7B, Base)",
+      0.0
+    ],
+    [
+      "CodeLlama (7B, SIFT)",
+      10.29
+    ],
+    [
+      "Lemur-v1 (70B, SIFT)",
+      7.35
+    ],
+    [
+      "Lemur-v1 (70B, Base)",
+      27.94
+    ],
+    [
+      "LLaMA-2 (13B, Base)",
+      15.44
+    ],
+    [
+      "LLaMA-2 (13B, RLHF)",
+      10.29
+    ],
+    [
+      "LLaMA-2 (70B, Base)",
+      27.94
+    ],
+    [
+      "LLaMA-2 (70B, RLHF)",
+      19.85
+    ],
+    [
+      "LLaMA-2 (7B, Base)",
+      8.09
+    ],
+    [
+      "LLaMA-2 (7B, RLHF)",
+      2.94
+    ],
+    [
+      "chat-bison-001 (closed-source)",
+      6.62
+    ],
+    [
+      "claude-2 (closed-source)",
+      47.06
+    ],
+    [
+      "claude-instant-1 (closed-source)",
+      47.06
+    ],
+    [
+      "gpt-3.5-turbo-0613 (closed-source)",
+      38.97
+    ],
+    [
+      "gpt-4-0613 (closed-source)",
+      56.62
+    ],
+    [
+      "Vicuna-v1.5 (13B, SIFT)",
+      1.47
+    ],
+    [
+      "Vicuna-v1.5 (7B, SIFT)",
+      6.62
+    ]
+  ]
+}
