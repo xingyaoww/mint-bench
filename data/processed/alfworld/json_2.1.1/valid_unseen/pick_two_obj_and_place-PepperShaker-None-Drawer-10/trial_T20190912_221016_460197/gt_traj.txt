@@ -1,0 +1,80 @@
+Assistant:
+<execute>
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("drawer 1")
+</execute>
+
+Observation:
+On the shelf 1, you see a statue 1.
+On the shelf 2, you see nothing.
+On the shelf 3, you see nothing.
+The drawer 1 is closed.
+Assistant:
+<execute>
+open("drawer 1")
+close("drawer 1")
+goto("drawer 2")
+open("drawer 2")
+close("drawer 2")
+goto("drawer 3")
+open("drawer 3")
+close("drawer 3")
+goto("countertop 1")
+goto("countertop 2")
+take("peppershaker 1", "countertop 2")
+goto("drawer 1")
+open("drawer 1")
+put("peppershaker 1", "drawer 1")
+close("drawer 1")
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("drawer 2")
+open("drawer 2")
+close("drawer 2")
+goto("drawer 3")
+open("drawer 3")
+close("drawer 3")
+goto("countertop 1")
+goto("countertop 2")
+goto("countertop 3")
+take("peppershaker 2", "countertop 3")
+goto("drawer 1")
+open("drawer 1")
+put("peppershaker 2", "drawer 1")
+</execute>
+
+Observation:
+You open the drawer 1. The drawer 1 is open. In it, you see a spoon 1.
+You close the drawer 1.
+The drawer 2 is closed.
+You open the drawer 2. The drawer 2 is open. In it, you see a creditcard 1, and a spoon 2.
+You close the drawer 2.
+The drawer 3 is closed.
+You open the drawer 3. The drawer 3 is open. In it, you see a dishsponge 2, and a fork 1.
+You close the drawer 3.
+On the countertop 1, you see a apple 1, a creditcard 2, a egg 1, and a tomato 1.
+On the countertop 2, you see a bread 1, a butterknife 1, a cellphone 1, a cup 3, a knife 1, a pan 1, a papertowelroll 1, a peppershaker 1, a saltshaker 1, and a spatula 1.
+You pick up the peppershaker 1 from the countertop 2.
+The drawer 1 is closed.
+You open the drawer 1. The drawer 1 is open. In it, you see a spoon 1.
+You put the peppershaker 1 in/on the drawer 1.
+You close the drawer 1.
+On the shelf 1, you see a statue 1.
+On the shelf 2, you see nothing.
+On the shelf 3, you see nothing.
+The drawer 2 is closed.
+You open the drawer 2. The drawer 2 is open. In it, you see a creditcard 1, and a spoon 2.
+You close the drawer 2.
+The drawer 3 is closed.
+You open the drawer 3. The drawer 3 is open. In it, you see a dishsponge 2, and a fork 1.
+You close the drawer 3.
+On the countertop 1, you see a apple 1, a creditcard 2, a egg 1, and a tomato 1.
+On the countertop 2, you see a bread 1, a butterknife 1, a cellphone 1, a cup 3, a knife 1, a pan 1, a papertowelroll 1, a saltshaker 1, and a spatula 1.
+On the countertop 3, you see a butterknife 2, a creditcard 3, a dishsponge 3, a houseplant 1, a knife 2, a lettuce 1, a peppershaker 2, a spatula 3, a vase 3, a vase 2, and a vase 1.
+You pick up the peppershaker 2 from the countertop 3.
+The drawer 1 is closed.
+You open the drawer 1. The drawer 1 is open. In it, you see a peppershaker 1, and a spoon 1.
+You put the peppershaker 2 in/on the drawer 1.

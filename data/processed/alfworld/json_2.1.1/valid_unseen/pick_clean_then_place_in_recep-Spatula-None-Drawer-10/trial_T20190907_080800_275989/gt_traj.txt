@@ -1,0 +1,48 @@
+Assistant:
+<execute>
+goto("sinkbasin 1")
+goto("drawer 1")
+</execute>
+
+Observation:
+On the sinkbasin 1, you see a spoon 1, and a tomato 3.
+The drawer 1 is closed.
+Assistant:
+<execute>
+open("drawer 1")
+close("drawer 1")
+goto("drawer 2")
+open("drawer 2")
+close("drawer 2")
+goto("drawer 3")
+open("drawer 3")
+close("drawer 3")
+goto("countertop 1")
+goto("countertop 2")
+goto("countertop 3")
+take("spatula 1", "countertop 3")
+goto("sinkbasin 1")
+clean("spatula 1", "sinkbasin 1")
+goto("drawer 1")
+open("drawer 1")
+put("spatula 1", "drawer 1")
+</execute>
+
+Observation:
+You open the drawer 1. The drawer 1 is open. In it, you see a fork 1.
+You close the drawer 1.
+The drawer 2 is closed.
+You open the drawer 2. The drawer 2 is open. In it, you see a butterknife 1.
+You close the drawer 2.
+The drawer 3 is closed.
+You open the drawer 3. The drawer 3 is open. In it, you see a creditcard 1, and a saltshaker 1.
+You close the drawer 3.
+On the countertop 1, you see a bowl 1, a cup 1, a egg 2, a mug 2, and a peppershaker 1.
+On the countertop 2, you see a creditcard 2, a dishsponge 1, a glassbottle 1, a knife 1, a lettuce 1, and a statue 1.
+On the countertop 3, you see a bowl 2, a bread 1, a butterknife 2, a cellphone 1, a houseplant 1, a knife 2, a soapbottle 2, a spatula 1, a tomato 2, a vase 3, and a vase 2.
+You pick up the spatula 1 from the countertop 3.
+On the sinkbasin 1, you see a spoon 1, and a tomato 3.
+You clean the spatula 1 using the sinkbasin 1.
+The drawer 1 is closed.
+You open the drawer 1. The drawer 1 is open. In it, you see a fork 1.
+You put the spatula 1 in/on the drawer 1.

@@ -1,0 +1,50 @@
+Assistant:
+<execute>
+goto("toaster 1")
+goto("stoveburner 1")
+goto("stoveburner 2")
+goto("stoveburner 3")
+goto("stoveburner 4")
+goto("sinkbasin 1")
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("microwave 1")
+</execute>
+
+Observation:
+On the toaster 1, you see nothing.
+On the stoveburner 1, you see a pot 1.
+On the stoveburner 2, you see a pan 1.
+On the stoveburner 3, you see a pot 1.
+On the stoveburner 4, you see a pan 1.
+On the sinkbasin 1, you see nothing.
+On the shelf 1, you see a bowl 3.
+On the shelf 2, you see a cellphone 1, a creditcard 3, a creditcard 2, a dishsponge 1, and a vase 3.
+On the shelf 3, you see nothing.
+The microwave 1 is closed.
+Assistant:
+<execute>
+open("microwave 1")
+close("microwave 1")
+goto("garbagecan 1")
+goto("fridge 1")
+open("fridge 1")
+take("plate 2", "fridge 1")
+goto("sinkbasin 1")
+clean("plate 2", "sinkbasin 1")
+goto("countertop 1")
+put("plate 2", "countertop 1")
+</execute>
+
+Observation:
+You open the microwave 1. The microwave 1 is open. In it, you see a apple 1, and a egg 1.
+You close the microwave 1.
+On the garbagecan 1, you see a glassbottle 1, a potato 1, and a soapbottle 3.
+The fridge 1 is closed.
+You open the fridge 1. The fridge 1 is open. In it, you see a bread 1, a cup 2, a cup 1, a egg 2, a lettuce 2, a lettuce 1, a plate 2, a tomato 2, and a tomato 1.
+You pick up the plate 2 from the fridge 1.
+On the sinkbasin 1, you see nothing.
+You clean the plate 2 using the sinkbasin 1.
+On the countertop 1, you see nothing.
+You put the plate 2 in/on the countertop 1.

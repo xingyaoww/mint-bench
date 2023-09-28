@@ -1,0 +1,56 @@
+Assistant:
+<execute>
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("drawer 1")
+</execute>
+
+Observation:
+On the shelf 1, you see a mug 3, and a statue 2.
+On the shelf 2, you see a creditcard 3, and a dishsponge 3.
+On the shelf 3, you see a vase 1.
+The drawer 1 is closed.
+Assistant:
+<execute>
+open("drawer 1")
+close("drawer 1")
+goto("drawer 2")
+open("drawer 2")
+close("drawer 2")
+goto("drawer 3")
+open("drawer 3")
+close("drawer 3")
+goto("countertop 1")
+goto("countertop 2")
+goto("countertop 3")
+goto("cabinet 1")
+goto("cabinet 2")
+open("cabinet 2")
+take("saltshaker 1", "cabinet 2")
+close("cabinet 2")
+goto("drawer 1")
+open("drawer 1")
+put("saltshaker 1", "drawer 1")
+</execute>
+
+Observation:
+You open the drawer 1. The drawer 1 is open. In it, you see a fork 1, and a peppershaker 1.
+You close the drawer 1.
+The drawer 2 is closed.
+You open the drawer 2. The drawer 2 is open. In it, you see a cellphone 1, and a spatula 1.
+You close the drawer 2.
+The drawer 3 is closed.
+You open the drawer 3. The drawer 3 is open. In it, you see nothing.
+You close the drawer 3.
+On the countertop 1, you see a creditcard 2, a dishsponge 2, and a mug 2.
+On the countertop 2, you see a creditcard 1, a cup 2, a knife 2, a knife 1, a lettuce 1, a papertowelroll 1, a soapbottle 2, a statue 1, a tomato 2, and a tomato 1.
+On the countertop 3, you see a bread 1, a butterknife 1, a houseplant 1, a potato 1, a spoon 1, and a vase 2.
+On the cabinet 1, you see a glassbottle 1.
+The cabinet 2 is closed.
+You open the cabinet 2. The cabinet 2 is open. In it, you see a plate 1, a saltshaker 1, and a soapbottle 1.
+You pick up the saltshaker 1 from the cabinet 2.
+You close the cabinet 2.
+The drawer 1 is closed.
+You open the drawer 1. The drawer 1 is open. In it, you see a fork 1, and a peppershaker 1.
+You put the saltshaker 1 in/on the drawer 1.

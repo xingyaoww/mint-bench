@@ -1,0 +1,28 @@
+Assistant:
+<execute>
+goto("sofa 1")
+goto("armchair 1")
+</execute>
+
+Observation:
+On the sofa 1, you see a newspaper 3.
+On the armchair 1, you see a cellphone 2, a pillow 2, and a pillow 1.
+Assistant:
+<execute>
+take("pillow 2", "armchair 1")
+goto("sofa 1")
+put("pillow 2", "sofa 1")
+goto("armchair 1")
+take("pillow 1", "armchair 1")
+goto("sofa 1")
+put("pillow 1", "sofa 1")
+</execute>
+
+Observation:
+You pick up the pillow 2 from the armchair 1.
+On the sofa 1, you see a newspaper 3.
+You put the pillow 2 in/on the sofa 1.
+On the armchair 1, you see a cellphone 2, and a pillow 1.
+You pick up the pillow 1 from the armchair 1.
+On the sofa 1, you see a newspaper 3, and a pillow 2.
+You put the pillow 1 in/on the sofa 1.

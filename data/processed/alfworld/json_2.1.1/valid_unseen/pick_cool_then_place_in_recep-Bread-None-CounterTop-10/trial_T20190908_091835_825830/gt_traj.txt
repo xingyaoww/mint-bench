@@ -1,0 +1,40 @@
+Assistant:
+<execute>
+goto("microwave 1")
+</execute>
+
+Observation:
+The microwave 1 is closed.
+Assistant:
+<execute>
+open("microwave 1")
+close("microwave 1")
+goto("garbagecan 1")
+goto("fridge 1")
+open("fridge 1")
+close("fridge 1")
+goto("countertop 1")
+goto("countertop 2")
+goto("countertop 3")
+take("bread 1", "countertop 3")
+goto("fridge 1")
+cool("bread 1", "fridge 1")
+goto("countertop 1")
+put("bread 1", "countertop 1")
+</execute>
+
+Observation:
+You open the microwave 1. The microwave 1 is open. In it, you see a apple 1.
+You close the microwave 1.
+On the garbagecan 1, you see a apple 2, a egg 2, and a potato 1.
+The fridge 1 is closed.
+You open the fridge 1. The fridge 1 is open. In it, you see a lettuce 1.
+You close the fridge 1.
+On the countertop 1, you see a mug 1.
+On the countertop 2, you see nothing.
+On the countertop 3, you see a apple 3, a bowl 3, a bowl 2, a bread 1, a butterknife 1, a creditcard 3, a egg 1, a glassbottle 3, a glassbottle 2, a houseplant 1, a lettuce 2, a pot 1, a saltshaker 3, a spoon 1, a statue 2, a tomato 2, and a tomato 1.
+You pick up the bread 1 from the countertop 3.
+The fridge 1 is closed.
+You cool the bread 1 using the fridge 1.
+On the countertop 1, you see a mug 1.
+You put the bread 1 in/on the countertop 1.

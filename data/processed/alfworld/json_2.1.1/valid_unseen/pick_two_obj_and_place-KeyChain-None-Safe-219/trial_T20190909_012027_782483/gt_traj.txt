@@ -1,0 +1,62 @@
+Assistant:
+<execute>
+goto("sofa 1")
+</execute>
+
+Observation:
+On the sofa 1, you see a box 3, a box 2, a cellphone 2, a keychain 4, and a pillow 3.
+Assistant:
+<execute>
+take("keychain 4", "sofa 1")
+goto("safe 1")
+open("safe 1")
+put("keychain 4", "safe 1")
+close("safe 1")
+goto("sofa 1")
+goto("sidetable 1")
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("shelf 12")
+goto("shelf 3")
+goto("shelf 4")
+goto("shelf 5")
+goto("shelf 6")
+goto("shelf 7")
+goto("shelf 8")
+goto("shelf 9")
+goto("shelf 10")
+goto("shelf 11")
+goto("dresser 1")
+take("keychain 1", "dresser 1")
+goto("safe 1")
+open("safe 1")
+put("keychain 1", "safe 1")
+</execute>
+
+Observation:
+You pick up the keychain 4 from the sofa 1.
+The safe 1 is closed.
+You open the safe 1. The safe 1 is open. In it, you see a statue 2, and a watch 3.
+You put the keychain 4 in/on the safe 1.
+You close the safe 1.
+On the sofa 1, you see a box 3, a box 2, a cellphone 2, and a pillow 3.
+On the sidetable 1, you see a remotecontrol 1, a tissuebox 1, and a watch 1.
+On the shelf 1, you see nothing.
+On the shelf 2, you see nothing.
+On the shelf 3, you see nothing.
+On the shelf 12, you see nothing.
+On the shelf 3, you see nothing.
+On the shelf 4, you see nothing.
+On the shelf 5, you see nothing.
+On the shelf 6, you see a statue 3.
+On the shelf 7, you see nothing.
+On the shelf 8, you see nothing.
+On the shelf 9, you see a newspaper 2, and a tissuebox 3.
+On the shelf 10, you see nothing.
+On the shelf 11, you see a vase 2.
+On the dresser 1, you see a box 1, a creditcard 1, a keychain 2, a keychain 1, a laptop 1, a statue 1, and a tissuebox 2.
+You pick up the keychain 1 from the dresser 1.
+The safe 1 is closed.
+You open the safe 1. The safe 1 is open. In it, you see a keychain 4, a statue 2, and a watch 3.
+You put the keychain 1 in/on the safe 1.

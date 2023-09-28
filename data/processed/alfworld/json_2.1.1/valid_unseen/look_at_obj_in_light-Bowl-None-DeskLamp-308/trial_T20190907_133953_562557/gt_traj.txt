@@ -1,0 +1,22 @@
+Assistant:
+<execute>
+goto("shelf 1")
+goto("shelf 2")
+</execute>
+
+Observation:
+On the shelf 1, you see a pen 1.
+On the shelf 2, you see a bowl 1.
+Assistant:
+<execute>
+take("bowl 1", "shelf 2")
+goto("shelf 1")
+goto("shelf 3")
+use("desklamp 1")
+</execute>
+
+Observation:
+You pick up the bowl 1 from the shelf 2.
+On the shelf 1, you see a pen 1.
+On the shelf 3, you see a alarmclock 2, a alarmclock 1, and a desklamp 1.
+You turn on the desklamp 1.

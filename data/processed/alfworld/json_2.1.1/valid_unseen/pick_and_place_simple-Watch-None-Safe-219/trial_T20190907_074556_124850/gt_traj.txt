@@ -1,0 +1,52 @@
+Assistant:
+<execute>
+goto("sidetable 1")
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 4")
+goto("shelf 3")
+goto("shelf 5")
+goto("shelf 6")
+goto("shelf 7")
+goto("shelf 8")
+goto("shelf 9")
+goto("shelf 10")
+goto("shelf 11")
+goto("shelf 12")
+goto("safe 1")
+</execute>
+
+Observation:
+On the sidetable 1, you see a tissuebox 1, and a vase 1.
+On the shelf 1, you see nothing.
+On the shelf 2, you see nothing.
+On the shelf 4, you see nothing.
+On the shelf 3, you see nothing.
+On the shelf 5, you see a keychain 3.
+On the shelf 6, you see a creditcard 1.
+On the shelf 7, you see a statue 1.
+On the shelf 8, you see nothing.
+On the shelf 9, you see nothing.
+On the shelf 10, you see a creditcard 2.
+On the shelf 11, you see a cellphone 3.
+On the shelf 12, you see nothing.
+The safe 1 is closed.
+Assistant:
+<execute>
+open("safe 1")
+close("safe 1")
+goto("dresser 1")
+take("watch 3", "dresser 1")
+goto("safe 1")
+open("safe 1")
+put("watch 3", "safe 1")
+</execute>
+
+Observation:
+You open the safe 1. The safe 1 is open. In it, you see a vase 3, and a vase 2.
+You close the safe 1.
+On the dresser 1, you see a box 1, a cellphone 2, a cellphone 1, a keychain 1, a laptop 1, a newspaper 1, and a watch 3.
+You pick up the watch 3 from the dresser 1.
+The safe 1 is closed.
+You open the safe 1. The safe 1 is open. In it, you see a vase 3, and a vase 2.
+You put the watch 3 in/on the safe 1.

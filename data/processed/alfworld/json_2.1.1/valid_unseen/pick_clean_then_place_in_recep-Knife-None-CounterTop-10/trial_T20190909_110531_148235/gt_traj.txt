@@ -1,0 +1,46 @@
+Assistant:
+<execute>
+goto("sinkbasin 1")
+goto("drawer 1")
+</execute>
+
+Observation:
+On the sinkbasin 1, you see a butterknife 2, a cup 2, a egg 2, and a spoon 1.
+The drawer 1 is closed.
+Assistant:
+<execute>
+open("drawer 1")
+close("drawer 1")
+goto("drawer 2")
+open("drawer 2")
+close("drawer 2")
+goto("drawer 3")
+open("drawer 3")
+close("drawer 3")
+goto("countertop 1")
+goto("countertop 2")
+goto("countertop 3")
+take("knife 1", "countertop 3")
+goto("sinkbasin 1")
+clean("knife 1", "sinkbasin 1")
+goto("countertop 1")
+put("knife 1", "countertop 1")
+</execute>
+
+Observation:
+You open the drawer 1. The drawer 1 is open. In it, you see a peppershaker 1.
+You close the drawer 1.
+The drawer 2 is closed.
+You open the drawer 2. The drawer 2 is open. In it, you see a saltshaker 2.
+You close the drawer 2.
+The drawer 3 is closed.
+You open the drawer 3. The drawer 3 is open. In it, you see a creditcard 2, a saltshaker 3, and a spatula 1.
+You close the drawer 3.
+On the countertop 1, you see a apple 3, a apple 2, a creditcard 1, and a peppershaker 2.
+On the countertop 2, you see a butterknife 1, a cellphone 1, a dishsponge 2, a dishsponge 1, a fork 1, a spatula 2, a statue 2, and a statue 1.
+On the countertop 3, you see a bread 1, a houseplant 1, a knife 1, a peppershaker 3, a pot 1, a soapbottle 1, a spatula 3, and a statue 3.
+You pick up the knife 1 from the countertop 3.
+On the sinkbasin 1, you see a butterknife 2, a cup 2, a egg 2, and a spoon 1.
+You clean the knife 1 using the sinkbasin 1.
+On the countertop 1, you see a apple 3, a apple 2, a creditcard 1, and a peppershaker 2.
+You put the knife 1 in/on the countertop 1.

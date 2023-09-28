@@ -1,0 +1,32 @@
+Assistant:
+<execute>
+goto("sinkbasin 1")
+goto("microwave 1")
+</execute>
+
+Observation:
+On the sinkbasin 1, you see a fork 1, a glassbottle 2, a spatula 1, and a spoon 3.
+The microwave 1 is closed.
+Assistant:
+<execute>
+open("microwave 1")
+close("microwave 1")
+goto("garbagecan 1")
+take("tomato 1", "garbagecan 1")
+goto("fridge 1")
+cool("tomato 1", "fridge 1")
+goto("microwave 1")
+open("microwave 1")
+put("tomato 1", "microwave 1")
+</execute>
+
+Observation:
+You open the microwave 1. The microwave 1 is open. In it, you see nothing.
+You close the microwave 1.
+On the garbagecan 1, you see a apple 1, and a tomato 1.
+You pick up the tomato 1 from the garbagecan 1.
+The fridge 1 is closed.
+You cool the tomato 1 using the fridge 1.
+The microwave 1 is closed.
+You open the microwave 1. The microwave 1 is open. In it, you see nothing.
+You put the tomato 1 in/on the microwave 1.

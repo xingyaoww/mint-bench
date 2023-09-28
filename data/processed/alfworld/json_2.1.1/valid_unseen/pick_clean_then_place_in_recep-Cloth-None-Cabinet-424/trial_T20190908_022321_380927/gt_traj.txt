@@ -1,0 +1,54 @@
+Assistant:
+<execute>
+goto("toilet 1")
+goto("sinkbasin 1")
+goto("sinkbasin 2")
+goto("garbagecan 1")
+goto("countertop 1")
+goto("cabinet 1")
+</execute>
+
+Observation:
+On the toilet 1, you see a candle 3, a toiletpaper 2, and a toiletpaper 1.
+On the sinkbasin 1, you see nothing.
+On the sinkbasin 2, you see nothing.
+On the garbagecan 1, you see nothing.
+On the countertop 1, you see a candle 2, a soapbar 1, a soapbottle 2, a soapbottle 1, and a spraybottle 1.
+The cabinet 1 is closed.
+Assistant:
+<execute>
+open("cabinet 1")
+close("cabinet 1")
+goto("cabinet 2")
+open("cabinet 2")
+close("cabinet 2")
+goto("cabinet 3")
+open("cabinet 3")
+close("cabinet 3")
+goto("cabinet 4")
+open("cabinet 4")
+take("cloth 1", "cabinet 4")
+goto("sinkbasin 2")
+clean("cloth 1", "sinkbasin 2")
+goto("cabinet 1")
+open("cabinet 1")
+put("cloth 1", "cabinet 1")
+</execute>
+
+Observation:
+You open the cabinet 1. The cabinet 1 is open. In it, you see a soapbottle 3.
+You close the cabinet 1.
+The cabinet 2 is closed.
+You open the cabinet 2. The cabinet 2 is open. In it, you see a candle 1.
+You close the cabinet 2.
+The cabinet 3 is closed.
+You open the cabinet 3. The cabinet 3 is open. In it, you see a soapbar 2.
+You close the cabinet 3.
+The cabinet 4 is closed.
+You open the cabinet 4. The cabinet 4 is open. In it, you see a cloth 1.
+You pick up the cloth 1 from the cabinet 4.
+On the sinkbasin 2, you see nothing.
+You clean the cloth 1 using the sinkbasin 2.
+The cabinet 1 is closed.
+You open the cabinet 1. The cabinet 1 is open. In it, you see a soapbottle 3.
+You put the cloth 1 in/on the cabinet 1.

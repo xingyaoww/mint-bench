@@ -1,0 +1,22 @@
+Assistant:
+<execute>
+goto("shelf 1")
+goto("shelf 2")
+</execute>
+
+Observation:
+On the shelf 1, you see nothing.
+On the shelf 2, you see a creditcard 2, a mug 2, and a peppershaker 2.
+Assistant:
+<execute>
+take("peppershaker 2", "shelf 2")
+goto("drawer 1")
+open("drawer 1")
+put("peppershaker 2", "drawer 1")
+</execute>
+
+Observation:
+You pick up the peppershaker 2 from the shelf 2.
+The drawer 1 is closed.
+You open the drawer 1. The drawer 1 is open. In it, you see a knife 1, and a saltshaker 2.
+You put the peppershaker 2 in/on the drawer 1.

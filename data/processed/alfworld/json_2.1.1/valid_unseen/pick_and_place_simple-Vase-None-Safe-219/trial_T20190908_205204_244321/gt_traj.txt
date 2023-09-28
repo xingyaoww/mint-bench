@@ -1,0 +1,42 @@
+Assistant:
+<execute>
+goto("sidetable 1")
+goto("shelf 1")
+goto("shelf 2")
+goto("armchair 1")
+goto("shelf 3")
+goto("shelf 4")
+goto("shelf 5")
+goto("shelf 6")
+goto("shelf 7")
+goto("shelf 8")
+goto("shelf 9")
+goto("shelf 10")
+</execute>
+
+Observation:
+On the sidetable 1, you see a newspaper 1, and a tissuebox 1.
+On the shelf 1, you see nothing.
+On the shelf 2, you see nothing.
+On the armchair 1, you see a pillow 1.
+On the shelf 3, you see nothing.
+On the shelf 4, you see nothing.
+On the shelf 5, you see nothing.
+On the shelf 6, you see a statue 1.
+On the shelf 7, you see nothing.
+On the shelf 8, you see nothing.
+On the shelf 9, you see a statue 2.
+On the shelf 10, you see a vase 1.
+Assistant:
+<execute>
+take("vase 1", "shelf 10")
+goto("safe 1")
+open("safe 1")
+put("vase 1", "safe 1")
+</execute>
+
+Observation:
+You pick up the vase 1 from the shelf 10.
+The safe 1 is closed.
+You open the safe 1. The safe 1 is open. In it, you see a watch 2.
+You put the vase 1 in/on the safe 1.

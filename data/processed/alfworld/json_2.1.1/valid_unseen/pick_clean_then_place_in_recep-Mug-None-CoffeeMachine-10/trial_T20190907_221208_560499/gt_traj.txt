@@ -1,0 +1,36 @@
+Assistant:
+<execute>
+goto("toaster 1")
+goto("stoveburner 1")
+goto("stoveburner 2")
+goto("stoveburner 3")
+goto("stoveburner 4")
+goto("sinkbasin 1")
+goto("shelf 1")
+goto("shelf 2")
+</execute>
+
+Observation:
+On the toaster 1, you see nothing.
+On the stoveburner 1, you see a pot 1.
+On the stoveburner 2, you see a pan 2.
+On the stoveburner 3, you see a pot 1.
+On the stoveburner 4, you see a pan 2.
+On the sinkbasin 1, you see a plate 3, a spatula 2, and a spatula 1.
+On the shelf 1, you see a dishsponge 3, and a statue 1.
+On the shelf 2, you see a mug 4, and a peppershaker 2.
+Assistant:
+<execute>
+take("mug 4", "shelf 2")
+goto("sinkbasin 1")
+clean("mug 4", "sinkbasin 1")
+goto("coffeemachine 1")
+put("mug 4", "coffeemachine 1")
+</execute>
+
+Observation:
+You pick up the mug 4 from the shelf 2.
+On the sinkbasin 1, you see a plate 3, a spatula 2, and a spatula 1.
+You clean the mug 4 using the sinkbasin 1.
+On the coffeemachine 1, you see nothing.
+You put the mug 4 in/on the coffeemachine 1.

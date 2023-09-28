@@ -1,0 +1,38 @@
+Assistant:
+<execute>
+goto("sinkbasin 1")
+goto("microwave 1")
+</execute>
+
+Observation:
+On the sinkbasin 1, you see a cup 3, a potato 3, a potato 1, a spoon 3, and a tomato 2.
+The microwave 1 is closed.
+Assistant:
+<execute>
+open("microwave 1")
+close("microwave 1")
+goto("garbagecan 1")
+goto("fridge 1")
+open("fridge 1")
+close("fridge 1")
+goto("countertop 1")
+take("egg 1", "countertop 1")
+goto("microwave 1")
+heat("egg 1", "microwave 1")
+goto("garbagecan 1")
+put("egg 1", "garbagecan 1")
+</execute>
+
+Observation:
+You open the microwave 1. The microwave 1 is open. In it, you see a apple 1, and a cup 1.
+You close the microwave 1.
+On the garbagecan 1, you see a lettuce 3, and a papertowelroll 1.
+The fridge 1 is closed.
+You open the fridge 1. The fridge 1 is open. In it, you see a apple 2, a bowl 2, a bowl 1, a bread 1, a lettuce 1, a plate 1, and a tomato 1.
+You close the fridge 1.
+On the countertop 1, you see a egg 1, and a soapbottle 2.
+You pick up the egg 1 from the countertop 1.
+The microwave 1 is closed.
+You heat the egg 1 using the microwave 1.
+On the garbagecan 1, you see a lettuce 3, and a papertowelroll 1.
+You put the egg 1 in/on the garbagecan 1.

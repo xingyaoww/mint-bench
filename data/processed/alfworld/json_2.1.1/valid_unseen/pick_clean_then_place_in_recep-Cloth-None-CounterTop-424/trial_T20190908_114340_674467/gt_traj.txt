@@ -1,0 +1,34 @@
+Assistant:
+<execute>
+goto("toilet 1")
+goto("sinkbasin 1")
+goto("sinkbasin 2")
+goto("garbagecan 1")
+goto("countertop 1")
+goto("cabinet 1")
+</execute>
+
+Observation:
+On the toilet 1, you see a candle 3, a candle 2, a candle 1, and a toiletpaper 3.
+On the sinkbasin 1, you see nothing.
+On the sinkbasin 2, you see nothing.
+On the garbagecan 1, you see nothing.
+On the countertop 1, you see a soapbottle 1, and a spraybottle 1.
+The cabinet 1 is closed.
+Assistant:
+<execute>
+open("cabinet 1")
+take("cloth 2", "cabinet 1")
+goto("sinkbasin 2")
+clean("cloth 2", "sinkbasin 2")
+goto("countertop 1")
+put("cloth 2", "countertop 1")
+</execute>
+
+Observation:
+You open the cabinet 1. The cabinet 1 is open. In it, you see a cloth 2.
+You pick up the cloth 2 from the cabinet 1.
+On the sinkbasin 2, you see nothing.
+You clean the cloth 2 using the sinkbasin 2.
+On the countertop 1, you see a soapbottle 1, and a spraybottle 1.
+You put the cloth 2 in/on the countertop 1.

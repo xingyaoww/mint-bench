@@ -1,0 +1,34 @@
+Assistant:
+<execute>
+goto("sofa 1")
+</execute>
+
+Observation:
+On the sofa 1, you see a box 1, a keychain 2, and a remotecontrol 1.
+Assistant:
+<execute>
+take("keychain 2", "sofa 1")
+goto("safe 1")
+open("safe 1")
+put("keychain 2", "safe 1")
+close("safe 1")
+goto("sofa 1")
+goto("sidetable 1")
+take("keychain 1", "sidetable 1")
+goto("safe 1")
+open("safe 1")
+put("keychain 1", "safe 1")
+</execute>
+
+Observation:
+You pick up the keychain 2 from the sofa 1.
+The safe 1 is closed.
+You open the safe 1. The safe 1 is open. In it, you see a watch 3, and a watch 2.
+You put the keychain 2 in/on the safe 1.
+You close the safe 1.
+On the sofa 1, you see a box 1, and a remotecontrol 1.
+On the sidetable 1, you see a keychain 1, and a watch 1.
+You pick up the keychain 1 from the sidetable 1.
+The safe 1 is closed.
+You open the safe 1. The safe 1 is open. In it, you see a keychain 2, a watch 3, and a watch 2.
+You put the keychain 1 in/on the safe 1.

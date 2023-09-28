@@ -1,0 +1,70 @@
+Assistant:
+<execute>
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("shelf 4")
+goto("shelf 5")
+goto("shelf 6")
+goto("safe 1")
+</execute>
+
+Observation:
+On the shelf 1, you see a pen 1.
+On the shelf 2, you see a pencil 1.
+On the shelf 3, you see a alarmclock 1, a bowl 1, a desklamp 1, and a mug 1.
+On the shelf 4, you see a alarmclock 2.
+On the shelf 5, you see a keychain 2.
+On the shelf 6, you see nothing.
+The safe 1 is closed.
+Assistant:
+<execute>
+open("safe 1")
+close("safe 1")
+goto("garbagecan 1")
+goto("drawer 1")
+open("drawer 1")
+close("drawer 1")
+goto("drawer 2")
+take("keychain 1", "drawer 2")
+put("keychain 1", "drawer 2")
+goto("laundryhamper 1")
+goto("drawer 3")
+goto("drawer 4")
+open("drawer 4")
+close("drawer 4")
+goto("drawer 5")
+goto("drawer 6")
+open("drawer 6")
+close("drawer 6")
+goto("desk 1")
+goto("desk 2")
+take("cd 1", "desk 2")
+goto("desk 1")
+use("desklamp 1")
+</execute>
+
+Observation:
+You open the safe 1. The safe 1 is open. In it, you see nothing.
+You close the safe 1.
+On the garbagecan 1, you see nothing.
+The drawer 1 is closed.
+You open the drawer 1. The drawer 1 is open. In it, you see a book 2, and a cellphone 1.
+You close the drawer 1.
+On the drawer 2, you see a keychain 1.
+You pick up the keychain 1 from the drawer 2.
+You put the keychain 1 in/on the drawer 2.
+On the laundryhamper 1, you see nothing.
+On the drawer 3, you see nothing.
+The drawer 4 is closed.
+You open the drawer 4. The drawer 4 is open. In it, you see nothing.
+You close the drawer 4.
+On the drawer 5, you see nothing.
+The drawer 6 is closed.
+You open the drawer 6. The drawer 6 is open. In it, you see nothing.
+You close the drawer 6.
+On the desk 1, you see a alarmclock 1, a bowl 1, a desklamp 1, and a mug 1.
+On the desk 2, you see a alarmclock 3, a bowl 3, a bowl 2, a cd 1, a creditcard 1, a laptop 2, and a mug 2.
+You pick up the cd 1 from the desk 2.
+On the desk 1, you see a alarmclock 1, a bowl 1, a desklamp 1, and a mug 1.
+You turn on the desklamp 1.

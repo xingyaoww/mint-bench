@@ -1,0 +1,32 @@
+Assistant:
+<execute>
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("shelf 4")
+goto("shelf 5")
+goto("shelf 6")
+goto("desk 1")
+goto("desk 2")
+</execute>
+
+Observation:
+On the shelf 1, you see nothing.
+On the shelf 2, you see nothing.
+On the shelf 3, you see a bowl 1, and a desklamp 1.
+On the shelf 4, you see a cd 3.
+On the shelf 5, you see a cellphone 2.
+On the shelf 6, you see nothing.
+On the desk 1, you see a bowl 1, a desklamp 1, and a laptop 2.
+On the desk 2, you see a alarmclock 1, a keychain 2, and a mug 1.
+Assistant:
+<execute>
+take("alarmclock 1", "desk 2")
+goto("desk 1")
+use("desklamp 1")
+</execute>
+
+Observation:
+You pick up the alarmclock 1 from the desk 2.
+On the desk 1, you see a bowl 1, a desklamp 1, and a laptop 2.
+You turn on the desklamp 1.

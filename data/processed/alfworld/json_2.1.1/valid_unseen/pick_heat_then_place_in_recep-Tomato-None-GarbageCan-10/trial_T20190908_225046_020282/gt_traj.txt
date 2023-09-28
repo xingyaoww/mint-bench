@@ -1,0 +1,22 @@
+Assistant:
+<execute>
+goto("sinkbasin 1")
+</execute>
+
+Observation:
+On the sinkbasin 1, you see a potato 3, and a tomato 2.
+Assistant:
+<execute>
+take("tomato 2", "sinkbasin 1")
+goto("microwave 1")
+heat("tomato 2", "microwave 1")
+goto("garbagecan 1")
+put("tomato 2", "garbagecan 1")
+</execute>
+
+Observation:
+You pick up the tomato 2 from the sinkbasin 1.
+The microwave 1 is closed.
+You heat the tomato 2 using the microwave 1.
+On the garbagecan 1, you see a egg 3, and a papertowelroll 1.
+You put the tomato 2 in/on the garbagecan 1.
