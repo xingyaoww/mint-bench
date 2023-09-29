@@ -1,0 +1,24 @@
+Assistant:
+<execute>
+goto("toilet 1")
+</execute>
+
+Observation:
+On the toilet 1, you see a soapbar 1, and a spraybottle 3.
+Assistant:
+<execute>
+take("soapbar 1", "toilet 1")
+goto("sinkbasin 2")
+clean("soapbar 1", "sinkbasin 2")
+goto("cabinet 1")
+open("cabinet 1")
+put("soapbar 1", "cabinet 1")
+</execute>
+
+Observation:
+You pick up the soapbar 1 from the toilet 1.
+On the sinkbasin 2, you see nothing.
+You clean the soapbar 1 using the sinkbasin 2.
+The cabinet 1 is closed.
+You open the cabinet 1. The cabinet 1 is open. In it, you see a soapbottle 2.
+You put the soapbar 1 in/on the cabinet 1.

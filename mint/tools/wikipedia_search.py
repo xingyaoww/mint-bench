@@ -6,7 +6,6 @@ from langchain.schema import Document
 
 WIKIPEDIA_MAX_QUERY_LENGTH = 300
 
-# Jiateng: derived from the langchain Wikipedia API
 class WikipediaAPIWrapper(BaseModel):
     """Wrapper around WikipediaAPI.
 

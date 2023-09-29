@@ -1,0 +1,40 @@
+Assistant:
+<execute>
+goto("toiletpaperhanger 1")
+goto("toilet 1")
+</execute>
+
+Observation:
+On the toiletpaperhanger 1, you see nothing.
+On the toilet 1, you see a soapbar 3, a soapbar 2, and a toiletpaper 3.
+Assistant:
+<execute>
+take("toiletpaper 3", "toilet 1")
+goto("cabinet 1")
+open("cabinet 1")
+put("toiletpaper 3", "cabinet 1")
+close("cabinet 1")
+goto("toiletpaperhanger 1")
+goto("toilet 1")
+goto("garbagecan 1")
+goto("countertop 1")
+take("toiletpaper 1", "countertop 1")
+goto("cabinet 1")
+open("cabinet 1")
+put("toiletpaper 1", "cabinet 1")
+</execute>
+
+Observation:
+You pick up the toiletpaper 3 from the toilet 1.
+The cabinet 1 is closed.
+You open the cabinet 1. The cabinet 1 is open. In it, you see a candle 2, and a cloth 1.
+You put the toiletpaper 3 in/on the cabinet 1.
+You close the cabinet 1.
+On the toiletpaperhanger 1, you see nothing.
+On the toilet 1, you see a soapbar 3, and a soapbar 2.
+On the garbagecan 1, you see nothing.
+On the countertop 1, you see a candle 3, a candle 1, a soapbottle 1, a spraybottle 2, and a toiletpaper 1.
+You pick up the toiletpaper 1 from the countertop 1.
+The cabinet 1 is closed.
+You open the cabinet 1. The cabinet 1 is open. In it, you see a candle 2, a cloth 1, and a toiletpaper 3.
+You put the toiletpaper 1 in/on the cabinet 1.

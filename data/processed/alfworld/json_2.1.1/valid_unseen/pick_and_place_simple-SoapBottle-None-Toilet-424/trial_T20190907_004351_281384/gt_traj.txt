@@ -1,0 +1,22 @@
+Assistant:
+<execute>
+goto("toilet 1")
+goto("garbagecan 1")
+goto("countertop 1")
+</execute>
+
+Observation:
+On the toilet 1, you see a spraybottle 1.
+On the garbagecan 1, you see nothing.
+On the countertop 1, you see a candle 1, a soapbottle 2, and a toiletpaper 2.
+Assistant:
+<execute>
+take("soapbottle 2", "countertop 1")
+goto("toilet 1")
+put("soapbottle 2", "toilet 1")
+</execute>
+
+Observation:
+You pick up the soapbottle 2 from the countertop 1.
+On the toilet 1, you see a spraybottle 1.
+You put the soapbottle 2 in/on the toilet 1.

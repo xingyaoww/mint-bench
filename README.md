@@ -16,8 +16,6 @@ Please visit our [website](https://xingyaoww.github.io/mint-bench) for more info
 ```bash
 git clone https://github.com/xingyaoww/mint-bench
 cd mint-bench
-# Download all data for evaluation & all existing model outputs
-./scripts/setup.sh
 ```
 
 You can choose to use docker (recommended) or local setup as follows.
@@ -104,7 +102,7 @@ streamlit run scripts/visualizer.py -- --data_dir data/outputs
 
 We welcome contributions to this repo from the community!
 
-To add your model to the benchmark, you can start an issue and submit your model outputs `<model_name>.zip` [here](https://uofi.app.box.com/f/07369c26b565487cb976aba921ca080d).
+To add your model to the benchmark, you can start a PR to merge your model outputs `data/outputs` into this repo. This will be automatically updated to the website.
 Please refer to [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for more details about contributing models, tools, and data.
 
 ## :books: Citation

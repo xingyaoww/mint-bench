@@ -1,0 +1,40 @@
+Assistant:
+<execute>
+goto("toilet 1")
+goto("sinkbasin 1")
+goto("sinkbasin 2")
+goto("garbagecan 1")
+goto("countertop 1")
+</execute>
+
+Observation:
+On the toilet 1, you see a candle 3, a spraybottle 2, and a toiletpaper 2.
+On the sinkbasin 1, you see nothing.
+On the sinkbasin 2, you see nothing.
+On the garbagecan 1, you see nothing.
+On the countertop 1, you see a candle 1, a soapbar 4, a soapbar 3, a soapbar 1, and a spraybottle 1.
+Assistant:
+<execute>
+take("soapbar 3", "countertop 1")
+goto("garbagecan 1")
+put("soapbar 3", "garbagecan 1")
+goto("toilet 1")
+goto("sinkbasin 1")
+goto("sinkbasin 2")
+goto("countertop 1")
+take("soapbar 1", "countertop 1")
+goto("garbagecan 1")
+put("soapbar 1", "garbagecan 1")
+</execute>
+
+Observation:
+You pick up the soapbar 3 from the countertop 1.
+On the garbagecan 1, you see nothing.
+You put the soapbar 3 in/on the garbagecan 1.
+On the toilet 1, you see a candle 3, a spraybottle 2, and a toiletpaper 2.
+On the sinkbasin 1, you see nothing.
+On the sinkbasin 2, you see nothing.
+On the countertop 1, you see a candle 1, a soapbar 4, a soapbar 1, and a spraybottle 1.
+You pick up the soapbar 1 from the countertop 1.
+On the garbagecan 1, you see a soapbar 3.
+You put the soapbar 1 in/on the garbagecan 1.

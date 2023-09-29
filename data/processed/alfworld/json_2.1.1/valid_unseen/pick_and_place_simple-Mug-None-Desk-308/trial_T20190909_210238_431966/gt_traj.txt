@@ -1,0 +1,18 @@
+Assistant:
+<execute>
+goto("shelf 1")
+</execute>
+
+Observation:
+On the shelf 1, you see a mug 2.
+Assistant:
+<execute>
+take("mug 2", "shelf 1")
+goto("desk 1")
+put("mug 2", "desk 1")
+</execute>
+
+Observation:
+You pick up the mug 2 from the shelf 1.
+On the desk 1, you see a bowl 1, a cd 2, a creditcard 2, a desklamp 1, a keychain 1, a laptop 2, a pen 2, and a pencil 2.
+You put the mug 2 in/on the desk 1.

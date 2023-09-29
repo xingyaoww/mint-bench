@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MINT: Evaluating LLMs in Multi-turn Interaction with Tools and Language Feedback</title>
+    <link rel="icon" href="website/img/mint-leaf-logo.png" type="image/icon type">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="website/css/bulma.min.css">
+    <link rel="stylesheet" href="website/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="website/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="website/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./website/javascript/bulma-carousel.min.js"></script>
+    <script src="./website/javascript/bulma-slider.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="website/javascript/success_rate_vs_k_vis.js" type="module"></script>
+    <script src="website/javascript/feedback_success_rate_vis.js" type="module"></script>
+    <script src="website/javascript/feedback_provider_efficacy.js" type="module"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWV4QEJ9D6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-TWV4QEJ9D6');
+    </script>
+    <script async src="//static.getclicky.com/101339888.js"></script>
+    <noscript>
+        <p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101339888ns.gif" /></p>
+    </noscript>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title publication-title">
+                            <img src="website/img/mint-leaf-logo.png" alt="logo" width="40" height="40" />
+                            MINT: Evaluating LLMs in Multi-turn Interaction with Tools and Language Feedback
+                        </h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="https://xingyaoww.github.io">Xingyao Wang</a><sup>1*</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://zihanwang314.github.io/">Zihan Wang</a><sup>2*</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://lumos-jiateng.github.io/">Jiateng Liu</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://yangyi-chen.github.io/">Yangyi Chen</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://lifan-yuan.github.io/">Lifan Yuan</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://haopeng-nlp.github.io/">Hao Peng</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://blender.cs.illinois.edu/hengji.html">Heng Ji</a><sup>1</sup>
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign,</span>
+                            <span class="author-block"><sup>2</sup>Renmin University of China</span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- PDF Link. -->
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/abs/2309.10691" class="btn btn-outline-dark"
+                                        role="button">&#128221;
+                                        Paper</a> &nbsp;&nbsp;
+
+                                </span>
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                                    <a href="https://github.com/xingyaoww/mint-bench" class="btn btn-outline-dark"
+                                        role="button">&#128187;
+                                        Code</a> &nbsp;&nbsp;
+
+                                </span>
+                                <!-- Dataset Link. -->
+                                <span class="link-block">
+
+                                    <a href="https://github.com/xingyaoww/mint-bench/blob/main/docs/DATA.md"
+                                        class="btn btn-outline-dark" role="button">&#128194;
+                                        Data</a>
+                            </div>
+                        </div>
+
+                        <h2 class="subtitle" style="text-align: left;">
+                            <b>MINT benchmark</b> measures LLMs' ability to solve tasks with multi-turn interactions
+                            by
+                            (1) using tools and (2) leveraging natural language feedback.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+
+                <h2 class="subtitle">
+                    <b>MINT benchmark</b> measures LLMs' ability to solve tasks with multi-turn interactions
+                    by
+                    (1) using tools and (2) leveraging natural language feedback.
+                </h2>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="section" id="abstract">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            To solve complex tasks, large language models (LLMs) often require multiple rounds of interactions with the user, sometimes assisted by external tools.
+                            
+                            However, current evaluation protocols often emphasize benchmark performance with single-turn exchanges, neglecting the nuanced interactions among the user, LLMs, and external tools, while also underestimating the importance of natural language feedback from users. These oversights contribute to discrepancies between research benchmark evaluations and real-world use cases.
+                            
+                            We introduce MINT, a benchmark that evaluates LLMs' ability to solve tasks with multi-turn interactions by (1) using tools and (2) leveraging natural language feedback.
+                            
+                            To ensure reproducibility, we provide an evaluation framework where LLMs can access tools by executing Python code and receive users' natural language feedback simulated by GPT-4.
+                            
+                            We repurpose a diverse set of established evaluation datasets focusing on reasoning, coding, and decision-making and carefully curate them into a compact subset for efficient evaluation.
+                            
+                            <br>
+
+                            Our analysis of 20 open- and closed-source LLMs offers intriguing findings.
+
+                        </p>
+
+                        <ol>
+                            <li>(a) LLMs generally benefit from tools and language feedback, with performance gains (absolute, same below) of 1-8% for each turn of tool use and 2-17% with natural language feedback.</li>
+                            <li>(b) Better single-turn performance does not guarantee better multi-turn performance.</li>
+                            <li>(c) Surprisingly, on the LLMs evaluated, supervised instruction-finetuning (SIFT) and reinforcement learning from human feedback (RLHF) generally hurt multi-turn capabilities.</li>
+                        </ol>
+
+                        <p>
+                            We expect MINT can help measure progress and incentivize research in improving LLMs' capabilities in multi-turn interactions, especially for open-source communities where multi-turn human evaluation can be less accessible compared to commercial LLMs with a larger user base.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+        </div>
+    </section>
+
+    <section class="section" id="interaction-framework">
+        <div class="container is-max-desktop">
+
+            <div class="columns is-full-width">
+
+                <!-- Visual Effects. -->
+                <div class="column">
+                    <div class="content">
+                        <h2 class="title is-3">Interaction Framework</h2>
+                        <p>
+                            MINT mirrors the real-world User-LLM-Tool collaborative problem-solving setting. To solve a
+                            problem,
+                            the
+                            LLM can (1) use external tools by generating and executing Python programs and/or (2)
+                            collecting
+                            natural
+                            language feedback to refine its solutions; the feedback is provided by GPT-4, aiming to
+                            simulate
+                            human
+                            users in a reproducible and scalable way.
+                        </p>
+                        <ul>
+                            <li>We measure LLMs' <b>tool-augmented task-solving capability</b> by analyzing its
+                                performance gain
+                                with increased numbers of turns without language feedback (i.e., no red dotted box in
+                                the figure
+                                below).
+                            </li>
+                            <li>
+                                We quantify LLMs' <b>ability to leverage natural language feedback</b> with the
+                                performance gain
+                                upon receiving GPT-4 generated feedback (i.e., performance without and with red dotted
+                                box in
+                                the
+                                figure below).
+                            </li>
+                        </ul>
+                        <div style="text-align:center;">
+                            <img src="website/img/illustrative-example.jpg" alt="illustrative-example"
+                                style="margin: 0 auto; display: block; max-width: 1000px; width: 100%; height: auto;" />
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Visual Effects. -->
+
+            </div>
+    </section>
+
+    <section class="section" id="evaluation">
+        <div class="container is-max-desktop">
+
+            <div class="columns is-full-width">
+
+                <!-- Visual Effects. -->
+                <div class="column">
+                    <div class="content">
+                        <h2 class="title is-3">Evaluation</h2>
+                        <p>
+                            We evaluate 20 LLMs where 4 are closed- and 16 are open-source.
+                            We cover different sizes and training techniques to better understand how they affect LLMs'
+                            multi-turn
+                            interaction capability. We consider three variants of training techniques:
+                        </p>
+                        <ul>
+                            <li>Base: Pre-trained model</li>
+                            <li>SIFT: Supervised Instruction-Finetuning</li>
+                            <li>RLHF: Reinforcement Learning from Human Feedback</li>
+                        </ul>
+
+                        <h3>Tool-augmented Task-Solving capabilities of LLMs</h3>
+                        <div class="text-justify" id="tool-augmented">
+                            <ul>
+                                <li>
+                                    We find all open-source models fall behind most commercial closed-source models in
+                                    both success
+                                    rate
+                                    at k=5 and improvement rate (slope).
+                                    <br>
+                                    <button class="btn btn-outline-secondary btn-sm"
+                                        id="visualize-sr-vs-k-open-behind-close">Visualize
+                                        This</button>
+                                </li>
+                                <li>
+                                    Absolute performance and improvement-per-turn (e.g., slope) scale with model size.
+                                    <br>
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-outline-secondary btn-sm inline-vis-button"
+                                            id="visualize-sr-vs-k-scale-with-model-size-llama2-base">Visualize: LLaMA-2
+                                            Base</button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm inline-vis-button"
+                                            id="visualize-sr-vs-k-scale-with-model-size-llama2-rlhf">LLaMA-2
+                                            RLHF</button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm inline-vis-button"
+                                            id="visualize-sr-vs-k-scale-with-model-size-codellama-base">CodeLLaMA
+                                            Base</button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm inline-vis-button"
+                                            id="visualize-sr-vs-k-scale-with-model-size-codellama-sift">CodeLLaMA
+                                            SIFT</button>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    SIFT on multi-turn data can potentially be helpful. <a
+                                        href="https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md">Vicuna-v1.5
+                                        (7B)</a>, which is a SIFT variant of LLaMA2 trained on ShareGPT conversations
+                                    (most are multi-turn), exhibit stronger performance compared to LLaMA-2 (Base and RLHF)<sup><a
+                                            href="#footnote-1" id="ref-footnote-1">1</a></sup>.
+                                    We observe similar trend for <a href="https://github.com/OpenLemur/Lemur">Lemur-70b-v1</a>, which continue pre-train LLaMA-2 (70B) on code intensive data.
+                                    <br>
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-outline-secondary btn-sm inline-vis-button"
+                                                id="visualize-sr-vs-k-vicuna-better-than-llama">Visualize: Vicuna-v1.5 (7B)</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm inline-vis-button"
+                                                id="visualize-sr-vs-k-lemur-better-than-llama">Lemur-v1 (70B)</button>
+                                        </div>
+                                </li>
+
+                                <li>
+                                    We find RLHF hurt LLM-tool multi-turn interaction on LLaMA-2 series. However, it's
+                                    unclear if RLHF is problematic overall, or if the issue only arise when RLHF is applied to
+                                    single-turn data (the case of LLaMA-2).
+                                    <br>
+                                    <button class="btn btn-outline-secondary btn-sm inline-vis-button"
+                                        id="visualize-sr-vs-k-rlhf">Visualize This</button>
+                                </li>
+                            </ul>
+
+                            <ol>
+                                <li style="font-size: 0.8rem;" id="footnote-1">We find some performance degradation in
+                                    Vicuna-v1.5
+                                    (especially for the 13B one), potential due to training artifacts. We refer to paper
+                                    Section 3.5
+                                    for
+                                    more details.</li>
+                            </ol>
+
+                        </div>
+
+                        <button class="btn btn-outline-secondary btn-sm" id="visualize-sr-vs-k-all">Visualize All
+                            Models</button>
+
+                        <div class="chart-container" id="chart-k" style="display:block;margin:0 auto;">
+                            <canvas id="chart-sr-vs-k"></canvas>
+                        </div>
+
+                        <h3>LLMs' Ability to Leverage Natural Language Feedback</h3>
+                        <ul>
+                            <li>
+                                We find no significant difference between open- and closed-source models in terms of
+                                &Delta;feedback.
+                                <br>
+                                <button class="btn btn-outline-secondary btn-sm inline-vis-button"
+                                    id="visualize-feedback-sr-no-diff-open-close">Visualize
+                                    This</button>
+
+                            </li>
+
+                            <li>
+                                Similar to previous findings, we find that SIFT and RLHF hurt models' ability to
+                                leverage feedback.
+                                The results on CodeLLama (except 7B) and LLaMA-2 show that SIFT/RLHF models
+                                all have
+                                lower &Delta;feedback and Success Rate (with feedback) compared to their base variants.
+                                <br>
+                                <button class="btn btn-outline-secondary btn-sm inline-vis-button"
+                                    id="visualize-feedback-sr-sift-rlhf">Visualize
+                                    This</button>
+                            </li>
+
+                            <li>
+                                Models hardly benefit from self-feedback. We find GPT-4-0613 using self-generated
+                                feedback has
+                                limited benefit: only decision-making has improved slightly.
+                                <br>
+                                <button class="btn btn-outline-secondary btn-sm inline-vis-button"
+                                    id="visualize-feedback-sr-gpt-4-self">Visualize
+                                    This</button>
+                            </li>
+
+                        </ul>
+
+
+
+                        <div class="text-center">
+                            <div class="btn-group btn-group-toggle text-center task-selector" data-toggle="buttons">
+                                <button type="button" class="btn btn-outline-secondary btn-sm" disabled>Choose task type
+                                    to
+                                    visualize:</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm active"
+                                    id="avg_micro">Micro
+                                    Average</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                    id="reasoning">Reasoning</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                    id="decision_making">Decision-Making</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                    id="code_generation">Code</button>
+                            </div>
+
+
+                            <div class="btn-group btn-group-toggle text-center sort-by-selector" data-toggle="buttons">
+                                <button type="button" class="btn btn-outline-secondary btn-sm" disabled>Sort
+                                    by:</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm active"
+                                    id="sort-by-feedbacksr">Success
+                                    Rate with GPT-4 Feedback</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                    id="sort-by-nofeedbacksr">Without
+                                    Feedback</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                    id="sort-by-feedbackdelta">&Delta;
+                                    Feedback</button>
+                            </div>
+                        </div>
+
+                        <div class="chart-container" id="chart-feedback" style="position:relative;margin:0 auto;">
+                            <canvas id="chart-sr-w-feedback" style="max-height: 100%;"></canvas>
+                        </div>
+
+                        <h3>LLMs' Ability to Provide Natural Language Feedback</h3>
+
+                        <p>
+                            In this section, we fixed the evaluated LLM (gpt-3.5-turbo-0613) and use seven different
+                            LLMs to
+                            <b>provide</b> language feedback.
+                            This allows us to measure different LLMs' effectiveness in providing feedback.
+                            <br>
+                            We find that task-solving ability could be orthogonal to feedback-providing ability: LLM's
+                            higher task-solving performance does not necessarily translate to better feedback-providing
+                            capability and vice versa.
+                            For example, despite performing the worst in solving tasks, CodeLLaMA (34B, SIFT) can provide feedback that improves the stronger GPT-3.5.
+                        </p>
+
+                        <div class="text-center">
+                            <div class="btn-group btn-group-toggle text-center feedback-provider-sort-by-selector"
+                                data-toggle="buttons">
+                                <button type="button" class="btn btn-outline-secondary btn-sm" disabled>Sort
+                                    by:</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm active"
+                                    id="sort-by-feedback-gain">
+                                    Success Rate with Feedback
+                                </button>
+
+                                <button type="button" class="btn btn-outline-secondary btn-sm"
+                                    id="sort-by-feedback-provider-perf">
+                                    Feedback Provider's Performance
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="chart-container" id="chart-feedback-p" style="display:block;margin:0 auto;">
+                            <canvas id="chart-feedback-provider"></canvas>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@misc{wang2023mint,
+    title={MINT: Evaluating LLMs in Multi-turn Interaction with Tools and Language Feedback},
+    author={Xingyao Wang and Zihan Wang and Jiateng Liu and Yangyi Chen and Lifan Yuan and Hao Peng and Heng Ji},
+    year={2023},
+    eprint={2309.10691},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}</code></pre>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div align="center" class="container">
+            <div class="columns is-centered">
+                <div class="content">
+                    This website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+
+</html>

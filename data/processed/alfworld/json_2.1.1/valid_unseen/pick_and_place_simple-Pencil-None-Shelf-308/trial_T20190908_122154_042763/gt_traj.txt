@@ -1,0 +1,58 @@
+Assistant:
+<execute>
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("shelf 4")
+goto("shelf 5")
+goto("shelf 6")
+goto("garbagecan 1")
+goto("drawer 1")
+</execute>
+
+Observation:
+On the shelf 1, you see nothing.
+On the shelf 2, you see a mug 1.
+On the shelf 3, you see a desklamp 1.
+On the shelf 4, you see a alarmclock 1.
+On the shelf 5, you see nothing.
+On the shelf 6, you see nothing.
+On the garbagecan 1, you see a cd 2.
+The drawer 1 is closed.
+Assistant:
+<execute>
+open("drawer 1")
+close("drawer 1")
+goto("drawer 2")
+goto("shelf 4")
+goto("drawer 3")
+goto("drawer 4")
+open("drawer 4")
+close("drawer 4")
+goto("drawer 5")
+goto("drawer 6")
+open("drawer 6")
+close("drawer 6")
+goto("desk 1")
+take("pencil 1", "desk 1")
+goto("shelf 1")
+put("pencil 1", "shelf 1")
+</execute>
+
+Observation:
+You open the drawer 1. The drawer 1 is open. In it, you see nothing.
+You close the drawer 1.
+On the drawer 2, you see a cellphone 3.
+On the shelf 4, you see a alarmclock 1.
+On the drawer 3, you see a cd 1, and a pen 1.
+The drawer 4 is closed.
+You open the drawer 4. The drawer 4 is open. In it, you see nothing.
+You close the drawer 4.
+On the drawer 5, you see a creditcard 1, and a keychain 3.
+The drawer 6 is closed.
+You open the drawer 6. The drawer 6 is open. In it, you see nothing.
+You close the drawer 6.
+On the desk 1, you see a desklamp 1, and a pencil 1.
+You pick up the pencil 1 from the desk 1.
+On the shelf 1, you see nothing.
+You put the pencil 1 in/on the shelf 1.

@@ -1,0 +1,44 @@
+Assistant:
+<execute>
+goto("sinkbasin 1")
+goto("microwave 1")
+</execute>
+
+Observation:
+On the sinkbasin 1, you see a bowl 3, a spatula 2, and a spatula 1.
+The microwave 1 is closed.
+Assistant:
+<execute>
+open("microwave 1")
+close("microwave 1")
+goto("garbagecan 1")
+goto("fridge 1")
+open("fridge 1")
+close("fridge 1")
+goto("countertop 1")
+goto("countertop 2")
+goto("countertop 3")
+take("egg 1", "countertop 3")
+goto("sinkbasin 1")
+clean("egg 1", "sinkbasin 1")
+goto("microwave 1")
+open("microwave 1")
+put("egg 1", "microwave 1")
+</execute>
+
+Observation:
+You open the microwave 1. The microwave 1 is open. In it, you see a mug 2.
+You close the microwave 1.
+On the garbagecan 1, you see a apple 1, a papertowelroll 1, and a soapbottle 3.
+The fridge 1 is closed.
+You open the fridge 1. The fridge 1 is open. In it, you see a cup 3, a cup 1, a lettuce 1, a plate 2, a plate 1, a potato 1, and a tomato 1.
+You close the fridge 1.
+On the countertop 1, you see a cup 2, a peppershaker 3, a saltshaker 1, and a tomato 2.
+On the countertop 2, you see a bread 1, a butterknife 1, a creditcard 1, a dishsponge 1, a glassbottle 3, a knife 1, and a spoon 1.
+On the countertop 3, you see a bread 3, a bread 2, a butterknife 3, a butterknife 2, a cellphone 1, a egg 1, a fork 3, a houseplant 1, a mug 3, and a statue 1.
+You pick up the egg 1 from the countertop 3.
+On the sinkbasin 1, you see a bowl 3, a spatula 2, and a spatula 1.
+You clean the egg 1 using the sinkbasin 1.
+The microwave 1 is closed.
+You open the microwave 1. The microwave 1 is open. In it, you see a mug 2.
+You put the egg 1 in/on the microwave 1.

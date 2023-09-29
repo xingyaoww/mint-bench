@@ -1,0 +1,18 @@
+Assistant:
+<execute>
+goto("shelf 1")
+</execute>
+
+Observation:
+On the shelf 1, you see a creditcard 2, and a saltshaker 1.
+Assistant:
+<execute>
+take("saltshaker 1", "shelf 1")
+goto("cabinet 1")
+put("saltshaker 1", "cabinet 1")
+</execute>
+
+Observation:
+You pick up the saltshaker 1 from the shelf 1.
+On the cabinet 1, you see a soapbottle 1, and a vase 1.
+You put the saltshaker 1 in/on the cabinet 1.

@@ -1,0 +1,44 @@
+Assistant:
+<execute>
+goto("sinkbasin 1")
+goto("drawer 1")
+</execute>
+
+Observation:
+On the sinkbasin 1, you see a fork 3, a lettuce 3, and a spatula 2.
+The drawer 1 is closed.
+Assistant:
+<execute>
+open("drawer 1")
+close("drawer 1")
+goto("drawer 2")
+open("drawer 2")
+close("drawer 2")
+goto("drawer 3")
+open("drawer 3")
+close("drawer 3")
+goto("countertop 1")
+goto("countertop 2")
+take("knife 1", "countertop 2")
+goto("sinkbasin 1")
+clean("knife 1", "sinkbasin 1")
+goto("countertop 1")
+put("knife 1", "countertop 1")
+</execute>
+
+Observation:
+You open the drawer 1. The drawer 1 is open. In it, you see a butterknife 1, and a fork 1.
+You close the drawer 1.
+The drawer 2 is closed.
+You open the drawer 2. The drawer 2 is open. In it, you see a spoon 1.
+You close the drawer 2.
+The drawer 3 is closed.
+You open the drawer 3. The drawer 3 is open. In it, you see nothing.
+You close the drawer 3.
+On the countertop 1, you see a lettuce 2, a mug 2, a peppershaker 1, and a spoon 2.
+On the countertop 2, you see a cup 1, a dishsponge 1, a glassbottle 3, a knife 1, a plate 2, a potato 3, and a statue 1.
+You pick up the knife 1 from the countertop 2.
+On the sinkbasin 1, you see a fork 3, a lettuce 3, and a spatula 2.
+You clean the knife 1 using the sinkbasin 1.
+On the countertop 1, you see a lettuce 2, a mug 2, a peppershaker 1, and a spoon 2.
+You put the knife 1 in/on the countertop 1.

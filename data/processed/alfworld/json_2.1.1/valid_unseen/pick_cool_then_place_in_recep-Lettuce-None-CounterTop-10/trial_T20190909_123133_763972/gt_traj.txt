@@ -1,0 +1,34 @@
+Assistant:
+<execute>
+goto("sinkbasin 1")
+goto("garbagecan 1")
+goto("fridge 1")
+</execute>
+
+Observation:
+On the sinkbasin 1, you see a egg 3, a spatula 2, a spoon 3, and a tomato 3.
+On the garbagecan 1, you see a papertowelroll 1, a potato 2, and a soapbottle 2.
+The fridge 1 is closed.
+Assistant:
+<execute>
+open("fridge 1")
+close("fridge 1")
+goto("countertop 1")
+goto("countertop 2")
+take("lettuce 1", "countertop 2")
+goto("fridge 1")
+cool("lettuce 1", "fridge 1")
+goto("countertop 1")
+put("lettuce 1", "countertop 1")
+</execute>
+
+Observation:
+You open the fridge 1. The fridge 1 is open. In it, you see a apple 1, a bread 1, a plate 1, a potato 1, and a tomato 2.
+You close the fridge 1.
+On the countertop 1, you see a egg 2, a spoon 1, a tomato 1, and a vase 1.
+On the countertop 2, you see a butterknife 1, a creditcard 2, a creditcard 1, a cup 1, a knife 1, a lettuce 1, a plate 2, and a spatula 1.
+You pick up the lettuce 1 from the countertop 2.
+The fridge 1 is closed.
+You cool the lettuce 1 using the fridge 1.
+On the countertop 1, you see a egg 2, a spoon 1, a tomato 1, and a vase 1.
+You put the lettuce 1 in/on the countertop 1.

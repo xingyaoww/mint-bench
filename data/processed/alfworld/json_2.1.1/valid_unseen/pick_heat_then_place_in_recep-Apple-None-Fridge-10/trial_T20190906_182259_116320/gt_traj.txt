@@ -1,0 +1,24 @@
+Assistant:
+<execute>
+goto("sinkbasin 1")
+</execute>
+
+Observation:
+On the sinkbasin 1, you see a apple 3, a egg 3, a glassbottle 2, a potato 3, and a spoon 2.
+Assistant:
+<execute>
+take("apple 3", "sinkbasin 1")
+goto("microwave 1")
+heat("apple 3", "microwave 1")
+goto("fridge 1")
+open("fridge 1")
+put("apple 3", "fridge 1")
+</execute>
+
+Observation:
+You pick up the apple 3 from the sinkbasin 1.
+The microwave 1 is closed.
+You heat the apple 3 using the microwave 1.
+The fridge 1 is closed.
+You open the fridge 1. The fridge 1 is open. In it, you see a bread 3, a bread 2, a bread 1, a lettuce 1, a tomato 2, and a tomato 1.
+You put the apple 3 in/on the fridge 1.

@@ -1,0 +1,30 @@
+Assistant:
+<execute>
+goto("sinkbasin 1")
+goto("microwave 1")
+</execute>
+
+Observation:
+On the sinkbasin 1, you see a fork 2, a spatula 2, and a spoon 3.
+The microwave 1 is closed.
+Assistant:
+<execute>
+open("microwave 1")
+close("microwave 1")
+goto("garbagecan 1")
+take("egg 2", "garbagecan 1")
+goto("microwave 1")
+heat("egg 2", "microwave 1")
+goto("garbagecan 1")
+put("egg 2", "garbagecan 1")
+</execute>
+
+Observation:
+You open the microwave 1. The microwave 1 is open. In it, you see nothing.
+You close the microwave 1.
+On the garbagecan 1, you see a apple 2, a egg 2, and a egg 1.
+You pick up the egg 2 from the garbagecan 1.
+The microwave 1 is closed.
+You heat the egg 2 using the microwave 1.
+On the garbagecan 1, you see a apple 2, and a egg 1.
+You put the egg 2 in/on the garbagecan 1.

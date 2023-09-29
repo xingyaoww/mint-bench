@@ -1,0 +1,58 @@
+Assistant:
+<execute>
+goto("sidetable 1")
+goto("shelf 1")
+goto("shelf 2")
+goto("drawer 2")
+</execute>
+
+Observation:
+On the sidetable 1, you see a cellphone 1, a creditcard 1, a keychain 2, a keychain 1, and a statue 1.
+On the shelf 1, you see nothing.
+On the shelf 2, you see nothing.
+The drawer 2 is closed.
+Assistant:
+<execute>
+open("drawer 2")
+close("drawer 2")
+goto("shelf 3")
+goto("shelf 4")
+goto("shelf 5")
+goto("shelf 6")
+goto("shelf 7")
+goto("shelf 8")
+goto("shelf 9")
+goto("shelf 10")
+goto("shelf 11")
+goto("shelf 12")
+goto("safe 1")
+open("safe 1")
+close("safe 1")
+goto("dresser 1")
+take("watch 1", "dresser 1")
+goto("safe 1")
+open("safe 1")
+put("watch 1", "safe 1")
+</execute>
+
+Observation:
+You open the drawer 2. The drawer 2 is open. In it, you see nothing.
+You close the drawer 2.
+On the shelf 3, you see nothing.
+On the shelf 4, you see nothing.
+On the shelf 5, you see nothing.
+On the shelf 6, you see nothing.
+On the shelf 7, you see a newspaper 3.
+On the shelf 8, you see nothing.
+On the shelf 9, you see nothing.
+On the shelf 10, you see nothing.
+On the shelf 11, you see nothing.
+On the shelf 12, you see nothing.
+The safe 1 is closed.
+You open the safe 1. The safe 1 is open. In it, you see a cellphone 3, and a cellphone 2.
+You close the safe 1.
+On the dresser 1, you see a laptop 1, a remotecontrol 1, a tissuebox 1, a vase 3, a vase 2, and a watch 1.
+You pick up the watch 1 from the dresser 1.
+The safe 1 is closed.
+You open the safe 1. The safe 1 is open. In it, you see a cellphone 3, and a cellphone 2.
+You put the watch 1 in/on the safe 1.

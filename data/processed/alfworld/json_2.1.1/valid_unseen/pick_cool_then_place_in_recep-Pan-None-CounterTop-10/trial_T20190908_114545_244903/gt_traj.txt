@@ -1,0 +1,26 @@
+Assistant:
+<execute>
+goto("toaster 1")
+goto("stoveburner 1")
+goto("stoveburner 2")
+</execute>
+
+Observation:
+On the toaster 1, you see nothing.
+On the stoveburner 1, you see a pot 1.
+On the stoveburner 2, you see a pan 1.
+Assistant:
+<execute>
+take("pan 1", "stoveburner 2")
+goto("fridge 1")
+cool("pan 1", "fridge 1")
+goto("countertop 1")
+put("pan 1", "countertop 1")
+</execute>
+
+Observation:
+You pick up the pan 1 from the stoveburner 2.
+The fridge 1 is closed.
+You cool the pan 1 using the fridge 1.
+On the countertop 1, you see a mug 1.
+You put the pan 1 in/on the countertop 1.

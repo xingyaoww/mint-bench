@@ -63,6 +63,4 @@ Please check [docs/CONFIG.md](../docs/CONFIG.md) for more config details.
 
 ## Submit a PR!
 
-You can submit a PR with your implemented task class and updated [`mint/configs/config_variables.py`](mint/configs/config_variables.py).
-
-You can upload your dataset (a zipped folder) to [this link](https://uofi.app.box.com/f/7fae5afb8bd546cdb2a714f6dd6b7549), and include your dataset name in your PR.
+You can submit a PR with your implemented task class, data instances (in `data/processed`), and updated [`mint/configs/config_variables.py`](mint/configs/config_variables.py).

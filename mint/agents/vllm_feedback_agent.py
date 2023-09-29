@@ -23,7 +23,23 @@ class VLLMFeedbackAgent(OpenAILMAgent):
         self.api_base = config["openai.api_base"]
         self.api_key = "EMPTY"
         LOGGER.info("remember to openup the server following docs/SERVING.md")
-        self.stop_words = ["\nObservation:", "\nTask:", "\nAssistant:", "\nHuman:"]
+
+        if "override" in config:
+            self.assistant_keyword = config["override"].get("assistant", "Assistant")
+            self.human_keyword = config["override"].get("human", "Human")
+            LOGGER.info(
+                f"Overriding assistant/human keyword for the [Feedback Model] to {self.assistant_keyword}/{self.human_keyword}"
+            )
+        else:
+            self.assistant_keyword = "Assistant"
+            self.human_keyword = "Human"
+
+        self.stop_words = [
+            "\nObservation:",
+            "\nTask:",
+            f"\n{self.assistant_keyword}:",
+            f"\n{self.human_keyword}:"
+        ]
 
         self.feedback_prompt = FeedbackPromptTemplate()
 
@@ -66,22 +82,27 @@ class VLLMFeedbackAgent(OpenAILMAgent):
             trajectory = trajectory[
                 trajectory.find("Task:") :
             ]  # Get rid of the initial instruction to avoid confusion
+
+            feedback_prompt = self.feedback_prompt(
+                in_context_example=task_in_context_example[
+                    task_in_context_example.find("Task:") :
+                ],  # This is to get rid of the initial instruction to avoid confusion
+                trajectory=trajectory,
+                correct_solution=gt_solution,
+                tool_desc=tool_desc,
+            )
+            # try to map the assistant/human keyword to avoid collision with the LLM's keyword
+            feedback_prompt = feedback_prompt.replace("Assistant:", f"{self.assistant_keyword}:")
+            feedback_prompt = feedback_prompt.replace("Human:", f"{self.human_keyword}:")
             messages = [
                 {
                     "role": "user",
-                    "content": self.feedback_prompt(
-                        in_context_example=task_in_context_example[
-                            task_in_context_example.find("Task:") :
-                        ],  # This is to get rid of the initial instruction to avoid confusion
-                        trajectory=trajectory,
-                        correct_solution=gt_solution,
-                        tool_desc=tool_desc,
-                    ),
+                    "content": feedback_prompt
                 }
             ]
 
             # log in yellow
-            LOGGER.info(
+            LOGGER.debug(
                 "Feedback Agent Prompt:\n"
                 + "\033[93m"
                 + messages[0]["content"]
@@ -92,7 +113,7 @@ class VLLMFeedbackAgent(OpenAILMAgent):
                 state.token_counter["feedback_" + usage_type] += count
             action = self.lm_output_to_action(lm_output, form)
             # log in red
-            LOGGER.info(
+            LOGGER.debug(
                 "Feedback Agent Action:\n" + "\033[91m" + action.value + "\033[0m"
             )
             return action

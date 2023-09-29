@@ -1,0 +1,98 @@
+Assistant:
+<execute>
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("shelf 4")
+goto("shelf 5")
+goto("shelf 6")
+goto("safe 1")
+</execute>
+
+Observation:
+On the shelf 1, you see a alarmclock 1, and a pen 2.
+On the shelf 2, you see a pencil 2.
+On the shelf 3, you see a alarmclock 2, a desklamp 1, and a mug 1.
+On the shelf 4, you see nothing.
+On the shelf 5, you see nothing.
+On the shelf 6, you see nothing.
+The safe 1 is closed.
+Assistant:
+<execute>
+open("safe 1")
+close("safe 1")
+goto("garbagecan 1")
+goto("drawer 1")
+open("drawer 1")
+close("drawer 1")
+goto("drawer 2")
+goto("drawer 1")
+open("drawer 1")
+close("drawer 1")
+goto("drawer 3")
+goto("drawer 4")
+open("drawer 4")
+take("cd 3", "drawer 4")
+close("drawer 4")
+goto("safe 1")
+open("safe 1")
+put("cd 3", "safe 1")
+close("safe 1")
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("shelf 4")
+goto("shelf 5")
+goto("shelf 6")
+goto("garbagecan 1")
+goto("drawer 1")
+open("drawer 1")
+close("drawer 1")
+goto("drawer 2")
+take("pencil 1", "drawer 2")
+put("pencil 1", "drawer 2")
+goto("desk 1")
+take("cd 1", "desk 1")
+goto("safe 1")
+open("safe 1")
+put("cd 1", "safe 1")
+</execute>
+
+Observation:
+You open the safe 1. The safe 1 is open. In it, you see nothing.
+You close the safe 1.
+On the garbagecan 1, you see nothing.
+The drawer 1 is closed.
+You open the drawer 1. The drawer 1 is open. In it, you see nothing.
+You close the drawer 1.
+On the drawer 2, you see a pen 1, and a pencil 1.
+The drawer 1 is closed.
+You open the drawer 1. The drawer 1 is open. In it, you see nothing.
+You close the drawer 1.
+On the drawer 3, you see nothing.
+The drawer 4 is closed.
+You open the drawer 4. The drawer 4 is open. In it, you see a cd 3, and a creditcard 1.
+You pick up the cd 3 from the drawer 4.
+You close the drawer 4.
+The safe 1 is closed.
+You open the safe 1. The safe 1 is open. In it, you see nothing.
+You put the cd 3 in/on the safe 1.
+You close the safe 1.
+On the shelf 1, you see a alarmclock 1, and a pen 2.
+On the shelf 2, you see a pencil 2.
+On the shelf 3, you see a alarmclock 2, a desklamp 1, and a mug 1.
+On the shelf 4, you see nothing.
+On the shelf 5, you see nothing.
+On the shelf 6, you see nothing.
+On the garbagecan 1, you see nothing.
+The drawer 1 is closed.
+You open the drawer 1. The drawer 1 is open. In it, you see nothing.
+You close the drawer 1.
+On the drawer 2, you see a pen 1, and a pencil 1.
+You pick up the pencil 1 from the drawer 2.
+You put the pencil 1 in/on the drawer 2.
+On the desk 1, you see a alarmclock 2, a bowl 1, a cd 1, a cellphone 1, a desklamp 1, and a mug 1.
+You pick up the cd 1 from the desk 1.
+The safe 1 is closed.
+You open the safe 1. The safe 1 is open. In it, you see a cd 3.
+You put the cd 1 in/on the safe 1.

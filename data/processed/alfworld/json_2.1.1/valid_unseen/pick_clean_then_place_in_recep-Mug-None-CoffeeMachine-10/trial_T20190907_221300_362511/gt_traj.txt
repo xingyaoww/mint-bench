@@ -1,0 +1,74 @@
+Assistant:
+<execute>
+goto("toaster 1")
+goto("stoveburner 1")
+goto("stoveburner 2")
+goto("stoveburner 3")
+goto("stoveburner 4")
+goto("sinkbasin 1")
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("microwave 1")
+</execute>
+
+Observation:
+On the toaster 1, you see nothing.
+On the stoveburner 1, you see a pot 1.
+On the stoveburner 2, you see a pan 1.
+On the stoveburner 3, you see a pot 1.
+On the stoveburner 4, you see a pan 1.
+On the sinkbasin 1, you see a cup 3, a egg 3, and a glassbottle 3.
+On the shelf 1, you see a vase 1.
+On the shelf 2, you see a dishsponge 3, a peppershaker 2, and a saltshaker 1.
+On the shelf 3, you see a vase 2.
+The microwave 1 is closed.
+Assistant:
+<execute>
+open("microwave 1")
+close("microwave 1")
+goto("garbagecan 1")
+goto("fridge 1")
+open("fridge 1")
+close("fridge 1")
+goto("drawer 1")
+open("drawer 1")
+close("drawer 1")
+goto("drawer 2")
+open("drawer 2")
+close("drawer 2")
+goto("drawer 3")
+open("drawer 3")
+close("drawer 3")
+goto("countertop 1")
+goto("countertop 2")
+take("mug 3", "countertop 2")
+goto("sinkbasin 1")
+clean("mug 3", "sinkbasin 1")
+goto("coffeemachine 1")
+put("mug 3", "coffeemachine 1")
+</execute>
+
+Observation:
+You open the microwave 1. The microwave 1 is open. In it, you see a apple 1, and a potato 1.
+You close the microwave 1.
+On the garbagecan 1, you see a apple 3, a egg 2, and a egg 1.
+The fridge 1 is closed.
+You open the fridge 1. The fridge 1 is open. In it, you see a apple 2, a cup 2, a cup 1, a lettuce 1, a plate 1, a tomato 2, and a tomato 1.
+You close the fridge 1.
+The drawer 1 is closed.
+You open the drawer 1. The drawer 1 is open. In it, you see a fork 2, and a spoon 1.
+You close the drawer 1.
+The drawer 2 is closed.
+You open the drawer 2. The drawer 2 is open. In it, you see a creditcard 1, and a spatula 1.
+You close the drawer 2.
+The drawer 3 is closed.
+You open the drawer 3. The drawer 3 is open. In it, you see a cellphone 2.
+You close the drawer 3.
+On the countertop 1, you see a butterknife 2.
+On the countertop 2, you see a butterknife 1, a cellphone 1, a dishsponge 2, a fork 1, a glassbottle 1, a lettuce 2, a mug 3, a papertowelroll 1, and a statue 1.
+You pick up the mug 3 from the countertop 2.
+On the sinkbasin 1, you see a cup 3, a egg 3, and a glassbottle 3.
+You clean the mug 3 using the sinkbasin 1.
+On the coffeemachine 1, you see nothing.
+You put the mug 3 in/on the coffeemachine 1.

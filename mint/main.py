@@ -1,3 +1,9 @@
+from mint.envs import GeneralEnv, AlfworldEnv
+from mint.datatypes import Action, State
+from mint.tasks import AlfWorldTask
+from mint.tools import Tool
+import mint.tasks as tasks
+import mint.agents as agents
 import logging
 import os
 import json
@@ -15,13 +21,6 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger("MINT")
 
-import mint.agents as agents
-import mint.tasks as tasks
-from mint.tools import Tool
-from mint.tasks import AlfWorldTask
-from mint.datatypes import Action, State
-from mint.envs import GeneralEnv, AlfworldEnv
-
 
 def interactive_loop(
     task: tasks.Task,
@@ -29,6 +28,7 @@ def interactive_loop(
     tools: List[Tool],
     feedback_config: Dict[str, Any],
     env_config: Dict[str, Any],
+    interactive_mode: bool = False,
 ):
     if isinstance(task, AlfWorldTask):
         LOGGER.info("loading Alfworld Env")
@@ -36,31 +36,70 @@ def interactive_loop(
     else:
         env = GeneralEnv(task, tools, feedback_config, env_config)
     state: State = env.reset()
+
+    init_msg = state.latest_output['content']
+    if interactive_mode:
+        # omit in-context example
+        splited_msg = init_msg.split("---")
+        init_msg = splited_msg[0] + "== In-context Example Omitted ==" + splited_msg[2]
+
     LOGGER.info(f"\nUser: \n\033[94m{state.latest_output['content']}\033[0m")
+
     num_steps = 0
+
     if task.loaded_history is not None:
         for turn in task.loaded_history:
             action = agent.lm_output_to_action(turn["lm_output"])
-            LOGGER.info(f"\nLoaded LM Agent Action:\n\033[92m{action.value}\033[0m")
+            LOGGER.info(
+                f"\nLoaded LM Agent Action:\n\033[92m{action.value}\033[0m")
             state = env.step(action, loaded=turn)
-            LOGGER.info(f"\nUser: \n\033[94m{state.latest_output['content']}\033[0m")
+            LOGGER.info(
+                "\033[1m" + "User:\n" + "\033[0m" +
+                f"\033[94m{state.latest_output['content']}\033[0m"
+            )
             num_steps += 1
 
     while not state.finished:
         # agent act
+        if interactive_mode:
+            to_continue = "n"
+            while to_continue not in ["y", "Y"]:
+                to_continue = input("\n> Continue? (y/n) ")
+
         action: Action = agent.act(state)
         # color the action in green
-        LOGGER.info(f"\nLM Agent Action:\n\033[92m{action.value}\033[0m")
+        # LOGGER.info(f"\nLM Agent Action:\n\033[92m{action.value}\033[0m")
+        LOGGER.info(
+            f"\n\033[1m" + "LM Agent Action:\n" + "\033[0m" +
+            f"\n\033[92m{action.value}\033[0m"
+        )
         # environment step
         state: State = env.step(action)
         # color the state in blue
         if not state.finished:
-            LOGGER.info(f"\nUser: \n\033[94m{state.latest_output['content']}\033[0m")
+            user_msg = state.latest_output['content']
+            if "Expert feedback:" in user_msg:
+                obs, feedback = user_msg.split("Expert feedback:")
+                feedback = "Expert feedback:" + feedback
+                # color the observation in blue & feedback in red
+                LOGGER.info(
+                    "\n" +
+                    "\033[1m" + "User:\n" + "\033[0m" +
+                    f"\033[94m{obs}\033[0m" + "\n" 
+                    + f"\033[93m{feedback}\033[0m" + "\n"
+                )
+            else:
+                # color the observation in blue
+                LOGGER.info(
+                    "\n" +
+                    "\033[1m" + "User:\n" + "\033[0m" +
+                    f"\033[94m{user_msg}\033[0m" + "\n"
+                )
         num_steps += 1
 
-    LOGGER.info(f"Task finished in {num_steps} steps. Success: {state.success}")
-    # metrics["success"] += int(state.success)
-    # metrics["n_tasks"] += 1
+    LOGGER.info(
+        f"Task finished in {num_steps} steps. Success: {state.success}"
+    )
 
     return state
 
@@ -96,10 +135,16 @@ def main(args: argparse.Namespace):
         for module, class_name in task_config["tool_imports"]
     ]
 
-    env_config: Dict[str, Any] = exp_config.get("environment", DEFAULT_ENV_CONFIG)
+    env_config: Dict[str, Any] = exp_config.get(
+        "environment", DEFAULT_ENV_CONFIG)
 
     pathlib.Path(exp_config["output_dir"]).mkdir(parents=True, exist_ok=True)
-    output_path = os.path.join(exp_config["output_dir"], "results.jsonl")
+    if args.interactive:
+        output_path = os.path.join(
+            exp_config["output_dir"], "results.interactive.jsonl")
+    else:
+        output_path = os.path.join(exp_config["output_dir"], "results.jsonl")
+
     done_task_id = set()
     if os.path.exists(output_path):
         with open(output_path) as f:
@@ -108,7 +153,8 @@ def main(args: argparse.Namespace):
                 if task_id == "":
                     task_id = json.loads(line)["task"].get("id", "")
                 done_task_id.add(task_id)
-        LOGGER.info(f"Existing output file found. {len(done_task_id)} tasks done.")
+        LOGGER.info(
+            f"Existing output file found. {len(done_task_id)} tasks done.")
 
     if len(done_task_id) == n_tasks:
         LOGGER.info("All tasks done. Exiting.")
@@ -128,11 +174,14 @@ def main(args: argparse.Namespace):
             if task.task_id in done_task_id:
                 continue
 
-            state = interactive_loop(task, agent, tools, feedback_config, env_config)
+            state = interactive_loop(
+                task, agent, tools, feedback_config, env_config, args.interactive
+            )
             if not os.path.exists(exp_config["output_dir"]):
                 os.makedirs(exp_config["output_dir"])
             f.write(
-                json.dumps({"state": state.to_dict(), "task": task.to_dict()}) + "\n"
+                json.dumps({"state": state.to_dict(),
+                           "task": task.to_dict()}) + "\n"
             )
             f.flush()  # make sure the output is written to file
             pbar.update(1)
@@ -151,6 +200,11 @@ if __name__ == "__main__":
         "--debug",
         action="store_true",
         help="Whether to run in debug mode (10 ex per task).",
+    )
+    parser.add_argument(
+        "--interactive",
+        action="store_true",
+        help="Whether to run in interactive mode for demo purpose.",
     )
     args = parser.parse_args()
     LOGGER.setLevel(logging.DEBUG if args.debug else logging.INFO)

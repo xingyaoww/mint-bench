@@ -1,0 +1,90 @@
+Assistant:
+<execute>
+goto("toaster 1")
+goto("stoveburner 1")
+goto("stoveburner 2")
+goto("stoveburner 3")
+goto("stoveburner 4")
+goto("sinkbasin 1")
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("microwave 1")
+</execute>
+
+Observation:
+On the toaster 1, you see nothing.
+On the stoveburner 1, you see a pot 1.
+On the stoveburner 2, you see a pan 1.
+On the stoveburner 3, you see a pot 1.
+On the stoveburner 4, you see a pan 1.
+On the sinkbasin 1, you see a cup 2, a egg 3, a fork 3, a potato 3, and a spatula 3.
+On the shelf 1, you see nothing.
+On the shelf 2, you see a dishsponge 2, a papertowelroll 1, and a plate 1.
+On the shelf 3, you see nothing.
+The microwave 1 is closed.
+Assistant:
+<execute>
+open("microwave 1")
+close("microwave 1")
+goto("garbagecan 1")
+goto("fridge 1")
+open("fridge 1")
+close("fridge 1")
+goto("drawer 1")
+open("drawer 1")
+close("drawer 1")
+goto("drawer 2")
+open("drawer 2")
+close("drawer 2")
+goto("drawer 3")
+open("drawer 3")
+close("drawer 3")
+goto("countertop 1")
+goto("countertop 2")
+goto("countertop 3")
+goto("coffeemachine 1")
+goto("cabinet 1")
+goto("cabinet 2")
+open("cabinet 2")
+close("cabinet 2")
+goto("cabinet 3")
+goto("cabinet 4")
+take("mug 1", "cabinet 4")
+goto("microwave 1")
+heat("mug 1", "microwave 1")
+goto("cabinet 1")
+put("mug 1", "cabinet 1")
+</execute>
+
+Observation:
+You open the microwave 1. The microwave 1 is open. In it, you see a cup 1, and a egg 1.
+You close the microwave 1.
+On the garbagecan 1, you see a egg 2, and a tomato 3.
+The fridge 1 is closed.
+You open the fridge 1. The fridge 1 is open. In it, you see a apple 1, a bowl 2, a bowl 1, a bread 2, a bread 1, a lettuce 1, and a potato 1.
+You close the fridge 1.
+The drawer 1 is closed.
+You open the drawer 1. The drawer 1 is open. In it, you see a cellphone 1, a spatula 1, and a spoon 2.
+You close the drawer 1.
+The drawer 2 is closed.
+You open the drawer 2. The drawer 2 is open. In it, you see a fork 2, and a fork 1.
+You close the drawer 2.
+The drawer 3 is closed.
+You open the drawer 3. The drawer 3 is open. In it, you see a spatula 2.
+You close the drawer 3.
+On the countertop 1, you see a creditcard 1, and a potato 2.
+On the countertop 2, you see a butterknife 1, a knife 1, a peppershaker 2, a spoon 1, a tomato 1, a vase 3, and a vase 2.
+On the countertop 3, you see a butterknife 3, a butterknife 2, a cellphone 2, a creditcard 2, a dishsponge 3, a glassbottle 3, a houseplant 1, a knife 3, a knife 2, a pan 2, a saltshaker 2, a soapbottle 3, a spoon 3, a statue 1, and a tomato 2.
+On the coffeemachine 1, you see nothing.
+On the cabinet 1, you see a vase 1.
+The cabinet 2 is closed.
+You open the cabinet 2. The cabinet 2 is open. In it, you see a dishsponge 1, and a glassbottle 1.
+You close the cabinet 2.
+On the cabinet 3, you see nothing.
+On the cabinet 4, you see a mug 1, and a soapbottle 1.
+You pick up the mug 1 from the cabinet 4.
+The microwave 1 is closed.
+You heat the mug 1 using the microwave 1.
+On the cabinet 1, you see a vase 1.
+You put the mug 1 in/on the cabinet 1.

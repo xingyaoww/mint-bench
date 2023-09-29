@@ -1,0 +1,32 @@
+Assistant:
+<execute>
+goto("toaster 1")
+goto("stoveburner 1")
+goto("stoveburner 2")
+goto("stoveburner 3")
+goto("stoveburner 4")
+goto("sinkbasin 1")
+</execute>
+
+Observation:
+On the toaster 1, you see nothing.
+On the stoveburner 1, you see a pot 1.
+On the stoveburner 2, you see a pan 2.
+On the stoveburner 3, you see a pot 1.
+On the stoveburner 4, you see a pan 2.
+On the sinkbasin 1, you see a apple 1, a butterknife 3, a cup 4, a dishsponge 2, a fork 2, a potato 3, a spatula 3, and a spoon 1.
+Assistant:
+<execute>
+take("cup 4", "sinkbasin 1")
+goto("microwave 1")
+heat("cup 4", "microwave 1")
+goto("cabinet 1")
+put("cup 4", "cabinet 1")
+</execute>
+
+Observation:
+You pick up the cup 4 from the sinkbasin 1.
+The microwave 1 is closed.
+You heat the cup 4 using the microwave 1.
+On the cabinet 1, you see a saltshaker 1.
+You put the cup 4 in/on the cabinet 1.

@@ -1,0 +1,26 @@
+Assistant:
+<execute>
+goto("toilet 1")
+</execute>
+
+Observation:
+On the toilet 1, you see a soapbar 2, and a soapbar 1.
+Assistant:
+<execute>
+take("soapbar 1", "toilet 1")
+goto("garbagecan 1")
+put("soapbar 1", "garbagecan 1")
+goto("toilet 1")
+take("soapbar 2", "toilet 1")
+goto("garbagecan 1")
+put("soapbar 2", "garbagecan 1")
+</execute>
+
+Observation:
+You pick up the soapbar 1 from the toilet 1.
+On the garbagecan 1, you see nothing.
+You put the soapbar 1 in/on the garbagecan 1.
+On the toilet 1, you see a soapbar 2.
+You pick up the soapbar 2 from the toilet 1.
+On the garbagecan 1, you see a soapbar 1.
+You put the soapbar 2 in/on the garbagecan 1.

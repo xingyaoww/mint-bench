@@ -1,0 +1,48 @@
+Assistant:
+<execute>
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("drawer 1")
+</execute>
+
+Observation:
+On the shelf 1, you see a creditcard 2, and a statue 1.
+On the shelf 2, you see a creditcard 3, a papertowelroll 1, and a saltshaker 3.
+On the shelf 3, you see nothing.
+The drawer 1 is closed.
+Assistant:
+<execute>
+open("drawer 1")
+close("drawer 1")
+goto("drawer 2")
+open("drawer 2")
+close("drawer 2")
+goto("drawer 3")
+open("drawer 3")
+close("drawer 3")
+goto("countertop 1")
+goto("countertop 2")
+goto("countertop 3")
+take("peppershaker 1", "countertop 3")
+goto("drawer 1")
+open("drawer 1")
+put("peppershaker 1", "drawer 1")
+</execute>
+
+Observation:
+You open the drawer 1. The drawer 1 is open. In it, you see a dishsponge 2, and a spoon 1.
+You close the drawer 1.
+The drawer 2 is closed.
+You open the drawer 2. The drawer 2 is open. In it, you see a dishsponge 1.
+You close the drawer 2.
+The drawer 3 is closed.
+You open the drawer 3. The drawer 3 is open. In it, you see a saltshaker 1.
+You close the drawer 3.
+On the countertop 1, you see a creditcard 1, and a tomato 3.
+On the countertop 2, you see a cellphone 1, a fork 1, a knife 1, a lettuce 1, a saltshaker 2, and a soapbottle 1.
+On the countertop 3, you see a apple 1, a bread 1, a butterknife 2, a butterknife 1, a cup 2, a egg 2, a houseplant 1, a knife 3, a knife 2, a pan 2, a peppershaker 1, and a vase 3.
+You pick up the peppershaker 1 from the countertop 3.
+The drawer 1 is closed.
+You open the drawer 1. The drawer 1 is open. In it, you see a dishsponge 2, and a spoon 1.
+You put the peppershaker 1 in/on the drawer 1.

@@ -1,0 +1,36 @@
+Assistant:
+<execute>
+goto("shelf 1")
+goto("shelf 2")
+goto("shelf 3")
+goto("shelf 4")
+goto("shelf 5")
+goto("shelf 6")
+goto("safe 1")
+</execute>
+
+Observation:
+On the shelf 1, you see nothing.
+On the shelf 2, you see nothing.
+On the shelf 3, you see a desklamp 1.
+On the shelf 4, you see a alarmclock 2, and a alarmclock 1.
+On the shelf 5, you see nothing.
+On the shelf 6, you see nothing.
+The safe 1 is closed.
+Assistant:
+<execute>
+open("safe 1")
+close("safe 1")
+goto("garbagecan 1")
+take("cd 2", "garbagecan 1")
+goto("shelf 3")
+use("desklamp 1")
+</execute>
+
+Observation:
+You open the safe 1. The safe 1 is open. In it, you see a keychain 1.
+You close the safe 1.
+On the garbagecan 1, you see a cd 2.
+You pick up the cd 2 from the garbagecan 1.
+On the shelf 3, you see a desklamp 1.
+You turn on the desklamp 1.

@@ -1,0 +1,36 @@
+Assistant:
+<execute>
+goto("toaster 1")
+goto("stoveburner 1")
+goto("stoveburner 2")
+goto("stoveburner 3")
+goto("stoveburner 4")
+goto("sinkbasin 1")
+goto("shelf 1")
+goto("shelf 2")
+</execute>
+
+Observation:
+On the toaster 1, you see nothing.
+On the stoveburner 1, you see a pot 1.
+On the stoveburner 2, you see a pan 1.
+On the stoveburner 3, you see a pot 1.
+On the stoveburner 4, you see a pan 1.
+On the sinkbasin 1, you see nothing.
+On the shelf 1, you see nothing.
+On the shelf 2, you see a bowl 2, and a peppershaker 1.
+Assistant:
+<execute>
+take("bowl 2", "shelf 2")
+goto("sinkbasin 1")
+clean("bowl 2", "sinkbasin 1")
+goto("cabinet 1")
+put("bowl 2", "cabinet 1")
+</execute>
+
+Observation:
+You pick up the bowl 2 from the shelf 2.
+On the sinkbasin 1, you see nothing.
+You clean the bowl 2 using the sinkbasin 1.
+On the cabinet 1, you see nothing.
+You put the bowl 2 in/on the cabinet 1.
