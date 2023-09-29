@@ -46,7 +46,7 @@ class AlfWorldTask(Task):
         self._env = env
 
     @property
-    def env(self) -> envs.AlfredTWEnv:  # Jiateng: changed into original env class
+    def env(self) -> envs.AlfredTWEnv:
         """Stateful environment of the task.
 
         Specific for AlfWorld.

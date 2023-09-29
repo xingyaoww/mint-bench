@@ -147,10 +147,6 @@ def build_json_for_all_tasks(
     env_config: dict,
 ):
     for task_name in TASK_INFO_MAP.keys():
-        # if task_name == "alfworld":
-        #     env_config = deepcopy(env_config)
-        #     # TODO: modify this if jiateng can get 5-step working
-        #     env_config["max_steps"] = 20
         model_name = agent_model_info["config"]["model_name"]
         if agent_model_info.get("exp_setting", "") == "human-eval-human":
             model_name += "-human-eval-human"
