@@ -285,21 +285,22 @@
                                     SIFT on multi-turn data can potentially be helpful. <a
                                         href="https://github.com/lm-sys/FastChat/blob/main/docs/vicuna_weights_version.md">Vicuna-v1.5
                                         (7B)</a>, which is a SIFT variant of LLaMA2 trained on ShareGPT conversations
-                                    (most are
-                                    multi-turn), exhibit stronger performance compared to LLaMA-2 (Base and RLHF)<sup><a
+                                    (most are multi-turn), exhibit stronger performance compared to LLaMA-2 (Base and RLHF)<sup><a
                                             href="#footnote-1" id="ref-footnote-1">1</a></sup>.
+                                    We observe similar trend for <a href="https://github.com/OpenLemur/Lemur">Lemur-70b-v1</a>, which continue pre-train LLaMA-2 (70B) on code intensive data.
                                     <br>
-                                    <button class="btn btn-outline-secondary btn-sm"
-                                        id="visualize-sr-vs-k-vicuna-better-than-llama">Visualize This</button>
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-outline-secondary btn-sm inline-vis-button"
+                                                id="visualize-sr-vs-k-vicuna-better-than-llama">Visualize: Vicuna-v1.5 (7B)</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm inline-vis-button"
+                                                id="visualize-sr-vs-k-lemur-better-than-llama">Lemur-v1 (70B)</button>
+                                        </div>
                                 </li>
 
                                 <li>
                                     We find RLHF hurt LLM-tool multi-turn interaction on LLaMA-2 series. However, it's
-                                    unclear if
-                                    RLHF
-                                    is problematic overall, or if the issue only arise when RLHF is applied to
-                                    single-turn data (the
-                                    case of LLaMA-2).
+                                    unclear if RLHF is problematic overall, or if the issue only arise when RLHF is applied to
+                                    single-turn data (the case of LLaMA-2).
                                     <br>
                                     <button class="btn btn-outline-secondary btn-sm inline-vis-button"
                                         id="visualize-sr-vs-k-rlhf">Visualize This</button>
@@ -339,7 +340,7 @@
                             <li>
                                 Similar to previous findings, we find that SIFT and RLHF hurt models' ability to
                                 leverage feedback.
-                                The results on CodeLLama (except 7B), LLaMA-2, and Lemur-v1 show that SIFT/RLHF models
+                                The results on CodeLLama (except 7B) and LLaMA-2 show that SIFT/RLHF models
                                 all have
                                 lower &Delta;feedback and Success Rate (with feedback) compared to their base variants.
                                 <br>
@@ -351,9 +352,7 @@
                             <li>
                                 Models hardly benefit from self-feedback. We find GPT-4-0613 using self-generated
                                 feedback has
-                                limited benefit: only decision-making has improved slightly. In the next section, we
-                                also find that
-                                self-feedback led to a performance drop in GPT-3.5.
+                                limited benefit: only decision-making has improved slightly.
                                 <br>
                                 <button class="btn btn-outline-secondary btn-sm inline-vis-button"
                                     id="visualize-feedback-sr-gpt-4-self">Visualize
@@ -409,14 +408,9 @@
                             This allows us to measure different LLMs' effectiveness in providing feedback.
                             <br>
                             We find that task-solving ability could be orthogonal to feedback-providing ability: LLM's
-                            higher
-                            task-solving performance does not necessarily translate to better feedback-providing
-                            capability and vice
-                            versa.
-                            For example, GPT-3.5 excelled in task-solving but struggled with self-feedback.
-                            On the other hand, CodeLLaMA-34B-Instruct (SIFT), despite performing the poorest in
-                            task-solving (-19%
-                            difference vs. GPT-3.5), can still provide feedback that improves the stronger GPT-3.5.
+                            higher task-solving performance does not necessarily translate to better feedback-providing
+                            capability and vice versa.
+                            For example, despite performing the worst in solving tasks, CodeLLaMA (34B, SIFT) can provide feedback that improves the stronger GPT-3.5.
                         </p>
 
                         <div class="text-center">

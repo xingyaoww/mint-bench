@@ -304,6 +304,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 ]);
             });
 
+            document.getElementById("visualize-sr-vs-k-lemur-better-than-llama").addEventListener("click", function () {
+                createChart([
+                    'Lemur-v1 (70B, Base)',
+                    'Lemur-v1 (70B, SIFT)',
+                    'LLaMA-2 (70B, RLHF)',
+                    'LLaMA-2 (70B, Base)',
+                ]);
+            });
+
             document.getElementById("visualize-sr-vs-k-rlhf").addEventListener("click", function () {
                 createChart([
                     'LLaMA-2 (7B, Base)',
