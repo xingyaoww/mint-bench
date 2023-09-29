@@ -161,3 +161,4 @@ cython_debug/
 .vscode/
 output.txt
 __MACOSX
+.DS_Store
