@@ -333,6 +333,7 @@ document.addEventListener('DOMContentLoaded', function () {
           'LLaMA-2 (70B, RLHF)',
           'LLaMA-2 (7B, Base)',
           'LLaMA-2 (7B, RLHF)',
+          'Vicuna-v1.5 (7B, SIFT)',
         ]);
       });
 
