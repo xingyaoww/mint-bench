@@ -1,2 +1,5 @@
+*.json* linguist-vendored
+*.pddl linguist-vendored
+*.ipynb linguist-vendored
 data/* linguist-vendored
 scripts/notebook/* linguist-vendored
