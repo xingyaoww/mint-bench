@@ -281,13 +281,13 @@ class TheoremqaTask(Task):
             prediction = prediction.replace(",", "")
 
         # Preprocessing the option [Stage 3]
-        if "a)" in prediction or "a )" in prediction:
+        if "a)" in prediction or "a )" in prediction or prediction.strip() == "a":
             prediction = "(a)"
-        if "b)" in prediction or "b )" in prediction:
+        if "b)" in prediction or "b )" in prediction or prediction.strip() == "b":
             prediction = "(b)"
-        if "c)" in prediction or "c )" in prediction:
+        if "c)" in prediction or "c )" in prediction or prediction.strip() == "c":
             prediction = "(c)"
-        if "d)" in prediction or "d )" in prediction:
+        if "d)" in prediction or "d )" in prediction or prediction.strip() == "d":
             prediction = "(d)"
 
         if (
