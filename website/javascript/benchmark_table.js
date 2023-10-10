@@ -1,11 +1,11 @@
 
 //Formatter to generate charts
-var chartFormatter = function(cell, formatterParams, onRendered){
+var chartFormatter = function (cell, formatterParams, onRendered) {
     var content = document.createElement("span");
     var values = cell.getValue();
 
     //invert values if needed
-    if(formatterParams.invert){
+    if (formatterParams.invert) {
         values = values.map(val => val * -1);
     }
 
@@ -20,39 +20,40 @@ var chartFormatter = function(cell, formatterParams, onRendered){
         // max: 100.0,
     }
 
-    if(formatterParams.fill){
+    if (formatterParams.fill) {
         options.fill = formatterParams.fill
     }
 
     //instantiate piety chart after the cell element has been aded to the DOM
-    onRendered(function(){
-        peity(content, formatterParams.type,  options);
+    onRendered(function () {
+        peity(content, formatterParams.type, options);
     });
 
     return content;
 };
 
 
-var colorFormatter = function(cell) {
+var colorFormatter = function (cell, formatterParams) {
     var value = cell.getValue();
-    
+
     // Check for the specific string "-"
     if (value === "-") {
         return value;
     }
 
-    // Determine your float range here. 
-    // For instance, if the float range is between 0 to 10:
-    var min = 0.0;
-    var max = 100;
+    // Default values
+    var defaults = {
+        min: 0.0,
+        max: 100.0,
+        startColor: { r: 255, g: 255, b: 255 },
+        endColor: { r: 107, g: 142, b: 35 }
+    };
 
-    // Default colors - blue to red
-    // 	107, 142, 35
-    var startColor = { r: 255, g: 255, b: 255 };
-    var endColor = { r: 107, g: 142, b: 35 };
-
-    // Clamp value to the range for safety
-    value = Math.max(min, Math.min(max, value));
+    // Override defaults with provided formatterParams values
+    var min = (formatterParams && formatterParams.min) || defaults.min;
+    var max = (formatterParams && formatterParams.max) || defaults.max;
+    var startColor = (formatterParams && formatterParams.startColor) || defaults.startColor;
+    var endColor = (formatterParams && formatterParams.endColor) || defaults.endColor;
 
     // Normalize the value between 0 and 1
     var normalizedValue = (value - min) / (max - min);
@@ -61,7 +62,7 @@ var colorFormatter = function(cell) {
     var red = Math.floor(startColor.r + (endColor.r - startColor.r) * normalizedValue);
     var green = Math.floor(startColor.g + (endColor.g - startColor.g) * normalizedValue);
     var blue = Math.floor(startColor.b + (endColor.b - startColor.b) * normalizedValue);
-    
+
     // make sure the value is rounded to 1 decimal place
     value = parseFloat(value).toFixed(1)
 
@@ -69,62 +70,141 @@ var colorFormatter = function(cell) {
 }
 
 
+var barColorFn = function (value, formatterParams) {
+    var defaults = {
+        range : [-50, 50],
+        low: { r: 255, g: 100, b: 150 },
+        high: { r: 150, g: 255, b: 150 }
+    };
+
+    // Override defaults with provided formatterParams values
+
+    var low_range = (formatterParams && formatterParams.range[0]) || defaults.range[0];
+    var high_range = (formatterParams && formatterParams.range[1]) || defaults.range[1];
+    var low = (formatterParams && formatterParams.low) || defaults.low;
+    var high = (formatterParams && formatterParams.high) || defaults.high;
+
+    // Clamp the value to the range [-100, 100]
+    value = Math.max(low_range, Math.min(high_range, value));
+    var range = high_range - low_range;
+
+    // Normalize the value to the range [0, 1]
+    var normalizedValue = (value + range / 2) / range;
+    // Interpolate between the two colors based on the normalized value
+    var interpolated = {
+        r: Math.floor(low.r + (high.r - low.r) * normalizedValue),
+        g: Math.floor(low.g + (high.g - low.g) * normalizedValue),
+        b: Math.floor(low.b + (high.b - low.b) * normalizedValue)
+    };
+
+    return 'rgba(' + interpolated.r + ',' + interpolated.g + ',' + interpolated.b + ',0.9)';
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('website/data/benchmark.json')
-        .then(response => response.json())
-        .then(tabledata => {
-            console.log(tabledata)
-            // add a field into each row as "line" to be used for the chart
-            tabledata.forEach(row => {
+    Promise.all([
+        fetch('website/data/benchmark.json').then(response => response.json()),
+        fetch('website/data/feedback_comparison.json').then(response => response.json())
+    ])
+        .then(([benchmark_tabledata, benchmark_feedback_efficancy_tabledata]) => {
+
+            // 1. Benchmark Table
+            benchmark_tabledata.forEach(row => {
                 row.line = [row['1'], row['2'], row['3'], row['4'], row['5']]
             })
-            // // make sure each value is a float with two digits
-            // tabledata.forEach(row => {
-            //     Object.keys(row).forEach(key => {
-            //         if (key != "model" && key != "size") {
-            //             row[key] = parseFloat(row[key]).toFixed(2)
-            //         }
-            //     })
-            // })
 
             var table = new Tabulator("#benchmark-table", {
-                data: tabledata,           //load row data from array
+                data: benchmark_tabledata,
                 layout: "fitDataFill",
-                // textSize: "14px",
-                movableColumns: false,      //allow column order to be changed
-                initialSort: [             //set the initial sort order of the data
+                movableColumns: false,
+                initialSort: [
                     { column: "5", dir: "desc" },
                 ],
                 columnDefaults: {
-                    tooltip: true,         //show tool tips on cells
+                    tooltip: true,
                 },
-                columns: [                 //define the table columns
-                    { title: "Model Family", field: "model", widthGrow:1},
-                    { title: "Size", field: "size"},
-                    { title: "Type", field: "type"},
+                columns: [
+                    { title: "Model Family", field: "model", widthGrow: 1 },
+                    { title: "Size", field: "size" },
+                    { title: "Type", field: "type" },
                     {//create column group
-                        title:"Tool-augmented Task-Solving Success Rate (within k turns)",
-                        columns:[
-                            {title:"k = 1", field:"1", hozAlign:"center", formatter: colorFormatter},
-                            {title:"k = 2", field:"2", hozAlign:"center", formatter: colorFormatter},
-                            {title:"k = 3", field:"3", hozAlign:"center", formatter: colorFormatter},
-                            {title:"k = 4", field:"4", hozAlign:"center", formatter: colorFormatter},
-                            {title:"k = 5", field:"5", sorter:"number", hozAlign:"center", formatter: colorFormatter},
-                            {title:"Slope", field:"Slope", sorter:"number"},
-                            // {title:"Line Chart", field:"line", width: 50, formatter:chartFormatter, formatterParams: {type:"line"}},
-                            // {title: "Bar", field: "line", width: 50, formatter: chartFormatter, formatterParams: { type: "bar"} },
+                        title: "Tool-augmented Task-Solving Success Rate (within k turns)",
+                        columns: [
+                            { title: "k = 1", field: "1", hozAlign: "center", formatter: colorFormatter },
+                            { title: "k = 2", field: "2", hozAlign: "center", formatter: colorFormatter },
+                            { title: "k = 3", field: "3", hozAlign: "center", formatter: colorFormatter },
+                            { title: "k = 4", field: "4", hozAlign: "center", formatter: colorFormatter },
+                            { title: "k = 5", field: "5", sorter: "number", hozAlign: "center", formatter: colorFormatter },
+                            { title: "Slope", field: "Slope", sorter: "number" },
                         ],
                     },
                     {//create column group
-                        title:"Ability to Leverage Language Feedback",
-                        columns:[
-                            {title:"k = 5 (+Feedback)", field:"Success Rate (5 turn) w\/ GPT-4 Feedback", hozAlign:"center", formatter: colorFormatter},
-                            {title:"&Delta;Feedback", field:"Delta Feedback"},
+                        title: "Ability to Leverage Language Feedback",
+                        columns: [
+                            {
+                                title: "k = 5 (+Feedback)", field: "Success Rate (5 turn) w\/ GPT-4 Feedback",
+                                hozAlign: "center", formatter: colorFormatter
+                            },
+                            { title: "&Delta;Feedback", field: "Delta Feedback" },
                         ],
                     },
                 ],
             });
-            return table;
+
+            // 2. Benchmark Feedback Efficancy Table
+            benchmark_feedback_efficancy_tabledata.forEach(row => {
+                row.model = row.feedback_provider_info.model;
+                row.size = row.feedback_provider_info.size;
+                row.type = row.feedback_provider_info.type;
+            })
+
+            var feedback_efficacy_table = new Tabulator("#benchmark-feedback-efficancy-table", {
+                data: benchmark_feedback_efficancy_tabledata,
+                layout: "fitDataFill",
+                movableColumns: false,
+                initialSort: [
+                    { column: "evaluated_LLM_feedback", dir: "desc" },
+                ],
+                columnDefaults: {
+                    tooltip: true,
+                },
+                columns: [
+                    {
+                        title: "Feedback Provider",
+                        columns: [
+                            { title: "Model Family", field: "model", widthGrow: 1 },
+                            { title: "Size", field: "size" },
+                            { title: "Type", field: "type" }
+                        ]
+                    },
+                    {
+                        title: "&Delta; Task Success Rate compared to GPT-3.5",
+                        field: "SR5_difference",
+                        formatter: "progress",
+                        legendAlign: "center",
+                        sorter: "number",
+                        formatterParams: {
+                            min: -50, max: 50,
+                            legend: true,
+                            color: barColorFn,
+                        },
+                    },
+                    {
+                        title: "&Delta; GPT-3.5 Success Rate with Provided Feedback",
+                        field: "evaluated_LLM_feedback",
+                        // hozAlign: "center",
+                        sorter: "number",
+                        formatter: "progress",
+                        legendAlign: "center",
+                        // width: 100,
+                        formatterParams: {
+                            min: -30, max: 30,
+                            legend: true,
+                            color: barColorFn
+                        },
+
+                    },
+                ]
+            });
         });
 
 })
