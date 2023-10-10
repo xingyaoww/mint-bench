@@ -57,6 +57,14 @@
       9.04
     ],
     [
+      "Mistral-v0.1 (7B, SIFT)",
+      22.01
+    ],
+    [
+      "Mistral-v0.1 (7B, Base)",
+      29.18
+    ],
+    [
       "chat-bison-001 (closed-source)",
       25.77
     ],
@@ -141,6 +149,14 @@
     [
       "LLaMA-2 (7B, RLHF)",
       14.56
+    ],
+    [
+      "Mistral-v0.1 (7B, SIFT)",
+      19.62
+    ],
+    [
+      "Mistral-v0.1 (7B, Base)",
+      21.84
     ],
     [
       "chat-bison-001 (closed-source)",
@@ -229,6 +245,14 @@
       2.24
     ],
     [
+      "Mistral-v0.1 (7B, SIFT)",
+      29.85
+    ],
+    [
+      "Mistral-v0.1 (7B, Base)",
+      49.25
+    ],
+    [
       "chat-bison-001 (closed-source)",
       47.01
     ],
@@ -313,6 +337,14 @@
     [
       "LLaMA-2 (7B, RLHF)",
       2.94
+    ],
+    [
+      "Mistral-v0.1 (7B, SIFT)",
+      19.85
+    ],
+    [
+      "Mistral-v0.1 (7B, Base)",
+      26.47
     ],
     [
       "chat-bison-001 (closed-source)",
