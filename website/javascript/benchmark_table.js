@@ -180,7 +180,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         title: "&Delta; Task Success Rate compared to GPT-3.5",
                         field: "SR5_difference",
                         formatter: "progress",
-                        legendAlign: "center",
                         sorter: "number",
                         formatterParams: {
                             min: -50, max: 50,
@@ -191,10 +190,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     {
                         title: "&Delta; GPT-3.5 Success Rate with Provided Feedback",
                         field: "evaluated_LLM_feedback",
-                        // hozAlign: "center",
                         sorter: "number",
                         formatter: "progress",
-                        legendAlign: "center",
                         // width: 100,
                         formatterParams: {
                             min: -30, max: 30,
