@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             },
                             {
                                 title: "&Delta;Feedback", field: "Delta Feedback",
-                                widthGrow: 1.3,
+                                widthGrow: 1.5,
                                 minWidth: 80
                             },
                         ],
