@@ -79,7 +79,15 @@ def interactive_loop(
         if not state.finished:
             user_msg = state.latest_output['content']
             if "Expert feedback:" in user_msg:
-                obs, feedback = user_msg.split("Expert feedback:")
+                try:
+                    splited = user_msg.split("Expert feedback:")
+                    obs, feedback = splited[0], "".join(splited[1:])
+                except Exception as e:
+                    LOGGER.info(f"Error: {e}")
+                    LOGGER.info(f"User message: {user_msg}")
+                    LOGGER.exception(e)
+                    raise e
+
                 feedback = "Expert feedback:" + feedback
                 # color the observation in blue & feedback in red
                 LOGGER.info(

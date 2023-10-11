@@ -114,7 +114,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             var table = new Tabulator("#benchmark-table", {
                 data: benchmark_tabledata,
-                layout: "fitDataFill",
+                layout: "fitColumns",
+                responsiveLayout: "collapse",
                 movableColumns: false,
                 initialSort: [
                     { column: "5", dir: "desc" },
@@ -123,28 +124,34 @@ document.addEventListener('DOMContentLoaded', function () {
                     tooltip: true,
                 },
                 columns: [
-                    { title: "Model Family", field: "model", widthGrow: 1 },
-                    { title: "Size", field: "size" },
-                    { title: "Type", field: "type" },
+                    { title: "Model Family", field: "model", widthGrow: 1, minWidth: 180},
+                    { title: "Size", field: "size", minWidth: 60},
+                    { title: "Type", field: "type", minWidth: 60},
                     {//create column group
                         title: "Tool-augmented Task-Solving Success Rate (within k turns)",
                         columns: [
-                            { title: "k = 1", field: "1", hozAlign: "center", formatter: colorFormatter },
-                            { title: "k = 2", field: "2", hozAlign: "center", formatter: colorFormatter },
-                            { title: "k = 3", field: "3", hozAlign: "center", formatter: colorFormatter },
-                            { title: "k = 4", field: "4", hozAlign: "center", formatter: colorFormatter },
-                            { title: "k = 5", field: "5", sorter: "number", hozAlign: "center", formatter: colorFormatter },
-                            { title: "Slope", field: "Slope", sorter: "number" },
+                            { title: "k = 1", field: "1", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "k = 2", field: "2", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "k = 3", field: "3", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "k = 4", field: "4", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "k = 5", field: "5", sorter: "number", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "Slope", field: "Slope", sorter: "number", minWidth: 90},
                         ],
                     },
-                    {//create column group
+                    {
                         title: "Ability to Leverage Language Feedback",
                         columns: [
                             {
                                 title: "k = 5 (+Feedback)", field: "Success Rate (5 turn) w\/ GPT-4 Feedback",
-                                hozAlign: "center", formatter: colorFormatter
+                                hozAlign: "center", formatter: colorFormatter,
+                                widthGrow: 1.7,
+                                minWidth: 180,
                             },
-                            { title: "&Delta;Feedback", field: "Delta Feedback" },
+                            {
+                                title: "&Delta;Feedback", field: "Delta Feedback",
+                                widthGrow: 1.5,
+                                minWidth: 80
+                            },
                         ],
                     },
                 ],
@@ -159,7 +166,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
             var feedback_efficacy_table = new Tabulator("#benchmark-feedback-efficancy-table", {
                 data: benchmark_feedback_efficancy_tabledata,
-                layout: "fitDataFill",
+                layout: "fitColumns",
+                // responsiveLayout: "collapse",
+                responsiveLayoutCollapseFormatter:function(data){
+                    //data - an array of objects containing the column title and value for each cell
+                    var list = document.createElement("ul");
+            
+                    data.forEach(function(col){
+                        console.log(col);
+                        let item = document.createElement("li");
+                        item.innerHTML = "<strong>" + col.title + "</strong> - " + col.value;
+                        list.appendChild(item);
+                    });
+            
+                    return Object.keys(data).length ? list : "";
+                },
                 movableColumns: false,
                 initialSort: [
                     { column: "evaluated_LLM_feedback", dir: "desc" },
@@ -171,17 +192,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     {
                         title: "Feedback Provider",
                         columns: [
-                            { title: "Model Family", field: "model", widthGrow: 1 },
-                            { title: "Size", field: "size" },
-                            { title: "Type", field: "type" }
+                            { title: "Model Family", field: "model", widthGrow: 1, minWidth: 180},
+                            { title: "Size", field: "size", minWidth: 90},
+                            { title: "Type", field: "type", minWidth: 90},
                         ]
                     },
                     {
                         title: "&Delta; Task Success Rate compared to GPT-3.5",
                         field: "SR5_difference",
                         formatter: "progress",
-                        legendAlign: "center",
                         sorter: "number",
+                        minWidth: 400,
+                        widthGrow: 3,
                         formatterParams: {
                             min: -50, max: 50,
                             legend: true,
@@ -191,17 +213,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     {
                         title: "&Delta; GPT-3.5 Success Rate with Provided Feedback",
                         field: "evaluated_LLM_feedback",
-                        // hozAlign: "center",
                         sorter: "number",
                         formatter: "progress",
-                        legendAlign: "center",
-                        // width: 100,
+                        minWidth: 400,
+                        widthGrow: 3,
                         formatterParams: {
                             min: -30, max: 30,
                             legend: true,
                             color: barColorFn
                         },
-
                     },
                 ]
             });

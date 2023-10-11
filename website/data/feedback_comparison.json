@@ -40,6 +40,16 @@
         "evaluated_LLM_feedback": -14.0
     },
     {
+        "feedback_provider": "Mistral-v0.1 (7B, SIFT)",
+        "feedback_provider_info": {
+            "model": "Mistral-v0.1",
+            "size": "7B",
+            "type": "SIFT"
+        },
+        "SR5_difference": -22.2,
+        "evaluated_LLM_feedback": -9.6
+    },
+    {
         "feedback_provider": "Mistral-v0.1 (7B, Base)",
         "feedback_provider_info": {
             "model": "Mistral-v0.1",
