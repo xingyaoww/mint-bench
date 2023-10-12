@@ -70,11 +70,11 @@
     ],
     [
       "claude-2 (closed-source)",
-      39.59
+      39.93
     ],
     [
       "claude-instant-1 (closed-source)",
-      45.73
+      45.9
     ],
     [
       "gpt-3.5-turbo-0613 (closed-source)",
@@ -82,7 +82,7 @@
     ],
     [
       "gpt-4-0613 (closed-source)",
-      69.11
+      69.45
     ],
     [
       "Vicuna-v1.5 (13B, SIFT)",
@@ -164,11 +164,11 @@
     ],
     [
       "claude-2 (closed-source)",
-      51.58
+      52.22
     ],
     [
       "claude-instant-1 (closed-source)",
-      49.68
+      50.0
     ],
     [
       "gpt-3.5-turbo-0613 (closed-source)",
@@ -176,7 +176,7 @@
     ],
     [
       "gpt-4-0613 (closed-source)",
-      66.77
+      67.41
     ],
     [
       "Vicuna-v1.5 (13B, SIFT)",
