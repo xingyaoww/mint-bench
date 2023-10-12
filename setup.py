@@ -5,7 +5,7 @@ with open("requirements.txt", "r") as f:
 
 setup(
     name="mint-bench",
-    version="1.0.0",
+    version="1.0.1",
     author="Xingyao Wang",
     author_email="xingyao6@illinois.edu",
     description="MINT Benchmark to Evaluate LLMs' Multi-Turn Interaction Capabilities.",
