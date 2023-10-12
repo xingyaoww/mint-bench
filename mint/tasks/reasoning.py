@@ -281,13 +281,13 @@ class TheoremqaTask(Task):
             prediction = prediction.replace(",", "")
 
         # Preprocessing the option [Stage 3]
-        if "a)" in prediction or "a )" in prediction or prediction.strip() == "a":
+        if "a)" in prediction or "a )" in prediction or prediction.lower().strip() == "a":
             prediction = "(a)"
-        if "b)" in prediction or "b )" in prediction or prediction.strip() == "b":
+        if "b)" in prediction or "b )" in prediction or prediction.lower().strip() == "b":
             prediction = "(b)"
-        if "c)" in prediction or "c )" in prediction or prediction.strip() == "c":
+        if "c)" in prediction or "c )" in prediction or prediction.lower().strip() == "c":
             prediction = "(c)"
-        if "d)" in prediction or "d )" in prediction or prediction.strip() == "d":
+        if "d)" in prediction or "d )" in prediction or prediction.lower().strip() == "d":
             prediction = "(d)"
 
         if (
@@ -333,13 +333,14 @@ class TheoremqaTask(Task):
         # Follow the implementation from TheoremQA
         # https://github.com/wenhuchen/TheoremQA/blob/123e36beaaa97c01f28a582f13c4f77a6822c199/predict_accuracy.py#L301C9-L317C1
         prediction = self.extract_answer(solution)
+        LOGGER.info(f"TheoremQA Parsed Prediction: {prediction}")
         answer_type = self._answer_type
         gt = self.reference
 
         if isinstance(prediction, (str, int, float)) or isinstance(prediction, list):
             # Comparing prediction against the reference
             if answer_type in ["bool", "option", "Option"]:
-                cur_correct = int(prediction == gt)
+                cur_correct = int(prediction == f"({gt})") or int(prediction == gt)
             elif answer_type == "integer":
                 cur_correct = int(compare_two_numbers(prediction, gt))
             elif answer_type == "float":
