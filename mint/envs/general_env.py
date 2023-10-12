@@ -120,7 +120,8 @@ class GeneralEnv(BaseEnv):
         return feedback.value
 
     def check_task_success(self, answer: str) -> bool:
-        LOGGER.info(f"REFERENCE ANSWER: {self.task.reference}")
+        LOGGER.info(f"STUDENT ANSWER: [{answer}]")
+        LOGGER.info(f"REFERENCE ANSWER: [{self.task.reference}]")
         return self.task.success(answer)
 
     def log_output(self, output: StepOutput) -> None:

@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="website/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="website/css/bulma-slider.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="website/css/index.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./website/javascript/bulma-carousel.min.js"></script>
@@ -37,6 +36,8 @@
     <script src="website/javascript/success_rate_vs_k_vis.js" type="module"></script>
     <script src="website/javascript/feedback_success_rate_vis.js" type="module"></script>
     <script src="website/javascript/feedback_provider_efficacy.js" type="module"></script>
+
+    <link rel="stylesheet" href="website/css/index.css">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWV4QEJ9D6"></script>
@@ -141,6 +142,15 @@
                     (1) using tools and (2) leveraging natural language feedback.
                 </h2>
                 <div id="benchmark-table"></div>
+                <br>
+                <h2 class="subtitle">
+                    <b>MINT</b> can measure different LLMs' ability to provide natural language feedback by measuring the benefit of their feedback (&Delta; Success Rate) to a fixed LLM (gpt-3.5-turbo-0613).
+                </h2>
+                <div id="benchmark-feedback-efficancy-table"></div>
+                <br>
+                <h2 class="subtitle">
+                    Please refer to our <a href="https://github.com/xingyaoww/mint-bench">GitHub repo</a> to add your model to the leaderboard.
+                </h2>
             </div>
         </div>
     </section>
@@ -294,7 +304,7 @@
                                         (7B)</a>, which is a SIFT variant of LLaMA2 trained on ShareGPT conversations
                                     (most are multi-turn), exhibit stronger performance compared to LLaMA-2 (Base and RLHF)<sup><a
                                             href="#footnote-1" id="ref-footnote-1">1</a></sup>.
-                                    We observe similar trend for <a href="https://github.com/OpenLemur/Lemur">Lemur-70b-v1</a>, which continue pre-train LLaMA-2 (70B) on code intensive data.
+                                    We observe similar trend for <a href="https://github.com/OpenLemur/Lemur">Lemur-70b-chat-v1</a>, which continue pre-train LLaMA-2 (70B) on code intensive data followed by SIFT on multi-turn data.
                                     <br>
                                         <div class="btn-group" role="group">
                                             <button type="button" class="btn btn-outline-secondary btn-sm inline-vis-button"
@@ -306,8 +316,8 @@
 
                                 <li>
                                     We find RLHF hurt LLM-tool multi-turn interaction on LLaMA-2 series. However, it's
-                                    unclear if RLHF is problematic overall, or if the issue only arise when RLHF is applied to
-                                    single-turn data (the case of LLaMA-2).
+                                    unclear if RLHF is problematic overall, or if the issue only arise when RLHF is primarily applied to
+                                    single-turn data.
                                     <br>
                                     <button class="btn btn-outline-secondary btn-sm inline-vis-button"
                                         id="visualize-sr-vs-k-rlhf">Visualize This</button>
@@ -407,7 +417,7 @@
                         <h3>LLMs' Ability to Provide Natural Language Feedback</h3>
 
                         <p>
-                            In this section, we fixed the evaluated LLM (gpt-3.5-turbo-0613) and use seven different
+                            In this section, we fixed the evaluated LLM (gpt-3.5-turbo-0613) and use different
                             LLMs to
                             <b>provide</b> language feedback.
                             This allows us to measure different LLMs' effectiveness in providing feedback.
@@ -463,8 +473,8 @@
     <footer class="footer">
         <div align="center" class="container">
             <div class="columns is-centered">
-                <div class="content">
-                    This website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+                <div class="content is-small">
+                    This website templated is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
                 </div>
             </div>
         </div>

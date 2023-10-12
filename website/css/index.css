@@ -173,3 +173,7 @@ body {
   }
 }
 
+
+.tabulator-header .tabulator-col {
+  text-align:center;
+}

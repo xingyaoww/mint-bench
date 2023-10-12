@@ -10,7 +10,7 @@
     ],
     [
       "CodeLlama (34B, Base)",
-      42.32
+      42.66
     ],
     [
       "CodeLlama (34B, SIFT)",
@@ -70,11 +70,11 @@
     ],
     [
       "claude-2 (closed-source)",
-      49.83
+      50.0
     ],
     [
       "claude-instant-1 (closed-source)",
-      52.05
+      52.39
     ],
     [
       "gpt-3.5-turbo-0613 (closed-source)",
@@ -82,7 +82,7 @@
     ],
     [
       "gpt-4-0613 (closed-source)",
-      68.43
+      68.77
     ],
     [
       "Vicuna-v1.5 (13B, SIFT)",
@@ -104,7 +104,7 @@
     ],
     [
       "CodeLlama (34B, Base)",
-      29.75
+      30.38
     ],
     [
       "CodeLlama (34B, SIFT)",
@@ -164,11 +164,11 @@
     ],
     [
       "claude-2 (closed-source)",
-      54.75
+      55.06
     ],
     [
       "claude-instant-1 (closed-source)",
-      53.8
+      54.43
     ],
     [
       "gpt-3.5-turbo-0613 (closed-source)",
@@ -176,7 +176,7 @@
     ],
     [
       "gpt-4-0613 (closed-source)",
-      66.46
+      67.09
     ],
     [
       "Vicuna-v1.5 (13B, SIFT)",
