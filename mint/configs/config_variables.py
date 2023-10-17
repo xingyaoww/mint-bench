@@ -46,15 +46,15 @@ FEEDBACK_CONFIG = {
 }
 
 EVALUATED_MODEL_LIST = [
-    {
-        "agent_class": "OpenAILMAgent",
-        "config": {
-            "model_name": "gpt-3.5-turbo-0613",
-            "chat_mode": True,
-            "max_tokens": 512,
-            "temperature": 0.0,
-        },
-    },
+    # {
+    #     "agent_class": "OpenAILMAgent",
+    #     "config": {
+    #         "model_name": "gpt-3.5-turbo-0613",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #     },
+    # },
     # {
     #     "agent_class": "OpenAILMAgent",
     #     "config": {
@@ -302,15 +302,15 @@ EVALUATED_MODEL_LIST = [
     #         "temperature": 0.0,
     #     },
     # },
-    # {
-    #     "agent_class": "ClaudeLMAgent",
-    #     "config": {
-    #         "model_name": "claude-instant-1",
-    #         "chat_mode": True,
-    #         "max_tokens": 512,
-    #         "temperature": 0.0,
-    #     },
-    # },
+    {
+        "agent_class": "ClaudeLMAgent",
+        "config": {
+            "model_name": "claude-instant-1",
+            "chat_mode": True,
+            "max_tokens": 512,
+            "temperature": 0.0,
+        },
+    },
 ]
 
 FEEDBACK_PROVIDER_LIST = [

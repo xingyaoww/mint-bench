@@ -117,7 +117,7 @@ function run_config_glob() {
 # ========================
 
 # TODO(user): Set your model_name here
-MODEL_NAME=gpt-3.5-turbo-0613
+MODEL_NAME=claude-instant-1
 FEEDBACK_MODEL=gpt-4-0613
 
 # TODO(user): Set to your configs here,
@@ -128,15 +128,15 @@ FEEDBACK_MODEL=gpt-4-0613
 
 # (1) Tool-augmented Task-Solving
 run_config_glob \
-    configs/$MODEL_NAME/F=None/max1_p1+tool+cd/**/*.json \
-    configs/$MODEL_NAME/F=None/max2_p2+tool+cd/**/*.json \
-    configs/$MODEL_NAME/F=None/max3_p2+tool+cd/**/*.json \
-    configs/$MODEL_NAME/F=None/max4_p2+tool+cd/**/*.json \
-    configs/$MODEL_NAME/F=None/max5_p2+tool+cd/**/*.json
+    configs/$MODEL_NAME/F=None/max1_p1+tool+cd/reasoning/theoremqa.json \
+    configs/$MODEL_NAME/F=None/max2_p2+tool+cd/reasoning/theoremqa.json \
+    configs/$MODEL_NAME/F=None/max3_p2+tool+cd/reasoning/theoremqa.json \
+    configs/$MODEL_NAME/F=None/max4_p2+tool+cd/reasoning/theoremqa.json \
+    configs/$MODEL_NAME/F=None/max5_p2+tool+cd/reasoning/theoremqa.json
 
 # (2) Ability to Learn from Natural Language Feedback
-run_config_glob \
-    configs/$MODEL_NAME/F=$FEEDBACK_MODEL/PHF=no_GT-textual/max5_p2+tool+cd/**/*.json
+# run_config_glob \
+#     configs/$MODEL_NAME/F=$FEEDBACK_MODEL/PHF=no_GT-textual/max5_p2+tool+cd/**/*.json
 
 # ========================
 # wait for all background processes to finish before exiting
