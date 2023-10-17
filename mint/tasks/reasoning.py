@@ -72,9 +72,8 @@ class MultipleChoiceTask(Task):
             if f"{l})" in solution or f"{l} )" in solution:
                 print("SOLUTION", l)
                 return l
-            else:
-                print("SOLUTION", solution)
-                return solution
+        print("SOLUTION", solution)
+        return solution
 
     def compare_w_digits(self, reference: str, answer: str) -> bool:
         if reference.isdigit() and answer.isdigit():
