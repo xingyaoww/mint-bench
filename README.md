@@ -4,7 +4,7 @@ Official Repo for paper [MINT: Multi-turn Interactive Evaluation for Large Langu
 
 **MINT** benchmark aims to evaluate LLMs' ability to solve tasks with **m**ulti-turn **int**eractions by (1) using tools and (2) leveraging natural language feedback.
 
-Please visit our [website](https://xingyaoww.github.io/mint-bench) for more information and visualization. Check [here](docs/DATA.md) for released model outputs and benchmark data.
+:trophy: Please visit our [website](https://xingyaoww.github.io/mint-bench) for the leaderboard.
 
 > :warning: WARNING: Evaluation of LLMs requires executing untrusted model-generated code. Users are *strongly encouraged* to sandbox the code execution so that it does not perform destructive actions on their host or network. We highly recommend using the provided docker image for isolated execution.
 
