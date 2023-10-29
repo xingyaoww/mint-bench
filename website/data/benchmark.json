@@ -1,5 +1,47 @@
 [
   {
+    "model":"AgentLM",
+    "size":"7B",
+    "type":"SIFT",
+    "1":0.0,
+    "2":4.44,
+    "3":5.29,
+    "4":6.48,
+    "5":7.34,
+    "Slope":1.67,
+    "rsquared":0.86,
+    "Delta Feedback":8.4,
+    "Success Rate (5 turn) w\/ GPT-4 Feedback":15.7
+  },
+  {
+    "model":"AgentLM",
+    "size":"13B",
+    "type":"SIFT",
+    "1":1.71,
+    "2":7.34,
+    "3":9.22,
+    "4":10.07,
+    "5":10.41,
+    "Slope":2.01,
+    "rsquared":0.79,
+    "Delta Feedback":7.2,
+    "Success Rate (5 turn) w\/ GPT-4 Feedback":17.6
+  },
+  {
+    "model":"AgentLM",
+    "size":"70B",
+    "type":"SIFT",
+    "1":6.48,
+    "2":17.75,
+    "3":24.91,
+    "4":28.16,
+    "5":28.67,
+    "Slope":5.48,
+    "rsquared":0.87,
+    "Delta Feedback":9.7,
+    "Success Rate (5 turn) w\/ GPT-4 Feedback":38.4
+  },
+  {
     "model":"CodeLlama",
     "size":"7B",
     "type":"Base",
