@@ -1,6 +1,18 @@
 {
   "avg_micro": [
     [
+      "AgentLM (13B, SIFT)",
+      17.58
+    ],
+    [
+      "AgentLM (70B, SIFT)",
+      38.4
+    ],
+    [
+      "AgentLM (7B, SIFT)",
+      15.7
+    ],
+    [
       "CodeLlama (13B, Base)",
       31.91
     ],
@@ -94,6 +106,18 @@
     ]
   ],
   "reasoning": [
+    [
+      "AgentLM (13B, SIFT)",
+      17.41
+    ],
+    [
+      "AgentLM (70B, SIFT)",
+      31.33
+    ],
+    [
+      "AgentLM (7B, SIFT)",
+      14.24
+    ],
     [
       "CodeLlama (13B, Base)",
       15.82
@@ -189,6 +213,18 @@
   ],
   "decision_making": [
     [
+      "AgentLM (13B, SIFT)",
+      27.61
+    ],
+    [
+      "AgentLM (70B, SIFT)",
+      61.94
+    ],
+    [
+      "AgentLM (7B, SIFT)",
+      25.37
+    ],
+    [
       "CodeLlama (13B, Base)",
       73.88
     ],
@@ -282,6 +318,18 @@
     ]
   ],
   "code_generation": [
+    [
+      "AgentLM (13B, SIFT)",
+      8.09
+    ],
+    [
+      "AgentLM (70B, SIFT)",
+      31.62
+    ],
+    [
+      "AgentLM (7B, SIFT)",
+      9.56
+    ],
     [
       "CodeLlama (13B, Base)",
       27.94

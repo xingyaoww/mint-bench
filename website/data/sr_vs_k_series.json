@@ -1,5 +1,35 @@
 [
   {
+    "label": "AgentLM (7B, SIFT)",
+    "data": [
+      0.0,
+      4.44,
+      5.29,
+      6.48,
+      7.34
+    ]
+  },
+  {
+    "label": "AgentLM (13B, SIFT)",
+    "data": [
+      1.71,
+      7.34,
+      9.22,
+      10.07,
+      10.41
+    ]
+  },
+  {
+    "label": "AgentLM (70B, SIFT)",
+    "data": [
+      6.48,
+      17.75,
+      24.91,
+      28.16,
+      28.67
+    ]
+  },
+  {
     "label": "CodeLlama (7B, Base)",
     "data": [
       0.34,
