@@ -1,6 +1,6 @@
-# MINT: Multi-turn Interactive Evaluation for Large Language Models
+# MINT: Evaluating LLMs in Multi-turn Interaction with Tools and Language Feedback
 
-Official Repo for paper [MINT: Multi-turn Interactive Evaluation for Large Language Models](https://arxiv.org/abs/2309.10691) by [Xingyao Wang](https://xingyaoww.github.io/)\*, [Zihan Wang](https://zihanwang314.github.io/)\*, [Jiateng Liu](https://lumos-jiateng.github.io/), [Yangyi Chen](https://yangyi-chen.github.io/), [Lifan Yuan](https://lifan-yuan.github.io/), [Hao Peng](https://haopeng-nlp.github.io/) and [Heng Ji](http://blender.cs.illinois.edu/hengji.html).
+Official Repo for paper [MINT: Evaluating LLMs in Multi-turn Interaction with Tools and Language Feedback](https://arxiv.org/abs/2309.10691) by [Xingyao Wang](https://xingyaoww.github.io/)\*, [Zihan Wang](https://zihanwang314.github.io/)\*, [Jiateng Liu](https://lumos-jiateng.github.io/), [Yangyi Chen](https://yangyi-chen.github.io/), [Lifan Yuan](https://lifan-yuan.github.io/), [Hao Peng](https://haopeng-nlp.github.io/) and [Heng Ji](http://blender.cs.illinois.edu/hengji.html).
 
 **MINT** benchmark aims to evaluate LLMs' ability to solve tasks with **m**ulti-turn **int**eractions by (1) using tools and (2) leveraging natural language feedback.
 
