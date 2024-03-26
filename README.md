@@ -91,6 +91,7 @@ DEBUG_MODE=1 ./scripts/run.sh
 ### Analyze and Visualize Output
 
 **Analyze result**: You can use the notebook `scripts/notebook/analyze_output.ipynb` to analyze the model you evaluated and reproduce tables and figures from the paper.
+Alternatively, you can convert output by running `python scripts/convert_outputs.py --data_dir data/outputs --output_dir YOUR_OUTPUT_DIR/` to get results breakdown by task name.
 
 **Visualize the results**: The following code will starts a streamlit-based visualizer to visualize your directory.
 ```bash
