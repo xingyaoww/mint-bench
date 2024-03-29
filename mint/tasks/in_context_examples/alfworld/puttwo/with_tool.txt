@@ -7,7 +7,7 @@ Assistant:
 To solve the task, I need to find and take the first cellphone, then put it in sofa, then find and take the second cellphone, then put it in sofa.
 First I need to find the first cellphone. A cellphone is more likely to appear in coffeetable (1), diningtable (1), sidetable (1-2), drawer (1-4), sofa (1), dresser (1), garbagecan (1). I can check one by one.
 </thought>
-<execute>
+```python
 for loc_to_check in ["coffeetable 1", "diningtable 1", "sidetable 1", "sidetable 2", "drawer 1", "drawer 2", "drawer 3", "drawer 4", "sofa 1", "dresser 1", "garbagecan 1"]:
     res = goto(loc_to_check)
     print(res)
@@ -19,7 +19,7 @@ for loc_to_check in ["coffeetable 1", "diningtable 1", "sidetable 1", "sidetable
     if "cellphone" in res:
         print(f"Found a cellphone in {loc_to_check}.")
         break
-</execute>
+```
 
 Observation:
 On the coffeetable 1, you see a box 1, a cellphone 3, and a plate 1.
@@ -29,11 +29,11 @@ Assistant:
 <thought>
 Now I find the first cellphone 3. Next, I need to put it in/on sofa 1.
 </thought>
-<execute>
+```python
 print(take_from("cellphone 3", "coffeetable 1"))
 print(goto("sofa 1"))
 print(put("cellphone 3", "sofa 1"))
-</execute>
+```
 
 Observation:
 You pick up the cellphone 3 from the coffeetable 1.
@@ -44,7 +44,7 @@ Assistant:
 <thought>
 Now I put the first cellphone in sofa. Next, I need to find the second cellphone. I have visited coffeetable 1, so the second cellphone is more likely to appear in diningtable (1), sidetable (1-2), drawer (1-4), sofa (1), dresser (1), garbagecan (1). I can check one by one, starting with coffeetable 1.
 </thought>
-<execute>
+```python
 for loc_to_check in ["diningtable 1", "sidetable 1", "sidetable 2", "drawer 1", "drawer 2", "drawer 3", "drawer 4", "sofa 1", "dresser 1", "garbagecan 1"]:
     res = goto(loc_to_check)
     print(res)
@@ -56,7 +56,7 @@ for loc_to_check in ["diningtable 1", "sidetable 1", "sidetable 2", "drawer 1", 
     if "cellphone" in res:
         print(f"Found a cellphone in {loc_to_check}.")
         break
-</execute>
+```
 
 Observation:
 On the diningtable 1, you see a cellphone 2, a keychain 2, a laptop 1, a statue 2, and a statue 1.
@@ -66,11 +66,11 @@ Assistant:
 <thought>
 Now I find the second cellphone 2. Next, I need to take it to sofa.
 </thought>
-<execute>
+```python
 print(take_from("cellphone 2", "diningtable 1"))
 print(goto("sofa 1"))
 print(put("cellphone 2", "sofa 1"))
-</execute>
+```
 
 Observation:
 You pick up the cellphone 2 from the diningtable 1.

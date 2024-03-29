@@ -82,11 +82,11 @@ class BardLMAgent(LMAgent):
             )
 
             response_str = response.last
-            # Best effort to find the candidate that contains <execute> or <solution>
+            # Best effort to find the candidate that contains ```python or <solution>
             if candidate_count > 1:
                 for candidate in response.candidates:
                     cur_content = candidate["content"]
-                    if "<execute>" in cur_content or "<solution>" in cur_content:
+                    if "```python" in cur_content or "<solution>" in cur_content:
                         response_str = cur_content
         except IndexError:
             raise BardIssue(

@@ -9,7 +9,7 @@ def get_toolset_description(tools: List[Tool]) -> str:
     if len(tools) == 0:
         return ""
 
-    output = "Tool function available (already imported in <execute> environment):\n"
+    output = "Tool function available (already imported in ```python environment):\n"
     for i, tool in enumerate(tools):
         output += f"[{i + 1}] {tool.signature}\n"
         output += f"{tool.description}\n"

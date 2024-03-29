@@ -4,7 +4,7 @@ Output format requirement: Round to three decimal places, using half up rounding
 
 Assistant:
 <thought> To solve this problem, let's start by determining Li Bai's birth year. </thought>
-<execute> print(wikipedia_search('Li Bai')) </execute>
+```python print(wikipedia_search('Li Bai')) ```
 
 Observation:
 Page: Li Bai
@@ -18,7 +18,7 @@ In polar coordinates, $x = r\cos(\theta)$ and $y = r\sin(\theta)$, and the diffe
 $\int\int_C (x+y)^2 dx,dy = \int_0^{2\pi}\int_0^{\sqrt{701}} (r\cos(\theta) + r\sin(\theta))^2r,dr,d\theta$
 Let's use the SymPy package to calculate this.
 </thought>
-<execute>
+```python
 from sympy import symbols, integrate, cos, sin, pi
 
 r, theta = symbols('r theta')
@@ -29,17 +29,17 @@ integrand = (r*cos(theta) + r*sin(theta))**2 * r
 # perform the double integration
 double_integral = integrate(integrate(integrand, (r, 0, 701 ** 0.5)), (theta, 0, 2*pi))
 print(double_integral)
-</execute>
+```
 
 Observation:
 Out[2]: 245700.5*pi
 
 Assistant:
 <thought> Let's round this result to three decimal places using half up rounding rule. </thought>
-<execute>
+```python
 import math
 print(round(245700.5*math.pi, 3))
-</execute>
+```
 
 Observation:
 771890.886

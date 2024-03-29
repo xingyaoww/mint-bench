@@ -4,7 +4,9 @@ At each turn, you should first provide your step-by-step thinking for solving th
 
 After that, you have two options:
 
-1) Interact with a Python programming environment and receive the corresponding output. Your code should be enclosed using "<execute>" tag, for example: <execute> print("Hello World!") </execute>.
+1) Interact with a Python programming environment and receive the corresponding output. Your code should be enclosed using "```python" tag, for example: ```python
+print("Hello World!")
+```.
 2) Directly provide a solution that adheres to the required format for the given task. Your solution should be enclosed using "<solution>" tag, for example: The answer is <solution> A </solution>.
 
 You have {max_total_steps} chances to interact with the environment or propose a solution. You can only propose a solution {max_propose_solution} times.

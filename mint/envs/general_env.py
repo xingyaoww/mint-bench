@@ -17,7 +17,7 @@ from mint.utils.exception import ParseError
 
 INVALID_INPUT_MESSAGE = (
     "I don't understand your input. \n"
-    "If you want to execute code, please use <execute> YOUR_CODE_HERE </execute>.\n"
+    "If you want to execute code, please use ```python\nYOUR_CODE_HERE\n```.\n"
     "If you want to give me an answer, please use <solution> YOUR_SOLUTION_HERE </solution>.\n"
     "For example: The answer to the question is <solution> 42 </solution>. \n"
 )
@@ -87,7 +87,7 @@ class GeneralEnv(BaseEnv):
                     [
                         i.strip()
                         for i in re.findall(
-                            r"<execute>(.*?)</execute>", lm_output, re.DOTALL
+                            r"```python(.*?)```", lm_output, re.DOTALL
                         )
                     ]
                 )

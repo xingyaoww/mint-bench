@@ -7,7 +7,7 @@ Assistant:
 To solve the task, I need to find and take a pan, then cool it with fridge, then put it in stoveburner.
 First I need to find a pan. An pan is more likely to appear in stoveburner (1-4), sinkbasin (1), diningtable (1), countertop (1-2), cabinet (1-16), drawer (1-5). I can check one by one.
 </thought>
-<execute>
+```python
 for loc_to_check in [
     *[f"stoveburner {i}" for i in range(1, 5)],
     "sinkbasin 1", "diningtable 1",
@@ -25,7 +25,7 @@ for loc_to_check in [
     if "pan" in res:
         print(f"Found a pan in {loc_to_check}.")
         break
-</execute>
+```
 
 Observation:
 On the stoveburner 1, you see nothing.
@@ -38,13 +38,13 @@ Assistant:
 Now I find a pan 1. Next, I need to take it and go to fridge 1 to cool it.
 Once it is cooled, I can put it in stoveburner 1.
 </thought>
-<execute>
+```python
 print(take_from("pan 1", "stoveburner 3"))
 print(goto("fridge 1"))
 print(cool("pan 1", "fridge 1"))
 print(goto("stoveburner 1"))
 print(put("pan 1", "stoveburner 1"))
-</execute>
+```
 
 Observation:
 You pick up the pan 1 from the stoveburner 3.
