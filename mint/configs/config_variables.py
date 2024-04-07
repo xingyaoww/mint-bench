@@ -500,6 +500,51 @@ EVALUATED_MODEL_LIST = [
     #         "openai.api_base": "http://localhost:8015/v1",
     #         "add_system_message": False,
     #     },
+    # }
+    # ==== Eurus ====
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Eurus-7B-KTO",
+    #         "chat_mode": False,  # Cannot find its chat template
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8016/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Eurus-7B-SFT",
+    #         "chat_mode": False,  # Cannot find its chat template
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8017/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Eurus-70B-SFT",
+    #         "chat_mode": False,  # Cannot find its chat template
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8018/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Eurus-70B-KTO",
+    #         "chat_mode": False,  # Cannot find its chat template
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8019/v1",
+    #         "add_system_message": False,
+    #     },
     # },
 ]
 
@@ -510,10 +555,10 @@ FEEDBACK_PROVIDER_LIST = [
     },
     # NOTE: You can comment out the feedback provider you don't want to measure 
     # the ability of the evaluated model to leverage feedback
-    {
-        "agent_class": "OpenAIFeedbackAgent",
-        "model_name": "gpt-4-0613",
-    },
+    # {
+    #     "agent_class": "OpenAIFeedbackAgent",
+    #     "model_name": "gpt-4-0613",
+    # },
     # {
     #     "agent_class": "OpenAIFeedbackAgent",
     #     "model_name": "gpt-3.5-turbo-16k-0613",
@@ -555,7 +600,7 @@ FEEDBACK_PROVIDER_LIST = [
 FEEDBACK_TYPES = [
     # NOTE: You can comment out the feedback provider you don't want to measure 
     # the ability of the evaluated model to leverage feedback
-    {"pseudo_human_feedback": "no_GT", "feedback_form": "textual"},
+    # {"pseudo_human_feedback": "no_GT", "feedback_form": "textual"},
     # {"pseudo_human_feedback": "no_GT", "feedback_form": "binary"},
     # {"pseudo_human_feedback": "GT", "feedback_form": "binary"},
     # {"pseudo_human_feedback": "GT", "feedback_form": "textual"},
