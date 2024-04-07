@@ -46,6 +46,9 @@ class PythonREPL(Tool):
             colors="NoColor",
         )
 
+        # disable certain function (for some rare weird cases where the tested model would try to set recursion limit and cause segfault)
+        _ = self.__call__("import sys; sys.setrecursionlimit = lambda *args, **kwargs: print('Setting recursion limit is disabled')")
+
     def __call__(self, query: str) -> str:
         """Use the tool and return observation"""
         with self.time_limit(self.timeout):

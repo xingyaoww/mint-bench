@@ -219,33 +219,33 @@ const default_order = [
     'gpt-3.5-turbo-0613 (closed-source)',
     'claude-2 (closed-source)',
     'claude-instant-1 (closed-source)',
-    'LLaMA-2 (70B, Base)',
-    'LLaMA-2 (70B, RLHF)',
-    'CodeLlama (34B, Base)',
-    'CodeLlama (34B, SIFT)',
+    'Llama-2-70b (70B, Base)',
+    'Llama-2-70b-chat (70B, RLHF)',
+    'CodeLlama-34b (34B, Base)',
+    'CodeLlama-34b-Instruct (34B, SIFT)',
 ]
 
 const all_models = [
-    'CodeLlama (13B, Base)',
-    'CodeLlama (13B, SIFT)',
-    'CodeLlama (34B, Base)',
-    'CodeLlama (34B, SIFT)',
-    'CodeLlama (7B, Base)',
-    'CodeLlama (7B, SIFT)',
-    'Lemur-v1 (70B, SIFT)',
-    'Lemur-v1 (70B, Base)',
-    'LLaMA-2 (13B, Base)',
-    'LLaMA-2 (13B, RLHF)',
-    'LLaMA-2 (70B, Base)',
-    'LLaMA-2 (70B, RLHF)',
-    'LLaMA-2 (7B, Base)',
-    'LLaMA-2 (7B, RLHF)',
+    'CodeLlama-13b (13B, Base)',
+    'CodeLlama-13b-Instruct (13B, SIFT)',
+    'CodeLlama-34b (34B, Base)',
+    'CodeLlama-34b-Instruct (34B, SIFT)',
+    'CodeLlama-7b (7B, Base)',
+    'CodeLlama-7b-Instruct (7B, SIFT)',
+    'Lemur-70b-chat-v1 (70B, SIFT)',
+    'Lemur-70b-v1 (70B, Base)',
+    'Llama-2-13b (13B, Base)',
+    'Llama-2-13b-chat (13B, RLHF)',
+    'Llama-2-70b (70B, Base)',
+    'Llama-2-70b-chat (70B, RLHF)',
+    'Llama-2-7b (7B, Base)',
+    'Llama-2-7b-chat (7B, RLHF)',
     'chat-bison-001 (closed-source)',
     'claude-2 (closed-source)',
     'claude-instant-1 (closed-source)',
     'gpt-3.5-turbo-0613 (closed-source)',
-    'Vicuna-v1.5 (13B, SIFT)',
-    'Vicuna-v1.5 (7B, SIFT)'
+    'vicuna-13b-v1.5 (13B, SIFT)',
+    'vicuna-7b-v1.5 (13B, SIFT)'
 ]
 
 
@@ -266,61 +266,61 @@ document.addEventListener('DOMContentLoaded', function () {
 
             document.getElementById("visualize-sr-vs-k-scale-with-model-size-llama2-base").addEventListener("click", function () {
                 createChart([
-                    'LLaMA-2 (7B, Base)',
-                    'LLaMA-2 (13B, Base)',
-                    'LLaMA-2 (70B, Base)',
+                    'Llama-2-7b (7B, Base)',
+                    'Llama-2-13b (13B, Base)',
+                    'Llama-2-70b (70B, Base)',
                 ]);
             });
 
             document.getElementById("visualize-sr-vs-k-scale-with-model-size-llama2-rlhf").addEventListener("click", function () {
                 createChart([
-                    'LLaMA-2 (7B, RLHF)',
-                    'LLaMA-2 (13B, RLHF)',
-                    'LLaMA-2 (70B, RLHF)',
+                    'Llama-2-7b-chat (7B, RLHF)',
+                    'Llama-2-13b-chat (13B, RLHF)',
+                    'Llama-2-70b-chat (70B, RLHF)',
                 ]);
             });
 
             document.getElementById("visualize-sr-vs-k-scale-with-model-size-codellama-base").addEventListener("click", function () {
                 createChart([
-                    'CodeLlama (7B, Base)',
-                    'CodeLlama (13B, Base)',
-                    'CodeLlama (34B, Base)',
+                    'CodeLlama-7b (7B, Base)',
+                    'CodeLlama-13b (13B, Base)',
+                    'CodeLlama-34b (34B, Base)',
                 ]);
             });
 
             document.getElementById("visualize-sr-vs-k-scale-with-model-size-codellama-sift").addEventListener("click", function () {
                 createChart([
-                    'CodeLlama (7B, SIFT)',
-                    'CodeLlama (13B, SIFT)',
-                    'CodeLlama (34B, SIFT)',
+                    'CodeLlama-7b-Instruct (7B, SIFT)',
+                    'CodeLlama-13b-Instruct (13B, SIFT)',
+                    'CodeLlama-34b-Instruct (34B, SIFT)',
                 ]);
             });
 
             document.getElementById("visualize-sr-vs-k-vicuna-better-than-llama").addEventListener("click", function () {
                 createChart([
-                    'Vicuna-v1.5 (7B, SIFT)',
-                    'LLaMA-2 (7B, RLHF)',
-                    'LLaMA-2 (7B, Base)',
+                    'vicuna-7b-v1.5 (13B, SIFT)',
+                    'Llama-2-7b-chat (7B, RLHF)',
+                    'Llama-2-7b (7B, Base)',
                 ]);
             });
 
             document.getElementById("visualize-sr-vs-k-lemur-better-than-llama").addEventListener("click", function () {
                 createChart([
-                    'Lemur-v1 (70B, Base)',
-                    'Lemur-v1 (70B, SIFT)',
-                    'LLaMA-2 (70B, RLHF)',
-                    'LLaMA-2 (70B, Base)',
+                    'Lemur-70b-v1 (70B, Base)',
+                    'Lemur-70b-chat-v1 (70B, SIFT)',
+                    'Llama-2-70b-chat (70B, RLHF)',
+                    'Llama-2-70b (70B, Base)',
                 ]);
             });
 
             document.getElementById("visualize-sr-vs-k-rlhf").addEventListener("click", function () {
                 createChart([
-                    'LLaMA-2 (7B, Base)',
-                    'LLaMA-2 (7B, RLHF)',
-                    'LLaMA-2 (13B, Base)',
-                    'LLaMA-2 (13B, RLHF)',
-                    'LLaMA-2 (70B, Base)',
-                    'LLaMA-2 (70B, RLHF)',
+                    'Llama-2-7b (7B, Base)',
+                    'Llama-2-7b-chat (7B, RLHF)',
+                    'Llama-2-13b (13B, Base)',
+                    'Llama-2-13b-chat (13B, RLHF)',
+                    'Llama-2-70b (70B, Base)',
+                    'Llama-2-70b-chat (70B, RLHF)',
                 ]);
             });
 

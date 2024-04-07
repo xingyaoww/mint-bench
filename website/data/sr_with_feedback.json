@@ -1,79 +1,79 @@
 {
   "avg_micro": [
     [
-      "AgentLM (13B, SIFT)",
+      "AgentLM-13b (13B, SIFT)",
       17.58
     ],
     [
-      "AgentLM (70B, SIFT)",
+      "AgentLM-70b (70B, SIFT)",
       38.4
     ],
     [
-      "AgentLM (7B, SIFT)",
+      "AgentLM-7b (7B, SIFT)",
       15.7
     ],
     [
-      "CodeLlama (13B, Base)",
+      "CodeLlama-13b (13B, Base)",
       31.91
     ],
     [
-      "CodeLlama (13B, SIFT)",
+      "CodeLlama-13b-Instruct (13B, SIFT)",
       22.35
     ],
     [
-      "CodeLlama (34B, Base)",
+      "CodeLlama-34b (34B, Base)",
       42.66
     ],
     [
-      "CodeLlama (34B, SIFT)",
+      "CodeLlama-34b-Instruct (34B, SIFT)",
       27.3
     ],
     [
-      "CodeLlama (7B, Base)",
+      "CodeLlama-7b (7B, Base)",
       16.21
     ],
     [
-      "CodeLlama (7B, SIFT)",
+      "CodeLlama-7b-Instruct (7B, SIFT)",
       25.94
     ],
     [
-      "Lemur-v1 (70B, SIFT)",
+      "Lemur-70b-chat-v1 (70B, SIFT)",
       43.69
     ],
     [
-      "Lemur-v1 (70B, Base)",
+      "Lemur-70b-v1 (70B, Base)",
       33.79
     ],
     [
-      "LLaMA-2 (13B, Base)",
+      "Llama-2-13b (13B, Base)",
       23.21
     ],
     [
-      "LLaMA-2 (13B, RLHF)",
+      "Llama-2-13b-chat (13B, RLHF)",
       17.58
     ],
     [
-      "LLaMA-2 (70B, Base)",
+      "Llama-2-70b (70B, Base)",
       35.32
     ],
     [
-      "LLaMA-2 (70B, RLHF)",
+      "Llama-2-70b-chat (70B, RLHF)",
       26.62
     ],
     [
-      "LLaMA-2 (7B, Base)",
+      "Llama-2-7b (7B, Base)",
       14.68
     ],
     [
-      "LLaMA-2 (7B, RLHF)",
+      "Llama-2-7b-chat (7B, RLHF)",
       9.04
     ],
     [
-      "Mistral-v0.1 (7B, SIFT)",
+      "Mistral-7B-Instruct-v0.1 (7B, SIFT)",
       22.01
     ],
     [
-      "Mistral-v0.1 (7B, Base)",
+      "Mistral-7B-v0.1 (7B, Base)",
       29.18
     ],
     [
@@ -97,89 +97,89 @@
       68.77
     ],
     [
-      "Vicuna-v1.5 (13B, SIFT)",
+      "vicuna-13b-v1.5 (13B, SIFT)",
       10.41
     ],
     [
-      "Vicuna-v1.5 (7B, SIFT)",
+      "vicuna-7b-v1.5 (7B, SIFT)",
       21.67
     ]
   ],
   "reasoning": [
     [
-      "AgentLM (13B, SIFT)",
+      "AgentLM-13b (13B, SIFT)",
       17.41
     ],
     [
-      "AgentLM (70B, SIFT)",
+      "AgentLM-70b (70B, SIFT)",
       31.33
     ],
     [
-      "AgentLM (7B, SIFT)",
+      "AgentLM-7b (7B, SIFT)",
       14.24
     ],
     [
-      "CodeLlama (13B, Base)",
+      "CodeLlama-13b (13B, Base)",
       15.82
     ],
     [
-      "CodeLlama (13B, SIFT)",
+      "CodeLlama-13b-Instruct (13B, SIFT)",
       10.13
     ],
     [
-      "CodeLlama (34B, Base)",
+      "CodeLlama-34b (34B, Base)",
       30.38
     ],
     [
-      "CodeLlama (34B, SIFT)",
+      "CodeLlama-34b-Instruct (34B, SIFT)",
       20.25
     ],
     [
-      "CodeLlama (7B, Base)",
+      "CodeLlama-7b (7B, Base)",
       4.75
     ],
     [
-      "CodeLlama (7B, SIFT)",
+      "CodeLlama-7b-Instruct (7B, SIFT)",
       17.09
     ],
     [
-      "Lemur-v1 (70B, SIFT)",
+      "Lemur-70b-chat-v1 (70B, SIFT)",
       32.59
     ],
     [
-      "Lemur-v1 (70B, Base)",
+      "Lemur-70b-v1 (70B, Base)",
       20.89
     ],
     [
-      "LLaMA-2 (13B, Base)",
+      "Llama-2-13b (13B, Base)",
       10.76
     ],
     [
-      "LLaMA-2 (13B, RLHF)",
+      "Llama-2-13b-chat (13B, RLHF)",
       24.05
     ],
     [
-      "LLaMA-2 (70B, Base)",
+      "Llama-2-70b (70B, Base)",
       22.47
     ],
     [
-      "LLaMA-2 (70B, RLHF)",
+      "Llama-2-70b-chat (70B, RLHF)",
       23.1
     ],
     [
-      "LLaMA-2 (7B, Base)",
+      "Llama-2-7b (7B, Base)",
       4.11
     ],
     [
-      "LLaMA-2 (7B, RLHF)",
+      "Llama-2-7b-chat (7B, RLHF)",
       14.56
     ],
     [
-      "Mistral-v0.1 (7B, SIFT)",
+      "Mistral-7B-Instruct-v0.1 (7B, SIFT)",
       19.62
     ],
     [
-      "Mistral-v0.1 (7B, Base)",
+      "Mistral-7B-v0.1 (7B, Base)",
       21.84
     ],
     [
@@ -203,89 +203,89 @@
       67.09
     ],
     [
-      "Vicuna-v1.5 (13B, SIFT)",
+      "vicuna-13b-v1.5 (13B, SIFT)",
       16.46
     ],
     [
-      "Vicuna-v1.5 (7B, SIFT)",
+      "vicuna-7b-v1.5 (7B, SIFT)",
       9.81
     ]
   ],
   "decision_making": [
     [
-      "AgentLM (13B, SIFT)",
+      "AgentLM-13b (13B, SIFT)",
       27.61
     ],
     [
-      "AgentLM (70B, SIFT)",
+      "AgentLM-70b (70B, SIFT)",
       61.94
     ],
     [
-      "AgentLM (7B, SIFT)",
+      "AgentLM-7b (7B, SIFT)",
       25.37
     ],
     [
-      "CodeLlama (13B, Base)",
+      "CodeLlama-13b (13B, Base)",
       73.88
     ],
     [
-      "CodeLlama (13B, SIFT)",
+      "CodeLlama-13b-Instruct (13B, SIFT)",
       58.96
     ],
     [
-      "CodeLlama (34B, Base)",
+      "CodeLlama-34b (34B, Base)",
       84.33
     ],
     [
-      "CodeLlama (34B, SIFT)",
+      "CodeLlama-34b-Instruct (34B, SIFT)",
       67.91
     ],
     [
-      "CodeLlama (7B, Base)",
+      "CodeLlama-7b (7B, Base)",
       59.7
     ],
     [
-      "CodeLlama (7B, SIFT)",
+      "CodeLlama-7b-Instruct (7B, SIFT)",
       62.69
     ],
     [
-      "Lemur-v1 (70B, SIFT)",
+      "Lemur-70b-chat-v1 (70B, SIFT)",
       68.66
     ],
     [
-      "Lemur-v1 (70B, Base)",
+      "Lemur-70b-v1 (70B, Base)",
       70.15
     ],
     [
-      "LLaMA-2 (13B, Base)",
+      "Llama-2-13b (13B, Base)",
       60.45
     ],
     [
-      "LLaMA-2 (13B, RLHF)",
+      "Llama-2-13b-chat (13B, RLHF)",
       9.7
     ],
     [
-      "LLaMA-2 (70B, Base)",
+      "Llama-2-70b (70B, Base)",
       73.13
     ],
     [
-      "LLaMA-2 (70B, RLHF)",
+      "Llama-2-70b-chat (70B, RLHF)",
       41.79
     ],
     [
-      "LLaMA-2 (7B, Base)",
+      "Llama-2-7b (7B, Base)",
       46.27
     ],
     [
-      "LLaMA-2 (7B, RLHF)",
+      "Llama-2-7b-chat (7B, RLHF)",
       2.24
     ],
     [
-      "Mistral-v0.1 (7B, SIFT)",
+      "Mistral-7B-Instruct-v0.1 (7B, SIFT)",
       29.85
     ],
     [
-      "Mistral-v0.1 (7B, Base)",
+      "Mistral-7B-v0.1 (7B, Base)",
       49.25
     ],
     [
@@ -309,89 +309,89 @@
       85.07
     ],
     [
-      "Vicuna-v1.5 (13B, SIFT)",
+      "vicuna-13b-v1.5 (13B, SIFT)",
       5.22
     ],
     [
-      "Vicuna-v1.5 (7B, SIFT)",
+      "vicuna-7b-v1.5 (7B, SIFT)",
       64.93
     ]
   ],
   "code_generation": [
     [
-      "AgentLM (13B, SIFT)",
+      "AgentLM-13b (13B, SIFT)",
       8.09
     ],
     [
-      "AgentLM (70B, SIFT)",
+      "AgentLM-70b (70B, SIFT)",
       31.62
     ],
     [
-      "AgentLM (7B, SIFT)",
+      "AgentLM-7b (7B, SIFT)",
       9.56
     ],
     [
-      "CodeLlama (13B, Base)",
+      "CodeLlama-13b (13B, Base)",
       27.94
     ],
     [
-      "CodeLlama (13B, SIFT)",
+      "CodeLlama-13b-Instruct (13B, SIFT)",
       14.71
     ],
     [
-      "CodeLlama (34B, Base)",
+      "CodeLlama-34b (34B, Base)",
       30.15
     ],
     [
-      "CodeLlama (34B, SIFT)",
+      "CodeLlama-34b-Instruct (34B, SIFT)",
       3.68
     ],
     [
-      "CodeLlama (7B, Base)",
+      "CodeLlama-7b (7B, Base)",
       0.0
     ],
     [
-      "CodeLlama (7B, SIFT)",
+      "CodeLlama-7b-Instruct (7B, SIFT)",
       10.29
     ],
     [
-      "Lemur-v1 (70B, SIFT)",
+      "Lemur-70b-chat-v1 (70B, SIFT)",
       44.85
     ],
     [
-      "Lemur-v1 (70B, Base)",
+      "Lemur-70b-v1 (70B, Base)",
       27.94
     ],
     [
-      "LLaMA-2 (13B, Base)",
+      "Llama-2-13b (13B, Base)",
       15.44
     ],
     [
-      "LLaMA-2 (13B, RLHF)",
+      "Llama-2-13b-chat (13B, RLHF)",
       10.29
     ],
     [
-      "LLaMA-2 (70B, Base)",
+      "Llama-2-70b (70B, Base)",
       27.94
     ],
     [
-      "LLaMA-2 (70B, RLHF)",
+      "Llama-2-70b-chat (70B, RLHF)",
       19.85
     ],
     [
-      "LLaMA-2 (7B, Base)",
+      "Llama-2-7b (7B, Base)",
       8.09
     ],
     [
-      "LLaMA-2 (7B, RLHF)",
+      "Llama-2-7b-chat (7B, RLHF)",
       2.94
     ],
     [
-      "Mistral-v0.1 (7B, SIFT)",
+      "Mistral-7B-Instruct-v0.1 (7B, SIFT)",
       19.85
     ],
     [
-      "Mistral-v0.1 (7B, Base)",
+      "Mistral-7B-v0.1 (7B, Base)",
       26.47
     ],
     [
@@ -415,11 +415,11 @@
       56.62
     ],
     [
-      "Vicuna-v1.5 (13B, SIFT)",
+      "vicuna-13b-v1.5 (13B, SIFT)",
       1.47
     ],
     [
-      "Vicuna-v1.5 (7B, SIFT)",
+      "vicuna-7b-v1.5 (7B, SIFT)",
       6.62
     ]
   ]

@@ -56,9 +56,8 @@ class VLLMAgent(OpenAILMAgent):
             assert messages[0]["role"] == "system"
             # system msg will be formatted by vllm and fastchat, so no need to format here
         else:
-            messages = [
-                {"role": "system", "content": ""}
-            ] + messages  # add empty system message
+            # simply ignore chat messages as it may cause issue for some served models
+            pass
 
         try:
             if self.config["chat_mode"]:
