@@ -103,9 +103,15 @@ var barColorFn = function (value, formatterParams) {
 document.addEventListener('DOMContentLoaded', function () {
     Promise.all([
         fetch('website/data/benchmark.json').then(response => response.json()),
-        fetch('website/data/feedback_comparison.json').then(response => response.json())
+        fetch('website/data/feedback_comparison.json').then(response => response.json()),
+        fetch('website/data/eurus_code_sr_vs_k_series.json').then(response => response.json()),
+        fetch('website/data/eurus_math_sr_vs_k_series.json').then(response => response.json())
     ])
-        .then(([benchmark_tabledata, benchmark_feedback_efficancy_tabledata]) => {
+        .then(([
+            benchmark_tabledata,
+            benchmark_feedback_efficancy_tabledata,
+            eurus_code_sr_vs_k_series,
+            eurus_math_sr_vs_k_series        ]) => {
 
             // 1. Benchmark Table
             benchmark_tabledata.forEach(row => {
@@ -124,9 +130,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     tooltip: true,
                 },
                 columns: [
-                    { title: "Model Family", field: "model", widthGrow: 1, minWidth: 180},
-                    { title: "Size", field: "size", minWidth: 60},
-                    { title: "Type", field: "type", minWidth: 60},
+                    { title: "Model Family", field: "model", widthGrow: 1.5, minWidth: 180},
+                    { title: "Size", field: "size", widthGrow: 0.9, minWidth: 60},
+                    { title: "Type", field: "type", widthGrow: 0.9, minWidth: 60},
                     {//create column group
                         title: "Tool-augmented Task-Solving Success Rate (within k turns)",
                         columns: [
@@ -152,6 +158,65 @@ document.addEventListener('DOMContentLoaded', function () {
                                 widthGrow: 1.5,
                                 minWidth: 80
                             },
+                        ],
+                    },
+                ],
+            });
+
+
+            var eurus_code_table = new Tabulator("#eurus-code-table", {
+                data: eurus_code_sr_vs_k_series,
+                layout: "fitColumns",
+                responsiveLayout: "collapse",
+                movableColumns: false,
+                initialSort: [
+                    { column: "5", dir: "desc" },
+                ],
+                columnDefaults: {
+                    tooltip: true,
+                },
+                columns: [
+                    { title: "Model Family", field: "model", widthGrow: 2, minWidth: 180},
+                    { title: "Size", field: "size", widthGrow: 0.9, minWidth: 60},
+                    { title: "Type", field: "type", widthGrow: 0.9, minWidth: 60},
+                    {//create column group
+                        title: "Tool-augmented Task-Solving Success Rate (within k turns, code subset)",
+                        columns: [
+                            { title: "k = 1", field: "1", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "k = 2", field: "2", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "k = 3", field: "3", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "k = 4", field: "4", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "k = 5", field: "5", sorter: "number", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "Slope", field: "Slope", sorter: "number", minWidth: 90},
+                        ],
+                    },
+                ],
+            });
+
+            var eurus_math_table = new Tabulator("#eurus-math-table", {
+                data: eurus_math_sr_vs_k_series,
+                layout: "fitColumns",
+                responsiveLayout: "collapse",
+                movableColumns: false,
+                initialSort: [
+                    { column: "5", dir: "desc" },
+                ],
+                columnDefaults: {
+                    tooltip: true,
+                },
+                columns: [
+                    { title: "Model Family", field: "model", widthGrow: 2, minWidth: 180},
+                    { title: "Size", field: "size", widthGrow: 0.9, minWidth: 60},
+                    { title: "Type", field: "type", widthGrow: 0.9, minWidth: 60},
+                    {//create column group
+                        title: "Tool-augmented Task-Solving Success Rate (within k turns, math subset)",
+                        columns: [
+                            { title: "k = 1", field: "1", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "k = 2", field: "2", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "k = 3", field: "3", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "k = 4", field: "4", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "k = 5", field: "5", sorter: "number", hozAlign: "center", formatter: colorFormatter, minWidth: 90},
+                            { title: "Slope", field: "Slope", sorter: "number", minWidth: 90},
                         ],
                     },
                 ],
