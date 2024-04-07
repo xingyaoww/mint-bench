@@ -58,6 +58,15 @@ EVALUATED_MODEL_LIST = [
     # {
     #     "agent_class": "OpenAILMAgent",
     #     "config": {
+    #         "model_name": "gpt-3.5-turbo-0613",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #     },
+    # },
+    # {
+    #     "agent_class": "OpenAILMAgent",
+    #     "config": {
     #         "model_name": "gpt-3.5-turbo-16k-0613",
     #         "chat_mode": True,
     #         "max_tokens": 512,
@@ -311,6 +320,232 @@ EVALUATED_MODEL_LIST = [
     #         "temperature": 0.0,
     #     },
     # },
+
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Mistral-7B-Instruct-v0.2",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8000/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "zephyr-7b-beta",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8001/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "openchat-3.5-1210",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8002/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Starling-LM-7B-alpha",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8003/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Magicoder-S-DS-6.7B",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8004/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "OpenCodeInterpreter-DS-6.7B",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8005/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "MAmmoTH-7B-Mistral",
+    #         "chat_mode": False,  # Cannot find its chat template
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8006/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "WizardMath-7B-V1.1",
+    #         "chat_mode": False,  # Cannot find its chat template
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8007/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "OpenMath-Mistral-7B-v0.1-hf",
+    #         "chat_mode": False,  # Cannot find its chat template
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8008/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+
+    # # ==== Larger ====
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Mixtral-8x7B-Instruct-v0.1",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8009/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "deepseek-coder-33b-instruct",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8010/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+
+    # # >67B
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "CodeLlama-70b-Instruct-hf",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8011/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "deepseek-llm-67b-chat",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8012/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Qwen1.5-72B-Chat",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8013/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "OpenCodeInterpreter-CL-70B",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8014/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "OpenMath-CodeLlama-70b-Python-hf",
+    #         "chat_mode": False,  # Cannot find its chat template
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8015/v1",
+    #         "add_system_message": False,
+    #     },
+    # }
+    # ==== Eurus ====
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Eurus-7B-KTO",
+    #         "chat_mode": False,  # Cannot find its chat template
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8016/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Eurus-7B-SFT",
+    #         "chat_mode": False,  # Cannot find its chat template
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8017/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Eurus-70B-SFT",
+    #         "chat_mode": False,  # Cannot find its chat template
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8018/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Eurus-70B-KTO",
+    #         "chat_mode": False,  # Cannot find its chat template
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8019/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
 ]
 
 FEEDBACK_PROVIDER_LIST = [
@@ -318,10 +553,12 @@ FEEDBACK_PROVIDER_LIST = [
         "agent_class": "None",
         "model_name": "None",
     },
-    {
-        "agent_class": "OpenAIFeedbackAgent",
-        "model_name": "gpt-4-0613",
-    },
+    # NOTE: You can comment out the feedback provider you don't want to measure 
+    # the ability of the evaluated model to leverage feedback
+    # {
+    #     "agent_class": "OpenAIFeedbackAgent",
+    #     "model_name": "gpt-4-0613",
+    # },
     # {
     #     "agent_class": "OpenAIFeedbackAgent",
     #     "model_name": "gpt-3.5-turbo-16k-0613",
@@ -361,7 +598,9 @@ FEEDBACK_PROVIDER_LIST = [
 ]
 
 FEEDBACK_TYPES = [
-    {"pseudo_human_feedback": "no_GT", "feedback_form": "textual"},
+    # NOTE: You can comment out the feedback provider you don't want to measure 
+    # the ability of the evaluated model to leverage feedback
+    # {"pseudo_human_feedback": "no_GT", "feedback_form": "textual"},
     # {"pseudo_human_feedback": "no_GT", "feedback_form": "binary"},
     # {"pseudo_human_feedback": "GT", "feedback_form": "binary"},
     # {"pseudo_human_feedback": "GT", "feedback_form": "textual"},
