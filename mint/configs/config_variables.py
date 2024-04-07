@@ -506,7 +506,7 @@ EVALUATED_MODEL_LIST = [
     #     "agent_class": "VLLMAgent",
     #     "config": {
     #         "model_name": "Eurus-7B-KTO",
-    #         "chat_mode": False,  # Cannot find its chat template
+    #         "chat_mode": True,
     #         "max_tokens": 512,
     #         "temperature": 0.0,
     #         "openai.api_base": "http://localhost:8016/v1",
@@ -517,7 +517,7 @@ EVALUATED_MODEL_LIST = [
     #     "agent_class": "VLLMAgent",
     #     "config": {
     #         "model_name": "Eurus-7B-SFT",
-    #         "chat_mode": False,  # Cannot find its chat template
+    #         "chat_mode": True,
     #         "max_tokens": 512,
     #         "temperature": 0.0,
     #         "openai.api_base": "http://localhost:8017/v1",
@@ -528,7 +528,7 @@ EVALUATED_MODEL_LIST = [
     #     "agent_class": "VLLMAgent",
     #     "config": {
     #         "model_name": "Eurus-70B-SFT",
-    #         "chat_mode": False,  # Cannot find its chat template
+    #         "chat_mode": True,
     #         "max_tokens": 512,
     #         "temperature": 0.0,
     #         "openai.api_base": "http://localhost:8018/v1",
@@ -538,8 +538,8 @@ EVALUATED_MODEL_LIST = [
     # {
     #     "agent_class": "VLLMAgent",
     #     "config": {
-    #         "model_name": "Eurus-70B-KTO",
-    #         "chat_mode": False,  # Cannot find its chat template
+    #         "model_name": "Eurus-70B-NCA",
+    #         "chat_mode": True,
     #         "max_tokens": 512,
     #         "temperature": 0.0,
     #         "openai.api_base": "http://localhost:8019/v1",
