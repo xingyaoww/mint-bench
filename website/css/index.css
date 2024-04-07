@@ -56,11 +56,9 @@ body {
     font-weight: bolder;
 }
 
-.publication-authors {
-}
 
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+   text-decoration: none;
 }
 
 .publication-authors a:hover {
