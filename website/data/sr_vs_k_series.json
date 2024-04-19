@@ -120,6 +120,16 @@
     ]
   },
   {
+    "label": "CodeQwen1.5-7B-Chat (7B, SIFT)",
+    "data": [
+      2.05,
+      28.67,
+      33.45,
+      38.23,
+      39.25
+    ]
+  },
+  {
     "label": "Eurus-70B-KTO (70B, RLHF)",
     "data": [
       16.63,

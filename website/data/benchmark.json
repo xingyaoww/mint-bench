@@ -168,6 +168,20 @@
     "Success Rate (5 turn) w\/ GPT-4 Feedback":25.9
   },
   {
+    "model":"CodeQwen1.5-7B-Chat",
+    "size":"7B",
+    "type":"SIFT",
+    "1":2.05,
+    "2":28.67,
+    "3":33.45,
+    "4":38.23,
+    "5":39.25,
+    "Slope":8.4,
+    "rsquared":0.75,
+    "Delta Feedback":"-",
+    "Success Rate (5 turn) w\/ GPT-4 Feedback":"-"
+  },
+  {
     "model":"Eurus-70B-KTO",
     "size":"70B",
     "type":"RLHF",

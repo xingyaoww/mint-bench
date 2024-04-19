@@ -546,6 +546,17 @@ EVALUATED_MODEL_LIST = [
     #         "add_system_message": False,
     #     },
     # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "CodeQwen1.5-7B-Chat",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8020/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
 ]
 
 FEEDBACK_PROVIDER_LIST = [

@@ -132,6 +132,17 @@
     "Slope": "0.3"
   },
   {
+    "model": "CodeQwen1.5-7B-Chat",
+    "size": "7B",
+    "type": "SIFT",
+    "1": 0.0,
+    "2": 41.18,
+    "3": 44.85,
+    "4": 49.26,
+    "5": 47.79,
+    "Slope": "10.4"
+  },
+  {
     "model": "Eurus-70B-KTO",
     "size": "70B",
     "type": "RLHF",
