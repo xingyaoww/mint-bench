@@ -420,6 +420,34 @@
     "Success Rate (5 turn) w\/ GPT-4 Feedback":"-"
   },
   {
+    "model":"Meta-Llama-3-70B-Instruct",
+    "size":"70B",
+    "type":"Base",
+    "1":29.52,
+    "2":36.18,
+    "3":35.84,
+    "4":38.05,
+    "5":37.71,
+    "Slope":1.83,
+    "rsquared":0.7,
+    "Delta Feedback":"-",
+    "Success Rate (5 turn) w\/ GPT-4 Feedback":"-"
+  },
+  {
+    "model":"Meta-Llama-3-8B-Instruct",
+    "size":"8B",
+    "type":"Base",
+    "1":19.11,
+    "2":23.72,
+    "3":26.79,
+    "4":24.23,
+    "5":24.57,
+    "Slope":1.14,
+    "rsquared":0.41,
+    "Delta Feedback":"-",
+    "Success Rate (5 turn) w\/ GPT-4 Feedback":"-"
+  },
+  {
     "model":"Mistral-7B-Instruct-v0.1",
     "size":"7B",
     "type":"SIFT",

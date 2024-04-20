@@ -330,6 +330,28 @@
     "Slope": "4.8"
   },
   {
+    "model": "Meta-Llama-3-70B-Instruct",
+    "size": "70B",
+    "type": "Base",
+    "1": 35.29,
+    "2": 41.18,
+    "3": 38.97,
+    "4": 42.65,
+    "5": 41.18,
+    "Slope": "1.3"
+  },
+  {
+    "model": "Meta-Llama-3-8B-Instruct",
+    "size": "8B",
+    "type": "Base",
+    "1": 19.85,
+    "2": 24.26,
+    "3": 26.47,
+    "4": 22.06,
+    "5": 23.53,
+    "Slope": "0.5"
+  },
+  {
     "model": "Mistral-7B-Instruct-v0.1",
     "size": "7B",
     "type": "SIFT",

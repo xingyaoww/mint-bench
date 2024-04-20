@@ -557,6 +557,28 @@ EVALUATED_MODEL_LIST = [
     #         "add_system_message": False,
     #     },
     # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Meta-Llama-3-8B-Instruct",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8021/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
+    # {
+    #     "agent_class": "VLLMAgent",
+    #     "config": {
+    #         "model_name": "Meta-Llama-3-70B-Instruct",
+    #         "chat_mode": True,
+    #         "max_tokens": 512,
+    #         "temperature": 0.0,
+    #         "openai.api_base": "http://localhost:8022/v1",
+    #         "add_system_message": False,
+    #     },
+    # },
 ]
 
 FEEDBACK_PROVIDER_LIST = [
