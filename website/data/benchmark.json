@@ -422,7 +422,7 @@
   {
     "model":"Meta-Llama-3-70B-Instruct",
     "size":"70B",
-    "type":"Base",
+    "type":"RLHF",
     "1":29.52,
     "2":36.18,
     "3":35.84,
@@ -436,7 +436,7 @@
   {
     "model":"Meta-Llama-3-8B-Instruct",
     "size":"8B",
-    "type":"Base",
+    "type":"RLHF",
     "1":19.11,
     "2":23.72,
     "3":26.79,

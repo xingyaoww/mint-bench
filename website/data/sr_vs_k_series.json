@@ -300,7 +300,7 @@
     ]
   },
   {
-    "label": "Meta-Llama-3-70B-Instruct (70B, Base)",
+    "label": "Meta-Llama-3-70B-Instruct (70B, RLHF)",
     "data": [
       29.52,
       36.18,
@@ -310,7 +310,7 @@
     ]
   },
   {
-    "label": "Meta-Llama-3-8B-Instruct (8B, Base)",
+    "label": "Meta-Llama-3-8B-Instruct (8B, RLHF)",
     "data": [
       19.11,
       23.72,
